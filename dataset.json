@@ -1,0 +1,11 @@
+[
+  {
+    "task": "Write a Python function that validates if a given string is a valid MongoDB ObjectId format (24 hexadecimal characters)"
+  },
+  {
+    "task": "Create a JSON schema that defines a MongoDB document for a user collection with fields: name (string), email (string), age (integer), and createdAt (date)"
+  },
+  {
+    "task": "Write a regex pattern that matches valid MongoDB collection names (alphanumeric characters, underscores, and dots, but cannot start with a dot or contain null characters)"
+  }
+]
