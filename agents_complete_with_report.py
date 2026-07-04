@@ -10,7 +10,7 @@ load_dotenv()
 
 api_key = os.getenv("ANTHROPIC_API_KEY")
 client = Anthropic(api_key=api_key)
-model = "claude-sonnet-4-6"
+model = "claude-sonnet-5"
 
 df = pd.read_csv(r"telehealth.csv")
 
@@ -33,7 +33,7 @@ def run_cohort_analysis(df):
         )
         churned_patients = total_patients - active_patients
         retention_rate = round((active_patients / total_patients) * 100, 2)
-        
+
         result[program] = {
             "number_of_patients": total_patients,
             "average_treatment_duration_weeks": round(group["treatment_duration_weeks"].mean(), 2),
@@ -53,14 +53,14 @@ def run_outcome_analysis(df):
         duration_median = round(group["treatment_duration_weeks"].quantile(0.5), 2)
         duration_q3 = round(group["treatment_duration_weeks"].quantile(0.75), 2)
         duration_mean = round(group["treatment_duration_weeks"].mean(), 2)
-        
+
         churned = group[group["retention_status"].astype(str).str.lower().eq("dropped off")]
-        
+
         early_dropoff = len(churned[churned["treatment_duration_weeks"] <= duration_q1])
-        mid_dropoff = len(churned[(churned["treatment_duration_weeks"] > duration_q1) & 
+        mid_dropoff = len(churned[(churned["treatment_duration_weeks"] > duration_q1) &
                                 (churned["treatment_duration_weeks"] <= duration_q3)])
         late_dropoff = len(churned[churned["treatment_duration_weeks"] > duration_q3])
-        
+
         result[program] = {
             "retention_rate_percent": retention_rate,
             "duration_trends": {
@@ -84,15 +84,15 @@ def flag_anomalies(df):
         q3 = group["treatment_duration_weeks"].quantile(0.75)
         iqr = q3 - q1
         lower_bound = q1 - (1.5 * iqr)
-        
+
         short_duration_outliers = group[group["treatment_duration_weeks"] < lower_bound]
         short_duration_count = len(short_duration_outliers)
-        
+
         churned = group[group["retention_status"].astype(str).str.lower().eq("dropped off")]
         churn_rate = round((len(churned) / len(group)) * 100, 2)
-        
+
         abnormal_churn = churn_rate > 25.0
-        
+
         result[program] = {
             "short_duration_outliers": {
                 "count": int(short_duration_count),
@@ -381,6 +381,21 @@ Return ONLY valid JSON. No markdown, no code blocks, no preamble, no text outsid
   "top_priority_recommendations": ["...", "..."]
 }"""
 
+
+def extract_text(content_blocks):
+    """
+    Safely extract only the text portions of a response's content blocks.
+    Skips ThinkingBlock, RedactedThinkingBlock, ToolUseBlock, etc. by
+    checking block.type explicitly instead of relying on hasattr, since
+    some non-text block types can still expose unrelated attributes.
+    """
+    parts = []
+    for block in content_blocks:
+        if getattr(block, "type", None) == "text":
+            parts.append(block.text)
+    return "".join(parts)
+
+
 def subagent_runner(dimension_name, dimension_addition):
     system = f"{system_prompt}\n\n{dimension_addition}"
 
@@ -392,17 +407,13 @@ def subagent_runner(dimension_name, dimension_addition):
         response = client.messages.create(
             model=model,
             max_tokens=8000,
-            temperature=0,
             system=system,
             tools=tools,
             messages=messages
         )
 
         if response.stop_reason != "tool_use":
-            final_text = ""
-            for block in response.content:
-                if hasattr(block, 'text'):
-                    final_text += block.text
+            final_text = extract_text(response.content)
 
             final_text = final_text.replace("```json", "").replace("```", "").strip()
             json_start = final_text.find('{')
@@ -443,7 +454,6 @@ def coordinator_synthesis(results):
         response = client.messages.create(
             model=model,
             max_tokens=8000,
-            temperature=0,
             system=synthesis_prompt,
             messages=[
                 {"role": "user", "content": f"Here are the four subagent reports:\n\n{combined_input}"}
@@ -452,7 +462,7 @@ def coordinator_synthesis(results):
     except Exception as e:
         return {"error": "Synthesis API call failed", "details": str(e)}
 
-    raw_text = response.content[0].text
+    raw_text = extract_text(response.content)
     raw_text = raw_text.replace("```json", "").replace("```", "").strip()
     json_start = raw_text.find('{')
     if json_start != -1:
@@ -465,23 +475,23 @@ def coordinator_synthesis(results):
         return {"error": "Failed to parse synthesis", "raw": raw_text[:1000]}
 
 def generate_clinical_report(coordinator_synthesis_output, subagent_results):
-    
+
     synthesis = coordinator_synthesis_output
-    
+
     report = []
     report.append("# Clinical Insights Report")
     report.append("")
     report.append(f"Generated: {datetime.now().strftime('%B %d, %Y at %H:%M')}")
     report.append("")
     report.append("")
-    
+
     report.append("## Executive Summary")
     report.append("")
     if "executive_summary" in synthesis:
         report.append(synthesis["executive_summary"])
     report.append("")
     report.append("")
-    
+
     report.append("## Program Performance Analysis")
     report.append("")
     perf = subagent_results.get("program_performance", {})
@@ -505,7 +515,7 @@ def generate_clinical_report(coordinator_synthesis_output, subagent_results):
                 report.append(f"  Evidence: {pattern.get('evidence', 'No evidence provided')}")
             report.append("")
     report.append("")
-    
+
     report.append("## Patient Segmentation Analysis")
     report.append("")
     segment = subagent_results.get("patient_segmentation", {})
@@ -521,7 +531,7 @@ def generate_clinical_report(coordinator_synthesis_output, subagent_results):
                 report.append(f"  {pattern.get('evidence', '')}")
             report.append("")
     report.append("")
-    
+
     report.append("## Retention and Drop-Off Analysis")
     report.append("")
     retention = subagent_results.get("retention_analysis", {})
@@ -551,7 +561,7 @@ def generate_clinical_report(coordinator_synthesis_output, subagent_results):
                     report.append(f"  Early stage: {early} patients, Mid stage: {mid} patients, Late stage: {late} patients")
             report.append("")
     report.append("")
-    
+
     report.append("## Anomalies and Risk Factors")
     report.append("")
     anomalies = subagent_results.get("anomaly_detection", {})
@@ -574,7 +584,7 @@ def generate_clinical_report(coordinator_synthesis_output, subagent_results):
                 report.append(f"* {concern}")
             report.append("")
     report.append("")
-    
+
     report.append("## Top Priority Recommendations")
     report.append("")
     if "top_priority_recommendations" in synthesis:
@@ -582,23 +592,23 @@ def generate_clinical_report(coordinator_synthesis_output, subagent_results):
             report.append(f"* {rec}")
         report.append("")
     report.append("")
-    
+
     report.append("## Cross-Cutting Insights")
     report.append("")
     if "cross_cutting_insights" in synthesis:
         for insight in synthesis.get("cross_cutting_insights", []):
             report.append(f"* {insight}")
     report.append("")
-    
+
     report.append("")
     report.append("---")
     report.append("")
     report.append(f"Report generated by Multi-Agent Healthcare Analytics System on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    
+
     return "\n".join(report)
 
 def save_report_to_file(report_text, filename="clinical_report.md"):
-    with open(filename, "w") as f:
+    with open(filename, "w", encoding="utf-8") as f:
         f.write(report_text)
     return filename
 
