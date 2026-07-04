@@ -4,7 +4,7 @@ import pandas as pd
 import os
 import json
 import concurrent.futures
-from datetime import datetime
+from report_generator import generate_clinical_report, save_report_to_file
 
 load_dotenv()
 
@@ -33,7 +33,7 @@ def run_cohort_analysis(df):
         )
         churned_patients = total_patients - active_patients
         retention_rate = round((active_patients / total_patients) * 100, 2)
-
+        
         result[program] = {
             "number_of_patients": total_patients,
             "average_treatment_duration_weeks": round(group["treatment_duration_weeks"].mean(), 2),
@@ -53,14 +53,14 @@ def run_outcome_analysis(df):
         duration_median = round(group["treatment_duration_weeks"].quantile(0.5), 2)
         duration_q3 = round(group["treatment_duration_weeks"].quantile(0.75), 2)
         duration_mean = round(group["treatment_duration_weeks"].mean(), 2)
-
+        
         churned = group[group["retention_status"].astype(str).str.lower().eq("dropped off")]
-
+        
         early_dropoff = len(churned[churned["treatment_duration_weeks"] <= duration_q1])
-        mid_dropoff = len(churned[(churned["treatment_duration_weeks"] > duration_q1) &
+        mid_dropoff = len(churned[(churned["treatment_duration_weeks"] > duration_q1) & 
                                 (churned["treatment_duration_weeks"] <= duration_q3)])
         late_dropoff = len(churned[churned["treatment_duration_weeks"] > duration_q3])
-
+        
         result[program] = {
             "retention_rate_percent": retention_rate,
             "duration_trends": {
@@ -84,15 +84,15 @@ def flag_anomalies(df):
         q3 = group["treatment_duration_weeks"].quantile(0.75)
         iqr = q3 - q1
         lower_bound = q1 - (1.5 * iqr)
-
+        
         short_duration_outliers = group[group["treatment_duration_weeks"] < lower_bound]
         short_duration_count = len(short_duration_outliers)
-
+        
         churned = group[group["retention_status"].astype(str).str.lower().eq("dropped off")]
         churn_rate = round((len(churned) / len(group)) * 100, 2)
-
+        
         abnormal_churn = churn_rate > 25.0
-
+        
         result[program] = {
             "short_duration_outliers": {
                 "count": int(short_duration_count),
@@ -131,7 +131,7 @@ tools = [
     },
     {
         "name": "run_cohort_analysis",
-        "description": "Returns a point-in-time snapshot per program for side-by-side comparison: patient counts and retention percentage. Use for ranking or comparing programs against each other, including ranking by churn or retention. Does not analyze drop-off timing or flag statistical risk — for timing use run_outcome_analysis, for risk thresholds use flag_anomalies.",
+        "description": "Returns a point-in-time snapshot per program for side-by-side comparison: patient counts and retention percentage. Use for ranking or comparing programs against each other, including ranking by churn or retention. Does not analyze drop-off timing or flag statistical risk. For timing use run_outcome_analysis, for risk thresholds use flag_anomalies.",
         "input_schema": {
             "type": "object",
             "properties": {},
@@ -140,7 +140,7 @@ tools = [
     },
     {
         "name": "run_outcome_analysis",
-        "description": "Returns time-based behavior per program: how treatment length is distributed, and which stage (early, mid, late) churned patients left at. Use for understanding when or at what point in treatment patients drop off. Does not rank programs against each other or flag statistical risk — for ranking use run_cohort_analysis, for risk thresholds use flag_anomalies.",
+        "description": "Returns time-based behavior per program: how treatment length is distributed, and which stage (early, mid, late) churned patients left at. Use for understanding when or at what point in treatment patients drop off. Does not rank programs against each other or flag statistical risk. For ranking use run_cohort_analysis, for risk thresholds use flag_anomalies.",
         "input_schema": {
             "type": "object",
             "properties": {},
@@ -149,7 +149,7 @@ tools = [
     },
     {
         "name": "flag_anomalies",
-        "description": "Returns statistical risk flags per program: treatment durations that are extreme outliers (IQR method) and churn rates exceeding a 25% threshold. Use for risk detection or exception flagging, not raw counts or timing. Does not provide patient counts or drop-off timing — for counts use run_cohort_analysis, for timing use run_outcome_analysis.",
+        "description": "Returns statistical risk flags per program: treatment durations that are extreme outliers (IQR method) and churn rates exceeding a 25% threshold. Use for risk detection or exception flagging, not raw counts or timing. Does not provide patient counts or drop-off timing. For counts use run_cohort_analysis, for timing use run_outcome_analysis.",
         "input_schema": {
             "type": "object",
             "properties": {},
@@ -381,16 +381,6 @@ Return ONLY valid JSON. No markdown, no code blocks, no preamble, no text outsid
   "top_priority_recommendations": ["...", "..."]
 }"""
 
-
-def extract_text(content_blocks):
- 
-    parts = []
-    for block in content_blocks:
-        if getattr(block, "type", None) == "text":
-            parts.append(block.text)
-    return "".join(parts)
-
-
 def subagent_runner(dimension_name, dimension_addition):
     system = f"{system_prompt}\n\n{dimension_addition}"
 
@@ -408,7 +398,10 @@ def subagent_runner(dimension_name, dimension_addition):
         )
 
         if response.stop_reason != "tool_use":
-            final_text = extract_text(response.content)
+            final_text = ""
+            for block in response.content:
+                if hasattr(block, 'text'):
+                    final_text += block.text
 
             final_text = final_text.replace("```json", "").replace("```", "").strip()
             json_start = final_text.find('{')
@@ -457,7 +450,11 @@ def coordinator_synthesis(results):
     except Exception as e:
         return {"error": "Synthesis API call failed", "details": str(e)}
 
-    raw_text = extract_text(response.content)
+    raw_text = ""
+    for block in response.content:
+        if hasattr(block, 'text'):
+            raw_text += block.text
+
     raw_text = raw_text.replace("```json", "").replace("```", "").strip()
     json_start = raw_text.find('{')
     if json_start != -1:
@@ -468,144 +465,6 @@ def coordinator_synthesis(results):
     except json.JSONDecodeError as e:
         print(f"Synthesis JSON Parse Error: {e}")
         return {"error": "Failed to parse synthesis", "raw": raw_text[:1000]}
-
-def generate_clinical_report(coordinator_synthesis_output, subagent_results):
-
-    synthesis = coordinator_synthesis_output
-
-    report = []
-    report.append("# Clinical Insights Report")
-    report.append("")
-    report.append(f"Generated: {datetime.now().strftime('%B %d, %Y at %H:%M')}")
-    report.append("")
-    report.append("")
-
-    report.append("## Executive Summary")
-    report.append("")
-    if "executive_summary" in synthesis:
-        report.append(synthesis["executive_summary"])
-    report.append("")
-    report.append("")
-
-    report.append("## Program Performance Analysis")
-    report.append("")
-    perf = subagent_results.get("program_performance", {})
-    if isinstance(perf, dict):
-        if "overall_summary" in perf:
-            report.append(perf["overall_summary"])
-            report.append("")
-        if "high_attention_programs" in perf:
-            report.append("**Priority Programs**")
-            report.append("")
-            for prog in perf.get("high_attention_programs", []):
-                report.append(f"* {prog.get('program', 'Unknown')}: {prog.get('priority', 'Medium')} priority")
-                for reason in prog.get("reasons", []):
-                    report.append(f"  - {reason}")
-            report.append("")
-        if "program_patterns" in perf:
-            report.append("**Key Patterns**")
-            report.append("")
-            for pattern in perf.get("program_patterns", []):
-                report.append(f"* {pattern.get('pattern', 'Unknown pattern')}")
-                report.append(f"  Evidence: {pattern.get('evidence', 'No evidence provided')}")
-            report.append("")
-    report.append("")
-
-    report.append("## Patient Segmentation Analysis")
-    report.append("")
-    segment = subagent_results.get("patient_segmentation", {})
-    if isinstance(segment, dict):
-        if "overall_summary" in segment:
-            report.append(segment["overall_summary"])
-            report.append("")
-        if "program_patterns" in segment:
-            report.append("**Patient Segments Identified**")
-            report.append("")
-            for pattern in segment.get("program_patterns", []):
-                report.append(f"* {pattern.get('pattern', 'Unknown segment')}")
-                report.append(f"  {pattern.get('evidence', '')}")
-            report.append("")
-    report.append("")
-
-    report.append("## Retention and Drop-Off Analysis")
-    report.append("")
-    retention = subagent_results.get("retention_analysis", {})
-    if isinstance(retention, dict):
-        if "overall_summary" in retention:
-            report.append(retention["overall_summary"])
-            report.append("")
-        if "duration_trends" in retention:
-            report.append("**Treatment Duration Trends**")
-            report.append("")
-            trends = retention.get("duration_trends", {})
-            for program, stats in trends.items():
-                if isinstance(stats, dict):
-                    report.append(f"* {program}")
-                    report.append(f"  Mean: {stats.get('mean_weeks', 'N/A')} weeks, Median: {stats.get('median_weeks', 'N/A')} weeks")
-            report.append("")
-        if "drop_off_points" in retention:
-            report.append("**Drop-Off Timing by Stage**")
-            report.append("")
-            dropoff = retention.get("drop_off_points", {})
-            for program, counts in dropoff.items():
-                if isinstance(counts, dict):
-                    report.append(f"* {program}")
-                    early = counts.get("early_stage_patients", 0)
-                    mid = counts.get("mid_stage_patients", 0)
-                    late = counts.get("late_stage_patients", 0)
-                    report.append(f"  Early stage: {early} patients, Mid stage: {mid} patients, Late stage: {late} patients")
-            report.append("")
-    report.append("")
-
-    report.append("## Anomalies and Risk Factors")
-    report.append("")
-    anomalies = subagent_results.get("anomaly_detection", {})
-    if isinstance(anomalies, dict):
-        if "overall_summary" in anomalies:
-            report.append(anomalies["overall_summary"])
-            report.append("")
-        if "common_risk_factors" in anomalies:
-            report.append("**Risk Factors Identified**")
-            report.append("")
-            for risk in anomalies.get("common_risk_factors", []):
-                report.append(f"* {risk.get('factor', 'Unknown risk')}")
-                report.append(f"  Frequency: {risk.get('frequency', 'Unknown')}")
-                report.append(f"  Affected programs: {', '.join(risk.get('affected_programs', []))}")
-            report.append("")
-        if "key_concerns" in anomalies:
-            report.append("**Key Concerns**")
-            report.append("")
-            for concern in anomalies.get("key_concerns", []):
-                report.append(f"* {concern}")
-            report.append("")
-    report.append("")
-
-    report.append("## Top Priority Recommendations")
-    report.append("")
-    if "top_priority_recommendations" in synthesis:
-        for rec in synthesis.get("top_priority_recommendations", []):
-            report.append(f"* {rec}")
-        report.append("")
-    report.append("")
-
-    report.append("## Cross-Cutting Insights")
-    report.append("")
-    if "cross_cutting_insights" in synthesis:
-        for insight in synthesis.get("cross_cutting_insights", []):
-            report.append(f"* {insight}")
-    report.append("")
-
-    report.append("")
-    report.append("---")
-    report.append("")
-    report.append(f"Report generated by Multi-Agent Healthcare Analytics System on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-
-    return "\n".join(report)
-
-def save_report_to_file(report_text, filename="clinical_report.md"):
-    with open(filename, "w", encoding="utf-8") as f:
-        f.write(report_text)
-    return filename
 
 print("=" * 80)
 print("STEP 1: Running 4 Subagents in PARALLEL (ThreadPoolExecutor)")
