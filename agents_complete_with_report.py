@@ -383,12 +383,7 @@ Return ONLY valid JSON. No markdown, no code blocks, no preamble, no text outsid
 
 
 def extract_text(content_blocks):
-    """
-    Safely extract only the text portions of a response's content blocks.
-    Skips ThinkingBlock, RedactedThinkingBlock, ToolUseBlock, etc. by
-    checking block.type explicitly instead of relying on hasattr, since
-    some non-text block types can still expose unrelated attributes.
-    """
+ 
     parts = []
     for block in content_blocks:
         if getattr(block, "type", None) == "text":
