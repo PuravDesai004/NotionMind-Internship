@@ -291,6 +291,55 @@ output_schema = """
   "final_summary": ""
 }"""
 
+retention_output_schema = """
+{
+  "overall_summary": "",
+  "program_patterns": [
+    {
+      "pattern": "",
+      "evidence": "",
+      "affected_programs": []
+    }
+  ],
+  "common_risk_factors": [
+    {
+      "factor": "",
+      "frequency": "",
+      "affected_programs": []
+    }
+  ],
+  "high_attention_programs": [
+    {
+      "program": "",
+      "priority": "High | Medium | Low",
+      "reasons": []
+    }
+  ],
+  "anomalies": [
+    {
+      "program": "",
+      "observation": ""
+    }
+  ],
+  "key_concerns": [],
+  "final_summary": "",
+  "duration_and_dropoff_by_program": {
+    "<program_name>": {
+      "duration_trends": {
+        "mean_weeks": 0,
+        "median_weeks": 0,
+        "q1_weeks": 0,
+        "q3_weeks": 0
+      },
+      "drop_off_points": {
+        "early_stage_patients": 0,
+        "mid_stage_patients": 0,
+        "late_stage_patients": 0
+      }
+    }
+  }
+}"""
+
 subagent_prompts = {
     "program_performance": """<dimension>PROGRAM PERFORMANCE</dimension>
 
@@ -332,8 +381,16 @@ Analyze:
 3. Duration trends (mean, median, Q1, Q3) per program
 4. Which program has the most concerning retention timing pattern
 
+In addition to your narrative findings above, you must also populate
+duration_and_dropoff_by_program in the JSON output below. For every program
+returned by run_outcome_analysis, copy its duration_trends and drop_off_points
+objects into duration_and_dropoff_by_program exactly as the tool returned them.
+Do not summarize, round differently, or omit any program. This field carries
+the tool's raw structured findings forward so downstream report generation
+never needs to call the tool again or touch the dataset directly.
+
 Return this exact JSON structure:
-""" + output_schema,
+""" + retention_output_schema,
 
     "anomaly_detection": """<dimension>ANOMALY DETECTION</dimension>
 
@@ -508,7 +565,7 @@ print("\n" + "=" * 80)
 print("STEP 3: Generating Clinical Report")
 print("=" * 80)
 
-clinical_report = generate_clinical_report(final_report, results, run_outcome_analysis(df))
+clinical_report = generate_clinical_report(final_report, results)
 
 output_filename = save_report_to_file(clinical_report)
 

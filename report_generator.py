@@ -1,6 +1,6 @@
 from datetime import datetime
 
-def generate_clinical_report(coordinator_synthesis_output, subagent_results, outcome_data=None):
+def generate_clinical_report(coordinator_synthesis_output, subagent_results):
 
     synthesis = coordinator_synthesis_output
     
@@ -65,34 +65,37 @@ def generate_clinical_report(coordinator_synthesis_output, subagent_results, out
         if "overall_summary" in retention:
             report.append(retention["overall_summary"])
             report.append("")
-    # Duration trends and drop-off timing come directly from the deterministic
-    # run_outcome_analysis tool output (JSON), not from the subagent narrative,
-    # which does not carry these per-program numbers.
-    if isinstance(outcome_data, dict) and outcome_data:
-        report.append("**Treatment Duration Trends**")
-        report.append("")
-        for program, stats in outcome_data.items():
-            if isinstance(stats, dict):
-                trends = stats.get("duration_trends", {})
-                report.append(f"* {program}")
-                report.append(
-                    f"  Mean: {trends.get('mean_weeks', 'N/A')} weeks, "
-                    f"Median: {trends.get('median_weeks', 'N/A')} weeks, "
-                    f"Q1: {trends.get('q1_weeks', 'N/A')} weeks, "
-                    f"Q3: {trends.get('q3_weeks', 'N/A')} weeks"
-                )
-        report.append("")
-        report.append("**Drop-Off Timing by Stage**")
-        report.append("")
-        for program, stats in outcome_data.items():
-            if isinstance(stats, dict):
-                counts = stats.get("drop_off_points", {})
-                report.append(f"* {program}")
-                early = counts.get("early_stage_patients", 0)
-                mid = counts.get("mid_stage_patients", 0)
-                late = counts.get("late_stage_patients", 0)
-                report.append(f"  Early stage: {early} patients, Mid stage: {mid} patients, Late stage: {late} patients")
-        report.append("")
+
+        # Duration trends and drop-off timing are structured findings the
+        # retention subagent already carries forward from its own
+        # run_outcome_analysis tool call. The report generator only reads
+        # this JSON field; it never touches the dataframe or calls a tool.
+        duration_data = retention.get("duration_and_dropoff_by_program", {})
+        if isinstance(duration_data, dict) and duration_data:
+            report.append("**Treatment Duration Trends**")
+            report.append("")
+            for program, stats in duration_data.items():
+                if isinstance(stats, dict):
+                    trends = stats.get("duration_trends", {})
+                    report.append(f"* {program}")
+                    report.append(
+                        f"  Mean: {trends.get('mean_weeks', 'N/A')} weeks, "
+                        f"Median: {trends.get('median_weeks', 'N/A')} weeks, "
+                        f"Q1: {trends.get('q1_weeks', 'N/A')} weeks, "
+                        f"Q3: {trends.get('q3_weeks', 'N/A')} weeks"
+                    )
+            report.append("")
+            report.append("**Drop-Off Timing by Stage**")
+            report.append("")
+            for program, stats in duration_data.items():
+                if isinstance(stats, dict):
+                    counts = stats.get("drop_off_points", {})
+                    report.append(f"* {program}")
+                    early = counts.get("early_stage_patients", 0)
+                    mid = counts.get("mid_stage_patients", 0)
+                    late = counts.get("late_stage_patients", 0)
+                    report.append(f"  Early stage: {early} patients, Mid stage: {mid} patients, Late stage: {late} patients")
+            report.append("")
     report.append("")
     
     report.append("## Anomalies and Risk Factors")
