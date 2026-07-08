@@ -1,99 +1,101 @@
 # Clinical Insights Report
 
-Generated: July 04, 2026 at 15:52
+Generated: July 04, 2026 at 12:01
 
 
 ## Executive Summary
 
-Across 300 patients in three programs, Weight Loss is the strongest performer (77.32% retention, 22.68% churn, balanced drop-off) while Testosterone is the highest-risk program (71.43% retention, 28.57% churn, largest patient base at 112) and Peptides is a secondary concern (26.37% churn, shortest duration at 10.31 weeks with drop-off concentrated early). All four analyses independently converge on the same core pattern: churn in Testosterone and Peptides is driven by early/mid-stage disengagement rather than treatment duration, with zero late-stage drop-offs and no statistical duration outliers detected in any program.
+Analysis of 300 patients across three programs (Peptides n=91, Testosterone n=112, Weight Loss n=97) shows retention ranging from 71.43% to 77.32% (average ~74.1%). Testosterone is the weakest performer and highest priority, combining the highest churn rate (28.57%), lowest retention (71.43%), largest patient population, and the longest and most variable treatment duration. Peptides is a secondary concern with churn at 26.37% and the shortest, most front-loaded drop-off pattern. Weight Loss is the strongest program (77.32% retention, 22.68% churn) with no flags. All programs show drop-off concentrated in early/mid stages with zero late-stage churn, and no statistically significant duration outliers were detected via IQR analysis in any program.
 
 
 ## Program Performance Analysis
 
-The dataset covers 300 patients across three programs: Peptides (91), Testosterone (112), and Weight Loss (97). Weight Loss has the highest retention rate (77.32%) and the only churn rate that stays below the risk threshold (22.68%). Testosterone has the lowest retention (71.43%) and the highest churn rate (28.57%), while also having the longest average treatment duration (28.22 weeks). Peptides has the shortest average duration (10.31 weeks) and a high churn rate (26.37%).
+Across 300 patients in three programs, Weight Loss has the best retention (77.32%), followed by Peptides (73.63%), and Testosterone has the weakest retention (71.43%) despite having the largest enrollment (112 patients) and the longest average treatment duration (28.22 weeks).
 
 **Priority Programs**
 
 * Testosterone: High priority
-  - Highest churn rate at 28.57%, flagged as high churn
   - Lowest retention rate at 71.43%
-  - Longest average treatment duration (28.22 weeks) without corresponding retention benefit
-  - 32 patients churned, the highest raw count among programs
+  - Highest churn rate at 28.57% (32 of 112 patients churned)
+  - Largest patient population (112), so churn impacts the most people in absolute terms
+  - Longest average treatment duration (28.22 weeks), which may be linked to higher drop-off
 * Peptides: Medium priority
-  - Churn rate of 26.37% flagged as high
-  - Shortest average treatment duration (10.31 weeks), which may relate to early attrition
-  - 67% of churned patients (16 of 24) dropped off in the early stage
+  - Second-highest churn rate at 26.37% (24 of 91 patients)
+  - Shortest average treatment duration (10.31 weeks), which is notably lower than the other two programs and worth monitoring
 * Weight Loss: Low priority
-  - Highest retention rate (77.32%) among all programs
-  - Only program with churn rate below the 25% risk threshold (22.68%)
-  - Drop-off is evenly distributed between early and mid stages, suggesting no acute risk period
+  - Highest retention rate (77.32%) and lowest churn rate (22.68%) among the three programs
+  - No immediate performance concerns based on current data
 
 **Key Patterns**
 
-* Weight Loss shows the strongest and most balanced performance
-  Evidence: Highest retention rate (77.32%), lowest churn rate (22.68%), and an even split between early (11) and mid-stage (11) drop-offs suggests no single risk period dominates.
-* Testosterone has the longest treatment duration paired with the highest churn
-  Evidence: Average duration is 28.22 weeks (highest of all programs) yet churn rate is 28.57%, the highest observed, with 32 of 112 patients churned.
-* Peptides has the shortest treatment duration and concentrated early drop-off
-  Evidence: Average duration is only 10.31 weeks, and of the 24 churned patients, 16 (67%) left in the early stage versus only 8 in the mid stage.
-* No program shows late-stage drop-off
-  Evidence: All three programs report 0 late-stage churned patients, meaning patients who leave tend to do so early or mid-treatment, not near completion.
+* Longer average treatment duration is associated with higher churn
+  Evidence: Testosterone has the longest average duration (28.22 weeks) and the highest churn rate (28.57%), while Peptides has the shortest duration (10.31 weeks) and a lower churn rate (26.37%).
+* Weight Loss shows the most balanced performance
+  Evidence: Weight Loss has a mid-range duration (16.47 weeks), the lowest churn rate (22.68%), and the highest retention rate (77.32%) among the three programs.
+* All programs have retention rates within a fairly narrow band
+  Evidence: Retention rates range from 71.43% to 77.32%, a spread of under 6 percentage points, meaning no program is catastrophically underperforming but Testosterone consistently trails the others.
 
 
 ## Patient Segmentation Analysis
 
-The dataset covers 300 patients across three programs: Peptides (91 patients), Testosterone (112 patients), and Weight Loss (97 patients). Retention rates range from 71.43% to 77.32%, with Testosterone showing the lowest retention and highest churn, while Weight Loss shows the best overall retention profile.
+The dataset covers 300 patients across three programs: Peptides (91 patients), Testosterone (112 patients), and Weight Loss (97 patients). Retention rates range from 71.43% to 77.32%, with Testosterone and Peptides both flagged for high churn (over the 25% threshold), while Weight Loss remains within normal churn levels. No late-stage drop-offs were recorded in any program, meaning all observed attrition happens in the early or mid stages of treatment.
 
 **Patient Segments Identified**
 
-* Early-stage drop-off dominates across all programs
-  No program recorded any late-stage drop-offs. Peptides: 16 early vs 8 mid; Testosterone: 18 early vs 14 mid; Weight Loss: 11 early vs 11 mid (evenly split).
-* Longer average treatment duration correlates with higher churn
-  Testosterone has the longest average duration (28.22 weeks) and the highest churn rate (28.57%), while Peptides has the shortest duration (10.31 weeks) but still a high churn rate (26.37%), suggesting duration alone doesn't fully explain churn.
-* Weight Loss shows more balanced drop-off timing and better retention
-  Weight Loss has an even early/mid split (11/11) and the highest retention rate (77.32%) with churn (22.68%) below the 25% risk threshold.
+* All programs show early or mid-stage drop-off only, with zero late-stage churn recorded
+  Peptides: 16 early / 8 mid / 0 late; Testosterone: 18 early / 14 mid / 0 late; Weight Loss: 11 early / 11 mid / 0 late
+* Peptides has the shortest average treatment duration and the most front-loaded drop-off (early stage roughly double mid stage)
+  Average duration 10.31 weeks; 16 early-stage drop-offs vs 8 mid-stage
+* Testosterone has the longest average treatment duration but also the highest churn rate and largest volume of both early and mid-stage drop-offs
+  Average duration 28.22 weeks; churn rate 28.57%; 18 early + 14 mid-stage drop-offs (32 total churned)
+* Weight Loss shows the most balanced drop-off distribution and best retention performance
+  Retention rate 77.32%; churn rate 22.68% (not flagged); 11 early and 11 mid-stage drop-offs evenly split
 
 
 ## Retention and Drop-Off Analysis
 
-Across the three programs (Peptides, Testosterone, Weight Loss), retention rates range from 71.43% to 77.32%, averaging about 74.1%. All programs show drop-offs concentrated in early and mid stages, with no late-stage drop-offs recorded in any program.
+Across the three programs (Peptides, Testosterone, Weight Loss), retention rates range from 71.43% to 77.32%, with an average retention rate of about 74.1%. All programs show drop-offs concentrated in early and mid-stage treatment, with zero late-stage drop-offs recorded in any program, meaning patients who make it past the mid-point tend to stay through completion.
 
 
 ## Anomalies and Risk Factors
 
-Across 300 patients in 3 programs (Peptides, Testosterone, Weight Loss), no statistically extreme treatment duration outliers were found using the IQR method. However, 2 of the 3 programs exceed the 25% churn rate risk threshold, with Testosterone showing the highest churn rate (28.57%) followed closely by Peptides (26.37%). Weight Loss remains within normal churn levels (22.68%).
+Anomaly detection was run across 300 patient records spanning three programs: Peptides, Testosterone, and Weight Loss. No statistically abnormal treatment duration outliers were found in any program using the IQR method. However, two programs (Peptides and Testosterone) exceed the 25% churn rate risk threshold, while Weight Loss remains within normal churn levels.
 
 **Risk Factors Identified**
 
-* Churn rate above 25% risk threshold
-  Frequency: 2 out of 3 programs (66.7%)
-  Affected programs: Testosterone, Peptides
+* High churn rate above 25% threshold
+  Frequency: 2 of 3 programs (66.7%)
+  Affected programs: Peptides, Testosterone
+* Treatment duration outliers
+  Frequency: 0 of 3 programs (0%) - not observed in current data
+  Affected programs: 
 
 **Key Concerns**
 
-* Testosterone and Peptides both show churn rates above the 25% risk threshold, indicating retention challenges in these two programs.
-* No treatment duration outliers were detected in any program, so the churn issue appears unrelated to unusually short or long treatment lengths based on this data.
-* Weight Loss is currently the only program operating within normal churn levels, making it a comparative benchmark for the other two.
+* Testosterone has the highest churn rate at 28.57%, exceeding the risk threshold and warranting close monitoring.
+* Peptides also exceeds the churn risk threshold at 26.37%, indicating retention challenges alongside Testosterone.
+* No program shows treatment duration outliers, suggesting the churn issue is not linked to unusually short treatment lengths based on this analysis alone.
 
 
 ## Top Priority Recommendations
 
-* Prioritize retention interventions for Testosterone given its combination of highest churn (28.57%), lowest retention (71.43%), largest patient volume (112), and high mid-stage drop-off (14 patients) -- investigate why long treatment duration is not converting to completion
-* Implement early-engagement/onboarding improvements for Peptides to address its concentrated early-stage drop-off (67% of churned patients), given its already short program length
-* Target early and mid-stage retention touchpoints across all programs, since no program shows late-stage drop-off -- resources should focus on the first half of treatment rather than late-stage retention efforts
-* Use Weight Loss's balanced drop-off pattern and normal churn rate as a benchmark model to inform engagement strategies for Testosterone and Peptides
-* Given no duration-based outliers were found, focus monitoring on churn rate and drop-off timing metrics rather than individual treatment-length anomalies
+* Prioritize intervention in the Testosterone program given its combination of highest churn (28.57%), lowest retention (71.43%), largest patient base (112), and widest duration variability — the greatest absolute and relative impact.
+* Implement early-stage engagement initiatives (e.g., onboarding check-ins, early follow-up) across all programs, with emphasis on Peptides and Testosterone where early drop-off is most concentrated.
+* Investigate the specific drivers of Peptides' early attrition despite its short program length, to determine if onboarding or expectation-setting issues are causing rapid disengagement.
+* Examine Testosterone's wide treatment duration spread (14–46 weeks) to identify whether inconsistent care pathways or patient journeys contribute to churn, and standardize where appropriate.
+* Use Weight Loss's balanced drop-off distribution and strong retention (77.32%) as a benchmark model to inform improvements in the other two programs.
+* Since no late-stage churn occurs in any program, focus retention resources on the early-to-mid stage transition point rather than late-stage retention efforts.
 
 
 ## Cross-Cutting Insights
 
-* All four analyses agree Testosterone is the top-priority program: highest churn (28.57%), lowest retention (71.43%), largest patient base (112), and highest total drop-off count (32), despite having the longest average duration -- duration does not translate into retention benefit for this program
-* Peptides' short duration (10.31 weeks) and high early-stage churn (67% of drop-offs) suggest an early engagement/onboarding gap rather than a duration-driven fatigue issue, consistent across segmentation, retention, and performance reports
-* The complete absence of late-stage drop-off across all programs and all analyses indicates that patients who progress past mid-stage are highly likely to complete treatment -- the retention challenge is concentrated entirely in early/mid stages
-* Since no duration outliers exist in any program, the churn problem is tied to drop-off timing and program-level engagement patterns rather than individual case anomalies
-* Weight Loss's balanced early/mid drop-off split and normal churn rate make it a useful internal benchmark for evaluating interventions in the other two programs
+* Testosterone is flagged as the highest-risk program across every analysis (performance, segmentation, retention, anomaly) — the combination of largest enrollment, highest churn, lowest retention, and widest duration variability makes it the clear top priority.
+* Early-stage drop-off is a cross-program vulnerability, but it is most severe in the two flagged high-churn programs (Peptides and Testosterone), suggesting the start of treatment is the critical intervention window.
+* Peptides presents a paradox: despite having the shortest average treatment duration, it still exceeds the churn threshold, with early-stage drop-off nearly double mid-stage — suggesting disengagement happens very soon after enrollment rather than being duration-driven.
+* The absence of late-stage churn across all programs, combined with concentrated early/mid drop-off, indicates retention efforts should focus on the first half of the treatment journey rather than the tail end.
+* Testosterone's long average duration combined with high churn (rather than short duration driving churn, as seen in Peptides) suggests different underlying drivers per program, despite both exceeding the same churn threshold.
 
 
 ---
 
-Report generated by Multi-Agent Healthcare Analytics System on 2026-07-04 15:52:27
+Report generated by Multi-Agent Healthcare Analytics System on 2026-07-04 12:01:23
