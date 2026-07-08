@@ -508,7 +508,7 @@ print("\n" + "=" * 80)
 print("STEP 3: Generating Clinical Report")
 print("=" * 80)
 
-clinical_report = generate_clinical_report(final_report, results, run_outcome_analysis(df))
+clinical_report = generate_clinical_report(final_report, results)
 
 output_filename = save_report_to_file(clinical_report)
 
