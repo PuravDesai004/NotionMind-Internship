@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinical Insights Report</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a1d29;
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+  }
+  .wordmark {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    margin-bottom: 18px;
+  }
+  .wm-light { color: #2f80ed; }
+  .wm-dark { color: #16337a; }
+  h1 {
+    color: #16337a;
+    border-bottom: 2px solid #2f80ed;
+    padding-bottom: 10px;
+  }
+  h2 {
+    color: #16337a;
+    margin-top: 32px;
+  }
+  h3 {
+    color: #0f766e;
+    margin-top: 20px;
+  }
+  p, li {
+    color: #1a1d29;
+  }
+  .meta {
+    color: #5a6072;
+    font-size: 14px;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin-top: 32px;
+  }
+</style>
+</head>
+<body>
+<div class='wordmark'><span class='wm-light'>NOTIO</span><span class='wm-dark'>NMIND</span><sup>&reg;</sup></div>
+<h1>Clinical Insights Report</h1>
+<p class='meta'>Generated July 10, 2026 at 13:18</p>
+<h2>Executive Summary</h2>
+<p>Analysis of 300 patients across three programs (Peptides, Testosterone, Weight Loss) shows an overall retention rate of ~74%. Weight Loss is the strongest program (77.32% retention, 22.68% churn, no flagged anomalies). Testosterone is the highest-risk program: largest enrollment (112 patients), lowest retention (71.43%), highest churn (28.57%), and the longest, most variable treatment duration (mean 28.22 weeks). Peptides also exceeds the 25% churn risk threshold (26.37%) with drop-off heavily concentrated in the early stage. Across all programs, early-stage drop-off is the dominant attrition pattern, no late-stage drop-off was recorded, and no treatment-duration outliers were detected by any method — churn rate, not duration, is the primary risk driver in this dataset.</p>
+<h2>Program Performance Analysis</h2>
+<p>Across 300 patients in three programs (Peptides, Testosterone, Weight Loss), Weight Loss has the best retention (77.32%) and lowest churn (22.68%), while Testosterone has the largest enrollment (112 patients) but the weakest retention (71.43%) and highest churn (28.57%). Peptides also shows high churn (26.37%) despite having the shortest average treatment duration (10.31 weeks). No program shows late-stage drop-off, meaning all recorded churn happens in early or mid treatment stages.</p>
+<h3>Priority Programs</h3>
+<ul>
+<li><strong>Testosterone</strong>: High priority
+<ul>
+<li>Highest churn rate at 28.57%, flagged as high churn</li>
+<li>Lowest retention rate at 71.43%</li>
+<li>Largest enrollment (112 patients), so churn affects the most people in absolute terms (32 churned)</li>
+<li>Longest average treatment duration (28.22 weeks), yet still highest drop-off</li>
+</ul>
+</li>
+<li><strong>Peptides</strong>: Medium priority
+<ul>
+<li>Churn rate of 26.37% flagged as high</li>
+<li>Shortest average treatment duration (10.31 weeks)</li>
+<li>Early-stage drop-off (16 patients) is twice the mid-stage drop-off (8 patients), suggesting patients leave sooner than in other programs</li>
+</ul>
+</li>
+<li><strong>Weight Loss</strong>: Low priority
+<ul>
+<li>Best retention rate at 77.32%</li>
+<li>Churn rate of 22.68% is below the risk threshold and not flagged</li>
+<li>Balanced drop-off pattern between early and mid stages</li>
+</ul>
+</li>
+</ul>
+<h3>Key Patterns</h3>
+<ul>
+<li>Testosterone has by far the longest average treatment duration and the largest patient base, but also the highest churn rate. &mdash; Average duration 28.22 weeks vs 16.47 (Weight Loss) and 10.31 (Peptides); churn rate 28.57% vs 22.68% and 26.37%.</li>
+<li>All three programs show zero late-stage drop-off; churn is concentrated in early and mid treatment stages only. &mdash; Late_stage_patients = 0 for Peptides, Testosterone, and Weight Loss in outcome analysis.</li>
+<li>Peptides has the shortest treatment duration and its drop-off is heavily weighted toward the early stage. &mdash; Mean duration 10.31 weeks; early-stage drop-off (16 patients) is double mid-stage drop-off (8 patients).</li>
+<li>Weight Loss shows the most balanced drop-off distribution and the healthiest overall retention profile. &mdash; Retention rate 77.32% (highest), churn rate 22.68% (only program not flagged), early (11) and mid (11) drop-offs are equal.</li>
+</ul>
+<h2>Patient Segmentation Analysis</h2>
+<p>Across 300 patients in three programs (Peptides, Testosterone, Weight Loss), retention ranges from 71% to 77%. Testosterone has the largest patient base (112) and the highest churn rate (28.57%), while Weight Loss shows the strongest retention (77.32%) and no flagged anomalies. Early-stage drop-off dominates in all programs, with no late-stage drop-offs recorded anywhere.</p>
+<h3>Patient Segments Identified</h3>
+<ul>
+<li>Early-stage drop-off is the dominant churn pattern across all programs &mdash; Peptides: 16 early vs 8 mid-stage drop-offs; Testosterone: 18 early vs 14 mid-stage; Weight Loss: 11 early vs 11 mid-stage. No program recorded any late-stage drop-offs.</li>
+<li>Longer average treatment duration does not guarantee better retention &mdash; Testosterone has the longest average duration (28.22 weeks) but the lowest retention rate (71.43%) and highest churn (28.57%), while Peptides has the shortest duration (10.31 weeks) yet slightly better retention (73.63%).</li>
+<li>Weight Loss shows the most balanced and stable retention profile &mdash; Highest retention rate (77.32%), lowest churn (22.68%), and equal early/mid drop-off split (11 vs 11), with no anomaly flags raised.</li>
+</ul>
+<h2>Retention and Drop-Off Analysis</h2>
+<p>Across all 300 patients in the dataset, the overall retention rate is approximately 74% (222 retained out of 300), with roughly 78 patients dropping off across the three programs. Peptides shows 73.63% retention, Testosterone 71.43%, and Weight Loss 77.32%, making Weight Loss the strongest performer and Testosterone the weakest.</p>
+<h3>Treatment Duration Trends</h3>
+<ul>
+<li><strong>Peptides</strong>: Mean 10.31 weeks, Median 11.0 weeks, Q1 5.0 weeks, Q3 16.0 weeks</li>
+<li><strong>Testosterone</strong>: Mean 28.22 weeks, Median 25.5 weeks, Q1 14.0 weeks, Q3 46.0 weeks</li>
+<li><strong>Weight Loss</strong>: Mean 16.47 weeks, Median 17.0 weeks, Q1 9.0 weeks, Q3 26.0 weeks</li>
+</ul>
+<h3>Drop-Off Timing by Stage</h3>
+<ul>
+<li><strong>Peptides</strong>: Early 16, Mid 8, Late 0</li>
+<li><strong>Testosterone</strong>: Early 18, Mid 14, Late 0</li>
+<li><strong>Weight Loss</strong>: Early 11, Mid 11, Late 0</li>
+</ul>
+<h2>Anomalies and Risk Factors</h2>
+<p>Anomaly detection was run across 300 patient records spanning 3 programs (Peptides, Testosterone, Weight Loss). No statistically abnormal treatment duration outliers were found in any program using the IQR method. However, 2 of the 3 programs exceed the 25% churn rate risk threshold: Testosterone (28.57%) and Peptides (26.37%). Weight Loss is within normal churn levels at 22.68%.</p>
+<h3>Risk Factors Identified</h3>
+<ul>
+<li>Churn rate above 25% threshold &mdash; Frequency: 2 out of 3 programs (66.7%), Affected: Testosterone, Peptides</li>
+</ul>
+<h3>Key Concerns</h3>
+<ul>
+<li>Testosterone has the highest churn rate (28.57%) of all programs and is flagged as high risk.</li>
+<li>Peptides also exceeds the churn risk threshold at 26.37%.</li>
+<li>2 out of 3 programs (66.7%) exceed the defined 25% churn risk threshold, suggesting churn is a widespread issue rather than isolated to one program.</li>
+<li>No treatment duration outliers were found in any program, so duration is not currently a contributing anomaly factor.</li>
+</ul>
+<h2>Top Priority Recommendations</h2>
+<ol>
+<li>Prioritize retention intervention for Testosterone: largest enrollment (112) combined with highest churn (28.57%) and lowest retention (71.43%) means it has the greatest absolute number of at-risk patients (32 churned)</li>
+<li>Target early-stage patient engagement across all programs, since early-stage drop-off is the most common and consistent exit point (Peptides 16, Testosterone 18, Weight Loss 11)</li>
+<li>Investigate mid-stage retention specifically for Testosterone and Weight Loss, where mid-stage drop-off nearly equals early-stage drop-off, indicating risk does not end after program start</li>
+<li>Review Peptides' early program experience (first ~10 weeks), since two-thirds of its churn occurs early despite the shortest average duration</li>
+<li>Examine causes of Testosterone's highly variable treatment duration (14–46 week spread) to understand whether inconsistent engagement structure contributes to its high churn</li>
+<li>Use Weight Loss's balanced drop-off and strong retention as a model/benchmark for improving the other two programs, since it shows no anomalies and the most even risk distribution</li>
+</ol>
+<h2>Cross-Cutting Insights</h2>
+<ul>
+<li>All four analyses independently converge on the same risk ranking: Testosterone (high) &gt; Peptides (medium) &gt; Weight Loss (low), driven primarily by churn rate rather than duration anomalies</li>
+<li>Early-stage drop-off is a universal pattern across all programs and all analyses, suggesting the first phase of treatment is the most common and consistent point of patient loss</li>
+<li>Testosterone's paradox — longest average duration combined with highest churn and notable mid-stage drop-off — indicates that even patients who stay longer are not more likely to retain, and attrition risk extends well past the early stage in this program</li>
+<li>Peptides' short duration paired with heavy early-stage concentration of drop-off (67%) suggests an early program experience issue distinct from Testosterone's more spread-out attrition pattern</li>
+<li>Absence of any duration outliers across all programs and methods reinforces that churn rate, not unusual treatment length, is the dataset's central risk signal</li>
+</ul>
+<hr><p class='meta'>Report generated by Multi-Agent Healthcare Analytics System &middot; July 10, 2026 at 13:18</p>
+</body>
+</html>

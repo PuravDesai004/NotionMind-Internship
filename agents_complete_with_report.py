@@ -4,7 +4,7 @@ import pandas as pd
 import os
 import json
 import concurrent.futures
-from report_generator import generate_clinical_report, save_report_to_file
+from report_generator_v2 import generate_clinical_report, save_report_to_file, generate_html_report, save_html_report_to_file
 
 load_dotenv()
 
@@ -570,6 +570,12 @@ clinical_report = generate_clinical_report(final_report, results)
 output_filename = save_report_to_file(clinical_report)
 
 print(f"\nClinical report saved to: {output_filename}")
+
+html_report = generate_html_report(final_report, results)
+
+html_output_filename = save_html_report_to_file(html_report)
+
+print(f"HTML clinical report saved to: {html_output_filename}")
 
 print("\n" + "=" * 80)
 print("Complete Pipeline Finished Successfully")
