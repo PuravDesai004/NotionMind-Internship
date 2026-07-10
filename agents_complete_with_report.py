@@ -4,7 +4,7 @@ import pandas as pd
 import os
 import json
 import concurrent.futures
-from report_generator_v2 import generate_clinical_report, save_report_to_file, generate_html_report, save_html_report_to_file
+from report_generator import generate_clinical_report, save_report_to_file, generate_html_report, save_html_report_to_file
 
 load_dotenv()
 
@@ -325,6 +325,7 @@ retention_output_schema = """
   "final_summary": "",
   "duration_and_dropoff_by_program": {
     "<program_name>": {
+      "retention_rate_percent": 0,
       "duration_trends": {
         "mean_weeks": 0,
         "median_weeks": 0,
@@ -383,11 +384,12 @@ Analyze:
 
 In addition to your narrative findings above, you must also populate
 duration_and_dropoff_by_program in the JSON output below. For every program
-returned by run_outcome_analysis, copy its duration_trends and drop_off_points
-objects into duration_and_dropoff_by_program exactly as the tool returned them.
-Do not summarize, round differently, or omit any program. This field carries
-the tool's raw structured findings forward so downstream report generation
-never needs to call the tool again or touch the dataset directly.
+returned by run_outcome_analysis, copy its retention_rate_percent,
+duration_trends, and drop_off_points fields into duration_and_dropoff_by_program
+exactly as the tool returned them. Do not summarize, round differently, or
+omit any program. This field carries the tool's raw structured findings
+forward so downstream report generation never needs to call the tool again
+or touch the dataset directly.
 
 Return this exact JSON structure:
 """ + retention_output_schema,

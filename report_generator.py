@@ -1,4 +1,5 @@
 from datetime import datetime
+import json
 
 def generate_clinical_report(coordinator_synthesis_output, subagent_results):
 
@@ -157,10 +158,51 @@ def _escape_html(text):
     return text
 
 
+def _badge_html(priority):
+    p = str(priority).strip().lower()
+    if p == "high":
+        color = "#b91c1c"
+        bg = "#fde8e8"
+    elif p == "low":
+        color = "#166534"
+        bg = "#e6f7ec"
+    else:
+        color = "#92400e"
+        bg = "#fef3d9"
+    label = _escape_html(priority) if priority else "Medium"
+    return f"<span class='badge' style='color:{color};background:{bg};'>{label}</span>"
+
+
 def generate_html_report(coordinator_synthesis_output, subagent_results):
 
     synthesis = coordinator_synthesis_output
     generated_at = datetime.now().strftime('%B %d, %Y at %H:%M')
+
+    retention = subagent_results.get("retention_analysis", {})
+    duration_data = retention.get("duration_and_dropoff_by_program", {}) if isinstance(retention, dict) else {}
+
+    chart_programs = []
+    chart_retention = []
+    chart_early = []
+    chart_mid = []
+    chart_late = []
+    if isinstance(duration_data, dict):
+        for program, stats in duration_data.items():
+            if isinstance(stats, dict):
+                chart_programs.append(program)
+                chart_retention.append(stats.get("retention_rate_percent", 0))
+                counts = stats.get("drop_off_points", {})
+                chart_early.append(counts.get("early_stage_patients", 0))
+                chart_mid.append(counts.get("mid_stage_patients", 0))
+                chart_late.append(counts.get("late_stage_patients", 0))
+
+    charts_json = json.dumps({
+        "programs": chart_programs,
+        "retention": chart_retention,
+        "early": chart_early,
+        "mid": chart_mid,
+        "late": chart_late
+    }).replace("</", "<\\/")
 
     parts = []
 
@@ -179,7 +221,8 @@ def generate_html_report(coordinator_synthesis_output, subagent_results):
             parts.append("<h3>Priority Programs</h3>")
             parts.append("<ul>")
             for prog in perf.get("high_attention_programs", []):
-                parts.append(f"<li><strong>{_escape_html(prog.get('program', 'Unknown'))}</strong>: {_escape_html(prog.get('priority', 'Medium'))} priority")
+                badge = _badge_html(prog.get('priority', 'Medium'))
+                parts.append(f"<li><strong>{_escape_html(prog.get('program', 'Unknown'))}</strong> {badge}")
                 reasons = prog.get("reasons", [])
                 if reasons:
                     parts.append("<ul>")
@@ -206,11 +249,16 @@ def generate_html_report(coordinator_synthesis_output, subagent_results):
                 parts.append(f"<li>{_escape_html(pattern.get('pattern', ''))} &mdash; {_escape_html(pattern.get('evidence', ''))}</li>")
             parts.append("</ul>")
 
-    retention = subagent_results.get("retention_analysis", {})
     if isinstance(retention, dict):
         parts.append("<h2>Retention and Drop-Off Analysis</h2>")
         parts.append(f"<p>{_escape_html(retention.get('overall_summary', ''))}</p>")
-        duration_data = retention.get("duration_and_dropoff_by_program", {})
+
+        if chart_programs:
+            parts.append("<h3>Retention Rate by Program</h3>")
+            parts.append("<canvas id='retentionChart' height='140'></canvas>")
+            parts.append("<h3>Drop-Off Stage by Program</h3>")
+            parts.append("<canvas id='dropoffChart' height='140'></canvas>")
+
         if isinstance(duration_data, dict) and duration_data:
             parts.append("<h3>Treatment Duration Trends</h3>")
             parts.append("<ul>")
@@ -274,6 +322,46 @@ def generate_html_report(coordinator_synthesis_output, subagent_results):
 
     body = "\n".join(parts)
 
+    chart_script = ""
+    if chart_programs:
+        chart_script = f"""
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+<script>
+  const chartData = {charts_json};
+
+  new Chart(document.getElementById('retentionChart'), {{
+    type: 'bar',
+    data: {{
+      labels: chartData.programs,
+      datasets: [{{
+        label: 'Retention %',
+        data: chartData.retention,
+        backgroundColor: '#0887FF'
+      }}]
+    }},
+    options: {{
+      scales: {{ y: {{ beginAtZero: true, max: 100 }} }},
+      plugins: {{ legend: {{ display: false }} }}
+    }}
+  }});
+
+  new Chart(document.getElementById('dropoffChart'), {{
+    type: 'bar',
+    data: {{
+      labels: chartData.programs,
+      datasets: [
+        {{ label: 'Early Stage', data: chartData.early, backgroundColor: '#0887FF' }},
+        {{ label: 'Mid Stage', data: chartData.mid, backgroundColor: '#103FB8' }},
+        {{ label: 'Late Stage', data: chartData.late, backgroundColor: '#0f766e' }}
+      ]
+    }},
+    options: {{
+      scales: {{ x: {{ stacked: true }}, y: {{ stacked: true, beginAtZero: true }} }}
+    }}
+  }});
+</script>
+"""
+
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -295,15 +383,15 @@ def generate_html_report(coordinator_synthesis_output, subagent_results):
     letter-spacing: 0.02em;
     margin-bottom: 18px;
   }}
-  .wm-light {{ color: #2f80ed; }}
-  .wm-dark {{ color: #16337a; }}
+  .wm-light {{ color: #0887FF; }}
+  .wm-dark {{ color: #103FB8; }}
   h1 {{
-    color: #16337a;
-    border-bottom: 2px solid #2f80ed;
+    color: #103FB8;
+    border-bottom: 2px solid #0887FF;
     padding-bottom: 10px;
   }}
   h2 {{
-    color: #16337a;
+    color: #103FB8;
     margin-top: 32px;
   }}
   h3 {{
@@ -317,6 +405,17 @@ def generate_html_report(coordinator_synthesis_output, subagent_results):
     color: #5a6072;
     font-size: 14px;
   }}
+  .badge {{
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 999px;
+    margin-left: 6px;
+  }}
+  canvas {{
+    margin: 12px 0 24px;
+  }}
   hr {{
     border: none;
     border-top: 1px solid #ddd;
@@ -326,6 +425,7 @@ def generate_html_report(coordinator_synthesis_output, subagent_results):
 </head>
 <body>
 {body}
+{chart_script}
 </body>
 </html>"""
 
