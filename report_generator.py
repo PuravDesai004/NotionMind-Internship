@@ -1,5 +1,4 @@
 from datetime import datetime
-import json
 
 def generate_clinical_report(coordinator_synthesis_output, subagent_results):
 
@@ -173,6 +172,104 @@ def _badge_html(priority):
     return f"<span class='badge' style='color:{color};background:{bg};'>{label}</span>"
 
 
+def _bar_chart_svg(labels, values, color, max_value=None, width=600, height=220, value_suffix=""):
+    if not labels:
+        return ""
+
+    if max_value is None:
+        max_value = max(values) if values else 1
+    if max_value <= 0:
+        max_value = 1
+
+    top_pad = 28
+    bottom_pad = 28
+    plot_h = height - top_pad - bottom_pad
+
+    n = len(labels)
+    slot_w = width / n
+    bar_w = slot_w * 0.6
+
+    bars = []
+    for i in range(n):
+        label = labels[i]
+        value = values[i]
+        bar_h = (value / max_value) * plot_h
+        x = i * slot_w + (slot_w - bar_w) / 2
+        y = top_pad + (plot_h - bar_h)
+
+        bars.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{bar_w:.1f}" height="{bar_h:.1f}" fill="{color}" rx="4"></rect>')
+        bars.append(f'<text x="{x + bar_w / 2:.1f}" y="{y - 6:.1f}" text-anchor="middle" font-size="12" font-weight="700" fill="#1a1d29">{value:g}{value_suffix}</text>')
+        bars.append(f'<text x="{x + bar_w / 2:.1f}" y="{height - 8:.1f}" text-anchor="middle" font-size="12" fill="#5a6072">{_escape_html(label)}</text>')
+
+    baseline_y = top_pad + plot_h
+
+    svg = (
+        f'<svg viewBox="0 0 {width} {height}" width="100%" height="{height}" role="img" '
+        f'aria-label="Bar chart">'
+        f'<line x1="0" y1="{baseline_y:.1f}" x2="{width}" y2="{baseline_y:.1f}" stroke="#e2e4ea" stroke-width="1"></line>'
+        f'{"".join(bars)}'
+        f'</svg>'
+    )
+    return svg
+
+
+def _stacked_bar_chart_svg(labels, series, width=600, height=240):
+    if not labels:
+        return ""
+
+    totals = [sum(values[i] for _, _, values in series) for i in range(len(labels))]
+    max_total = max(totals) if totals else 1
+    if max_total <= 0:
+        max_total = 1
+
+    top_pad = 20
+    bottom_pad = 28
+    legend_h = 24
+    plot_h = height - top_pad - bottom_pad - legend_h
+
+    n = len(labels)
+    slot_w = width / n
+    bar_w = slot_w * 0.6
+
+    bars = []
+    for i in range(n):
+        label = labels[i]
+        x = i * slot_w + (slot_w - bar_w) / 2
+        cursor_y = top_pad + plot_h
+
+        for name, color, values in series:
+            v = values[i]
+            seg_h = (v / max_total) * plot_h
+            if seg_h > 0:
+                y = cursor_y - seg_h
+                bars.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{bar_w:.1f}" height="{seg_h:.1f}" fill="{color}"></rect>')
+                if seg_h > 14:
+                    bars.append(f'<text x="{x + bar_w / 2:.1f}" y="{y + seg_h / 2 + 4:.1f}" text-anchor="middle" font-size="11" fill="#ffffff">{v:g}</text>')
+                cursor_y = y
+
+        bars.append(f'<text x="{x + bar_w / 2:.1f}" y="{top_pad + plot_h + 20:.1f}" text-anchor="middle" font-size="12" fill="#5a6072">{_escape_html(label)}</text>')
+
+    baseline_y = top_pad + plot_h
+
+    legend_items = []
+    lx = 0
+    ly = height - legend_h + 10
+    for name, color, _ in series:
+        legend_items.append(f'<rect x="{lx}" y="{ly - 10}" width="10" height="10" fill="{color}"></rect>')
+        legend_items.append(f'<text x="{lx + 14}" y="{ly - 1}" font-size="11" fill="#5a6072">{_escape_html(name)}</text>')
+        lx += 14 + len(name) * 6 + 24
+
+    svg = (
+        f'<svg viewBox="0 0 {width} {height}" width="100%" height="{height}" role="img" '
+        f'aria-label="Stacked bar chart">'
+        f'<line x1="0" y1="{baseline_y:.1f}" x2="{width}" y2="{baseline_y:.1f}" stroke="#e2e4ea" stroke-width="1"></line>'
+        f'{"".join(bars)}'
+        f'{"".join(legend_items)}'
+        f'</svg>'
+    )
+    return svg
+
+
 def generate_html_report(coordinator_synthesis_output, subagent_results):
 
     synthesis = coordinator_synthesis_output
@@ -195,14 +292,6 @@ def generate_html_report(coordinator_synthesis_output, subagent_results):
                 chart_early.append(counts.get("early_stage_patients", 0))
                 chart_mid.append(counts.get("mid_stage_patients", 0))
                 chart_late.append(counts.get("late_stage_patients", 0))
-
-    charts_json = json.dumps({
-        "programs": chart_programs,
-        "retention": chart_retention,
-        "early": chart_early,
-        "mid": chart_mid,
-        "late": chart_late
-    }).replace("</", "<\\/")
 
     parts = []
 
@@ -254,10 +343,16 @@ def generate_html_report(coordinator_synthesis_output, subagent_results):
         parts.append(f"<p>{_escape_html(retention.get('overall_summary', ''))}</p>")
 
         if chart_programs:
+            retention_svg = _bar_chart_svg(chart_programs, chart_retention, "#0887FF", max_value=100, value_suffix="%")
+            dropoff_svg = _stacked_bar_chart_svg(chart_programs, [
+                ("Early Stage", "#0887FF", chart_early),
+                ("Mid Stage", "#103FB8", chart_mid),
+                ("Late Stage", "#0f766e", chart_late),
+            ])
             parts.append("<h3>Retention Rate by Program</h3>")
-            parts.append("<canvas id='retentionChart' height='140'></canvas>")
+            parts.append(f"<div class='chart'>{retention_svg}</div>")
             parts.append("<h3>Drop-Off Stage by Program</h3>")
-            parts.append("<canvas id='dropoffChart' height='140'></canvas>")
+            parts.append(f"<div class='chart'>{dropoff_svg}</div>")
 
         if isinstance(duration_data, dict) and duration_data:
             parts.append("<h3>Treatment Duration Trends</h3>")
@@ -322,46 +417,6 @@ def generate_html_report(coordinator_synthesis_output, subagent_results):
 
     body = "\n".join(parts)
 
-    chart_script = ""
-    if chart_programs:
-        chart_script = f"""
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
-<script>
-  const chartData = {charts_json};
-
-  new Chart(document.getElementById('retentionChart'), {{
-    type: 'bar',
-    data: {{
-      labels: chartData.programs,
-      datasets: [{{
-        label: 'Retention %',
-        data: chartData.retention,
-        backgroundColor: '#0887FF'
-      }}]
-    }},
-    options: {{
-      scales: {{ y: {{ beginAtZero: true, max: 100 }} }},
-      plugins: {{ legend: {{ display: false }} }}
-    }}
-  }});
-
-  new Chart(document.getElementById('dropoffChart'), {{
-    type: 'bar',
-    data: {{
-      labels: chartData.programs,
-      datasets: [
-        {{ label: 'Early Stage', data: chartData.early, backgroundColor: '#0887FF' }},
-        {{ label: 'Mid Stage', data: chartData.mid, backgroundColor: '#103FB8' }},
-        {{ label: 'Late Stage', data: chartData.late, backgroundColor: '#0f766e' }}
-      ]
-    }},
-    options: {{
-      scales: {{ x: {{ stacked: true }}, y: {{ stacked: true, beginAtZero: true }} }}
-    }}
-  }});
-</script>
-"""
-
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -413,7 +468,7 @@ def generate_html_report(coordinator_synthesis_output, subagent_results):
     border-radius: 999px;
     margin-left: 6px;
   }}
-  canvas {{
+  .chart {{
     margin: 12px 0 24px;
   }}
   hr {{
@@ -425,7 +480,6 @@ def generate_html_report(coordinator_synthesis_output, subagent_results):
 </head>
 <body>
 {body}
-{chart_script}
 </body>
 </html>"""
 
