@@ -4,12 +4,13 @@ import pandas as pd
 import os
 import json
 import concurrent.futures
+import time
 from report_generator import generate_clinical_report, save_report_to_file, generate_html_report, save_html_report_to_file
 
 load_dotenv()
 
 api_key = os.getenv("ANTHROPIC_API_KEY")
-client = Anthropic(api_key=api_key)
+client = Anthropic(api_key=api_key,max_retries=3)
 model = "claude-sonnet-5"
 
 df = pd.read_csv(r"telehealth.csv")
@@ -141,7 +142,7 @@ def chunk_dict_by_size(data, max_chars=6000):
     return chunks
 
 
-def prepare_analysis_response(raw, tool_input, max_chars=6000):
+def _prepare_analysis_response(raw, tool_input, max_chars=6000):
     tool_input = tool_input or {}
     requested_index = int(tool_input.get("chunk_index", 0))
 
@@ -158,7 +159,6 @@ def prepare_analysis_response(raw, tool_input, max_chars=6000):
 
 
 def _classify_error(exc):
-    
     message = str(exc)
     lowered = message.lower()
 
@@ -182,11 +182,11 @@ def run_tool(tool_name, tool_input):
     if tool_name == "get_df_info":
         return {"data": get_df_info()}
     elif tool_name == "run_cohort_analysis":
-        return prepare_analysis_response(run_cohort_analysis(df), tool_input)
+        return _prepare_analysis_response(run_cohort_analysis(df), tool_input)
     elif tool_name == "run_outcome_analysis":
-        return prepare_analysis_response(run_outcome_analysis(df), tool_input)
+        return _prepare_analysis_response(run_outcome_analysis(df), tool_input)
     elif tool_name == "flag_anomalies":
-        return prepare_analysis_response(flag_anomalies(df), tool_input)
+        return _prepare_analysis_response(flag_anomalies(df), tool_input)
     raise ValueError(f"Unknown tool: {tool_name}")
 
 
@@ -200,13 +200,13 @@ def run_tool_safe(tool_name, tool_input, max_retries=1):
             category, retryable = _classify_error(e)
             if retryable and attempt < max_retries:
                 attempt += 1
+                time.sleep(1)
                 continue
             return {
                 "success": False,
                 "error_category": category,
                 "isRetryable": retryable,
                 "message": str(e),
-                "partial_results": None,
             }
 
 tools = [
@@ -302,6 +302,7 @@ What you cannot do:
 </job>
 
 <precautions>
+
 Tool responses may include a failed_programs field, listing any programs
 that could not be analyzed due to malformed or corrupted data. Treat these
 as known gaps, not something to guess around. State plainly which
@@ -309,6 +310,7 @@ programs were excluded and why, rather than inferring or fabricating
 numbers for them. Base all data-type and structure observations only on
 what get_df_info actually returns (columns, data_types, and the first 5
 rows), and do not assume more rows or precision than what was returned.
+
 </precautions>
 
 <analysis_rules>
