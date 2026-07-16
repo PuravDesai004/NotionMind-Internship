@@ -4,12 +4,13 @@ import pandas as pd
 import os
 import json
 import concurrent.futures
-from report_generator import generate_clinical_report, save_report_to_file
+import time
+from report_generator import generate_clinical_report, save_report_to_file, generate_html_report, save_html_report_to_file
 
 load_dotenv()
 
 api_key = os.getenv("ANTHROPIC_API_KEY")
-client = Anthropic(api_key=api_key)
+client = Anthropic(api_key=api_key,max_retries=3)
 model = "claude-sonnet-5"
 
 df = pd.read_csv(r"telehealth.csv")
@@ -26,98 +27,187 @@ def get_df_info():
 
 def run_cohort_analysis(df):
     result = {}
+    failed_programs = {}
     for program, group in df.groupby("program_type"):
-        total_patients = len(group)
-        active_patients = (
-            group["retention_status"].astype(str).str.lower().isin(["active", "completed"]).sum()
-        )
-        churned_patients = total_patients - active_patients
-        retention_rate = round((active_patients / total_patients) * 100, 2)
-        
-        result[program] = {
-            "number_of_patients": total_patients,
-            "average_treatment_duration_weeks": round(group["treatment_duration_weeks"].mean(), 2),
-            "active_patients": int(active_patients),
-            "churned_patients": int(churned_patients),
-            "retention_rate_percent": retention_rate,
-        }
-    return result
+        try:
+            total_patients = len(group)
+            active_patients = (
+                group["retention_status"].astype(str).str.lower().isin(["active", "completed"]).sum()
+            )
+            churned_patients = total_patients - active_patients
+            retention_rate = round((active_patients / total_patients) * 100, 2)
+
+            result[program] = {
+                "number_of_patients": total_patients,
+                "average_treatment_duration_weeks": round(group["treatment_duration_weeks"].mean(), 2),
+                "active_patients": int(active_patients),
+                "churned_patients": int(churned_patients),
+                "retention_rate_percent": retention_rate,
+            }
+        except Exception as e:
+            failed_programs[program] = str(e)
+    return {"data": result, "failed_programs": failed_programs}
 
 def run_outcome_analysis(df):
     result = {}
+    failed_programs = {}
     for program, group in df.groupby("program_type"):
-        retention_rate = round(
-            (group["retention_status"].astype(str).str.lower().isin(["active", "completed"]).sum() / len(group)) * 100, 2
-        )
-        duration_q1 = round(group["treatment_duration_weeks"].quantile(0.25), 2)
-        duration_median = round(group["treatment_duration_weeks"].quantile(0.5), 2)
-        duration_q3 = round(group["treatment_duration_weeks"].quantile(0.75), 2)
-        duration_mean = round(group["treatment_duration_weeks"].mean(), 2)
-        
-        churned = group[group["retention_status"].astype(str).str.lower().eq("dropped off")]
-        
-        early_dropoff = len(churned[churned["treatment_duration_weeks"] <= duration_q1])
-        mid_dropoff = len(churned[(churned["treatment_duration_weeks"] > duration_q1) & 
-                                (churned["treatment_duration_weeks"] <= duration_q3)])
-        late_dropoff = len(churned[churned["treatment_duration_weeks"] > duration_q3])
-        
-        result[program] = {
-            "retention_rate_percent": retention_rate,
-            "duration_trends": {
-                "mean_weeks": duration_mean,
-                "median_weeks": duration_median,
-                "q1_weeks": duration_q1,
-                "q3_weeks": duration_q3,
-            },
-            "drop_off_points": {
-                "early_stage_patients": int(early_dropoff),
-                "mid_stage_patients": int(mid_dropoff),
-                "late_stage_patients": int(late_dropoff),
+        try:
+            retention_rate = round(
+                (group["retention_status"].astype(str).str.lower().isin(["active", "completed"]).sum() / len(group)) * 100, 2
+            )
+            duration_q1 = round(group["treatment_duration_weeks"].quantile(0.25), 2)
+            duration_median = round(group["treatment_duration_weeks"].quantile(0.5), 2)
+            duration_q3 = round(group["treatment_duration_weeks"].quantile(0.75), 2)
+            duration_mean = round(group["treatment_duration_weeks"].mean(), 2)
+
+            churned = group[group["retention_status"].astype(str).str.lower().eq("dropped off")]
+
+            early_dropoff = len(churned[churned["treatment_duration_weeks"] <= duration_q1])
+            mid_dropoff = len(churned[(churned["treatment_duration_weeks"] > duration_q1) &
+                                    (churned["treatment_duration_weeks"] <= duration_q3)])
+            late_dropoff = len(churned[churned["treatment_duration_weeks"] > duration_q3])
+
+            result[program] = {
+                "retention_rate_percent": retention_rate,
+                "duration_trends": {
+                    "mean_weeks": duration_mean,
+                    "median_weeks": duration_median,
+                    "q1_weeks": duration_q1,
+                    "q3_weeks": duration_q3,
+                },
+                "drop_off_points": {
+                    "early_stage_patients": int(early_dropoff),
+                    "mid_stage_patients": int(mid_dropoff),
+                    "late_stage_patients": int(late_dropoff),
+                }
             }
-        }
-    return result
+        except Exception as e:
+            failed_programs[program] = str(e)
+    return {"data": result, "failed_programs": failed_programs}
 
 def flag_anomalies(df):
     result = {}
+    failed_programs = {}
     for program, group in df.groupby("program_type"):
-        q1 = group["treatment_duration_weeks"].quantile(0.25)
-        q3 = group["treatment_duration_weeks"].quantile(0.75)
-        iqr = q3 - q1
-        lower_bound = q1 - (1.5 * iqr)
-        
-        short_duration_outliers = group[group["treatment_duration_weeks"] < lower_bound]
-        short_duration_count = len(short_duration_outliers)
-        
-        churned = group[group["retention_status"].astype(str).str.lower().eq("dropped off")]
-        churn_rate = round((len(churned) / len(group)) * 100, 2)
-        
-        abnormal_churn = churn_rate > 25.0
-        
-        result[program] = {
-            "short_duration_outliers": {
-                "count": int(short_duration_count),
-                "threshold_weeks": round(lower_bound, 2),
-                "affected_patients_percent": round((short_duration_count / len(group)) * 100, 2),
-                "flagged": short_duration_count > 0,
-            },
-            "abnormal_drop_off_clusters": {
-                "churn_rate_percent": churn_rate,
-                "flagged": abnormal_churn,
-                "interpretation": "High churn detected" if abnormal_churn else "Normal churn levels"
+        try:
+            q1 = group["treatment_duration_weeks"].quantile(0.25)
+            q3 = group["treatment_duration_weeks"].quantile(0.75)
+            iqr = q3 - q1
+            lower_bound = q1 - (1.5 * iqr)
+
+            short_duration_outliers = group[group["treatment_duration_weeks"] < lower_bound]
+            short_duration_count = len(short_duration_outliers)
+
+            churned = group[group["retention_status"].astype(str).str.lower().eq("dropped off")]
+            churn_rate = round((len(churned) / len(group)) * 100, 2)
+
+            abnormal_churn = churn_rate > 25.0
+
+            result[program] = {
+                "short_duration_outliers": {
+                    "count": int(short_duration_count),
+                    "threshold_weeks": round(lower_bound, 2),
+                    "affected_patients_percent": round((short_duration_count / len(group)) * 100, 2),
+                    "flagged": short_duration_count > 0,
+                },
+                "abnormal_drop_off_clusters": {
+                    "churn_rate_percent": churn_rate,
+                    "flagged": abnormal_churn,
+                    "interpretation": "High churn detected" if abnormal_churn else "Normal churn levels"
+                }
             }
-        }
-    return result
+        except Exception as e:
+            failed_programs[program] = str(e)
+    return {"data": result, "failed_programs": failed_programs}
+
+
+def chunk_dict_by_size(data, max_chars=6000):
+    chunks = []
+    current_chunk = {}
+    current_size = 2
+
+    for key, value in data.items():
+        item_size = len(json.dumps({key: value}, default=str))
+        if current_chunk and current_size + item_size > max_chars:
+            chunks.append(current_chunk)
+            current_chunk = {}
+            current_size = 2
+        current_chunk[key] = value
+        current_size += item_size
+
+    if current_chunk or not chunks:
+        chunks.append(current_chunk)
+
+    return chunks
+
+
+def _prepare_analysis_response(raw, tool_input, max_chars=6000):
+    tool_input = tool_input or {}
+    requested_index = int(tool_input.get("chunk_index", 0))
+
+    chunks = chunk_dict_by_size(raw["data"], max_chars=max_chars)
+    chunk_index = max(0, min(requested_index, len(chunks) - 1))
+
+    return {
+        "data": chunks[chunk_index],
+        "chunk_index": chunk_index,
+        "total_chunks": len(chunks),
+        "has_more": chunk_index < len(chunks) - 1,
+        "failed_programs": raw["failed_programs"],
+    }
+
+
+def _classify_error(exc):
+    message = str(exc)
+    lowered = message.lower()
+
+    if isinstance(exc, ValueError) and lowered.startswith("unknown tool"):
+        return "unknown_tool", False
+
+    if any(keyword in lowered for keyword in ["connection", "timeout", "temporarily", "unavailable", "network"]):
+        return "transient_error", True
+
+    if isinstance(exc, (ConnectionError, TimeoutError, OSError)):
+        return "transient_error", True
+
+    if isinstance(exc, (KeyError, TypeError, ValueError)):
+        return "data_error", False
+
+    return "unexpected_error", True
+
 
 def run_tool(tool_name, tool_input):
+    tool_input = tool_input or {}
     if tool_name == "get_df_info":
-        return get_df_info()
+        return {"data": get_df_info()}
     elif tool_name == "run_cohort_analysis":
-        return run_cohort_analysis(df)
+        return _prepare_analysis_response(run_cohort_analysis(df), tool_input)
     elif tool_name == "run_outcome_analysis":
-        return run_outcome_analysis(df)
+        return _prepare_analysis_response(run_outcome_analysis(df), tool_input)
     elif tool_name == "flag_anomalies":
-        return flag_anomalies(df)
+        return _prepare_analysis_response(flag_anomalies(df), tool_input)
     raise ValueError(f"Unknown tool: {tool_name}")
+
+
+def run_tool_safe(tool_name, tool_input, max_retries=1):
+    attempt = 0
+    while True:
+        try:
+            result = run_tool(tool_name, tool_input)
+            return {"success": True, **result}
+        except Exception as e:
+            category, retryable = _classify_error(e)
+            if retryable and attempt < max_retries:
+                attempt += 1
+                time.sleep(1)
+                continue
+            return {
+                "success": False,
+                "error_category": category,
+                "isRetryable": retryable,
+                "message": str(e),
+            }
 
 tools = [
     {
@@ -131,28 +221,43 @@ tools = [
     },
     {
         "name": "run_cohort_analysis",
-        "description": "Returns a point-in-time snapshot per program for side-by-side comparison: patient counts and retention percentage. Use for ranking or comparing programs against each other, including ranking by churn or retention. Does not analyze drop-off timing or flag statistical risk. For timing use run_outcome_analysis, for risk thresholds use flag_anomalies.",
+        "description": "Returns a point-in-time snapshot per program for side-by-side comparison: patient counts and retention percentage. Use for ranking or comparing programs against each other, including ranking by churn or retention. Does not analyze drop-off timing or flag statistical risk. For timing use run_outcome_analysis, for risk thresholds use flag_anomalies. Response may be split across multiple chunks if the number of programs is large -- check has_more and call again with an incremented chunk_index to retrieve the rest.",
         "input_schema": {
             "type": "object",
-            "properties": {},
+            "properties": {
+                "chunk_index": {
+                    "type": "integer",
+                    "description": "Which chunk of results to retrieve, starting at 0. Only needed if a previous call to this tool returned has_more: true."
+                }
+            },
             "required": []
         }
     },
     {
         "name": "run_outcome_analysis",
-        "description": "Returns time-based behavior per program: how treatment length is distributed, and which stage (early, mid, late) churned patients left at. Use for understanding when or at what point in treatment patients drop off. Does not rank programs against each other or flag statistical risk. For ranking use run_cohort_analysis, for risk thresholds use flag_anomalies.",
+        "description": "Returns time-based behavior per program: how treatment length is distributed, and which stage (early, mid, late) churned patients left at. Use for understanding when or at what point in treatment patients drop off. Does not rank programs against each other or flag statistical risk. For ranking use run_cohort_analysis, for risk thresholds use flag_anomalies. Response may be split across multiple chunks if the number of programs is large -- check has_more and call again with an incremented chunk_index to retrieve the rest.",
         "input_schema": {
             "type": "object",
-            "properties": {},
+            "properties": {
+                "chunk_index": {
+                    "type": "integer",
+                    "description": "Which chunk of results to retrieve, starting at 0. Only needed if a previous call to this tool returned has_more: true."
+                }
+            },
             "required": []
         }
     },
     {
         "name": "flag_anomalies",
-        "description": "Returns statistical risk flags per program: treatment durations that are extreme outliers (IQR method) and churn rates exceeding a 25% threshold. Use for risk detection or exception flagging, not raw counts or timing. Does not provide patient counts or drop-off timing. For counts use run_cohort_analysis, for timing use run_outcome_analysis.",
+        "description": "Returns statistical risk flags per program: treatment durations that are extreme outliers (IQR method) and churn rates exceeding a 25% threshold. Use for risk detection or exception flagging, not raw counts or timing. Does not provide patient counts or drop-off timing. For counts use run_cohort_analysis, for timing use run_outcome_analysis. Response may be split across multiple chunks if the number of programs is large -- check has_more and call again with an incremented chunk_index to retrieve the rest.",
         "input_schema": {
             "type": "object",
-            "properties": {},
+            "properties": {
+                "chunk_index": {
+                    "type": "integer",
+                    "description": "Which chunk of results to retrieve, starting at 0. Only needed if a previous call to this tool returned has_more: true."
+                }
+            },
             "required": []
         }
     }
@@ -196,6 +301,18 @@ What you cannot do:
 
 </job>
 
+<precautions>
+
+Tool responses may include a failed_programs field, listing any programs
+that could not be analyzed due to malformed or corrupted data. Treat these
+as known gaps, not something to guess around. State plainly which
+programs were excluded and why, rather than inferring or fabricating
+numbers for them. Base all data-type and structure observations only on
+what get_df_info actually returns (columns, data_types, and the first 5
+rows), and do not assume more rows or precision than what was returned.
+
+</precautions>
+
 <analysis_rules>
 
 - Use only the information returned by the tools
@@ -206,6 +323,11 @@ What you cannot do:
 - Flag unusually high or low values (e.g., high churn, short duration outliers)
 - Highlight programs that stand out from the others
 - Explain observations in simple and clear language. No medical jargon.
+
+Every tool response is wrapped in an envelope. Read it before using the data:
+- If success is false, the tool call failed. error_category and message explain why, and isRetryable indicates whether it is worth trying again later. Do not fabricate the data that tool would have returned -- note the limitation in your findings instead.
+- If the response includes has_more: true, you have not seen all the data yet. Call the same tool again with chunk_index increased by 1 (starting at 0) and keep going until has_more is false, so no program is missed.
+- If the response includes a non-empty failed_programs object, those specific programs could not be analyzed by that tool even though the call itself succeeded. Mention this limitation for those specific programs rather than silently omitting them or guessing their numbers.
 
 Prioritize programs based on:
 - Retention rate
@@ -325,6 +447,7 @@ retention_output_schema = """
   "final_summary": "",
   "duration_and_dropoff_by_program": {
     "<program_name>": {
+      "retention_rate_percent": 0,
       "duration_trends": {
         "mean_weeks": 0,
         "median_weeks": 0,
@@ -382,12 +505,19 @@ Analyze:
 4. Which program has the most concerning retention timing pattern
 
 In addition to your narrative findings above, you must also populate
-duration_and_dropoff_by_program in the JSON output below. For every program
-returned by run_outcome_analysis, copy its duration_trends and drop_off_points
-objects into duration_and_dropoff_by_program exactly as the tool returned them.
-Do not summarize, round differently, or omit any program. This field carries
-the tool's raw structured findings forward so downstream report generation
-never needs to call the tool again or touch the dataset directly.
+duration_and_dropoff_by_program in the JSON output below. The per-program
+numbers from run_outcome_analysis live inside the tool response's data field.
+If the response has has_more: true, call run_outcome_analysis again with an
+incremented chunk_index and keep going until has_more is false, combining
+every chunk's programs together. For every program you receive, copy its
+retention_rate_percent, duration_trends, and drop_off_points fields into
+duration_and_dropoff_by_program exactly as the tool returned them -- do not
+summarize or round differently. If a program appears in the tool's
+failed_programs field, leave it out of duration_and_dropoff_by_program rather
+than inventing numbers for it, and mention the gap in key_concerns instead.
+This field carries the tool's raw structured findings forward so downstream
+report generation never needs to call the tool again or touch the dataset
+directly.
 
 Return this exact JSON structure:
 """ + retention_output_schema,
@@ -475,20 +605,13 @@ def subagent_runner(dimension_name, dimension_addition):
         tool_results = []
         for block in response.content:
             if block.type == "tool_use":
-                try:
-                    result = run_tool(block.name, block.input)
-                    tool_results.append({
-                        "type": "tool_result",
-                        "tool_use_id": block.id,
-                        "content": json.dumps(result, default=str)
-                    })
-                except Exception as e:
-                    tool_results.append({
-                        "type": "tool_result",
-                        "tool_use_id": block.id,
-                        "content": json.dumps({"error": str(e)}),
-                        "is_error": True
-                    })
+                envelope = run_tool_safe(block.name, block.input)
+                tool_results.append({
+                    "type": "tool_result",
+                    "tool_use_id": block.id,
+                    "content": json.dumps(envelope, default=str),
+                    "is_error": not envelope["success"]
+                })
 
         messages.append({"role": "user", "content": tool_results})
 
@@ -523,54 +646,62 @@ def coordinator_synthesis(results):
         print(f"Synthesis JSON Parse Error: {e}")
         return {"error": "Failed to parse synthesis", "raw": raw_text[:1000]}
 
-print("=" * 80)
-print("STEP 1: Running 4 Subagents in PARALLEL (ThreadPoolExecutor)")
-print("=" * 80)
 
-with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
-    futures = {
-        dimension: executor.submit(subagent_runner, dimension, addition)
-        for dimension, addition in subagent_prompts.items()
-    }
+if __name__ == "__main__":
+    print("=" * 80)
+    print("STEP 1: Running 4 Subagents in PARALLEL (ThreadPoolExecutor)")
+    print("=" * 80)
 
-    results = {}
-    for dimension, future in futures.items():
-        print(f"  Waiting for {dimension}...")
-        results[dimension] = future.result()
-        print(f"  {dimension} done")
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
+        futures = {
+            dimension: executor.submit(subagent_runner, dimension, addition)
+            for dimension, addition in subagent_prompts.items()
+        }
 
-print("\nAll 4 subagents completed\n")
+        results = {}
+        for dimension, future in futures.items():
+            print(f"  Waiting for {dimension}...")
+            results[dimension] = future.result()
+            print(f"  {dimension} done")
 
-print("=" * 80)
-print("STEP 1 OUTPUT - Raw Subagent Results (preview)")
-print("=" * 80)
+    print("\nAll 4 subagents completed\n")
 
-for dimension, result in results.items():
-    print(f"\n{dimension.upper()}:")
-    print(json.dumps(result, indent=2)[:500])
+    print("=" * 80)
+    print("STEP 1 OUTPUT - Raw Subagent Results (preview)")
+    print("=" * 80)
 
-print("\n" + "=" * 80)
-print("STEP 2: Coordinator Synthesizing Final Report")
-print("=" * 80)
+    for dimension, result in results.items():
+        print(f"\n{dimension.upper()}:")
+        print(json.dumps(result, indent=2)[:500])
 
-final_report = coordinator_synthesis(results)
+    print("\n" + "=" * 80)
+    print("STEP 2: Coordinator Synthesizing Final Report")
+    print("=" * 80)
 
-print("\nSynthesis complete\n")
-print("=" * 80)
-print("FINAL REPORT")
-print("=" * 80)
-print(json.dumps(final_report, indent=2))
+    final_report = coordinator_synthesis(results)
 
-print("\n" + "=" * 80)
-print("STEP 3: Generating Clinical Report")
-print("=" * 80)
+    print("\nSynthesis complete\n")
+    print("=" * 80)
+    print("FINAL REPORT")
+    print("=" * 80)
+    print(json.dumps(final_report, indent=2))
 
-clinical_report = generate_clinical_report(final_report, results)
+    print("\n" + "=" * 80)
+    print("STEP 3: Generating Clinical Report")
+    print("=" * 80)
 
-output_filename = save_report_to_file(clinical_report)
+    clinical_report = generate_clinical_report(final_report, results)
 
-print(f"\nClinical report saved to: {output_filename}")
+    output_filename = save_report_to_file(clinical_report)
 
-print("\n" + "=" * 80)
-print("Complete Pipeline Finished Successfully")
-print("=" * 80)
+    print(f"\nClinical report saved to: {output_filename}")
+
+    html_report = generate_html_report(final_report, results)
+
+    html_output_filename = save_html_report_to_file(html_report)
+
+    print(f"HTML clinical report saved to: {html_output_filename}")
+
+    print("\n" + "=" * 80)
+    print("Complete Pipeline Finished Successfully")
+    print("=" * 80)
