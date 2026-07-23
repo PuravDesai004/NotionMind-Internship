@@ -142,7 +142,7 @@ def chunk_dict_by_size(data, max_chars=6000):
     return chunks
 
 
-def _prepare_analysis_response(raw, tool_input, max_chars=6000):
+def prepare_analysis_response(raw, tool_input, max_chars=6000):
     tool_input = tool_input or {}
     requested_index = int(tool_input.get("chunk_index", 0))
 
@@ -158,7 +158,7 @@ def _prepare_analysis_response(raw, tool_input, max_chars=6000):
     }
 
 
-def _classify_error(exc):
+def classify_error(exc):
     message = str(exc)
     lowered = message.lower()
 
@@ -182,11 +182,11 @@ def run_tool(tool_name, tool_input):
     if tool_name == "get_df_info":
         return {"data": get_df_info()}
     elif tool_name == "run_cohort_analysis":
-        return _prepare_analysis_response(run_cohort_analysis(df), tool_input)
+        return prepare_analysis_response(run_cohort_analysis(df), tool_input)
     elif tool_name == "run_outcome_analysis":
-        return _prepare_analysis_response(run_outcome_analysis(df), tool_input)
+        return prepare_analysis_response(run_outcome_analysis(df), tool_input)
     elif tool_name == "flag_anomalies":
-        return _prepare_analysis_response(flag_anomalies(df), tool_input)
+        return prepare_analysis_response(flag_anomalies(df), tool_input)
     raise ValueError(f"Unknown tool: {tool_name}")
 
 
@@ -197,7 +197,7 @@ def run_tool_safe(tool_name, tool_input, max_retries=1):
             result = run_tool(tool_name, tool_input)
             return {"success": True, **result}
         except Exception as e:
-            category, retryable = _classify_error(e)
+            category, retryable = classify_error(e)
             if retryable and attempt < max_retries:
                 attempt += 1
                 time.sleep(1)
