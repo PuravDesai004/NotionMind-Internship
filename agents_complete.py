@@ -14,7 +14,7 @@ from report_generator import generate_clinical_report, save_report_to_file, gene
 load_dotenv()
 
 api_key = os.getenv("ANTHROPIC_API_KEY")
-client = Anthropic(api_key=api_key)
+client = Anthropic(api_key=api_key,max_retries=3)
 model = "claude-sonnet-5"
 
 # Loaded once at import time. Every analysis function below reads this same
