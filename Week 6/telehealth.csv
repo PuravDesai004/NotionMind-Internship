@@ -1,0 +1,2001 @@
+patient_id,program_type,start_date,treatment_duration_weeks,retention_status,drop_off_reason
+PT-0001,Peptides,01-12-2025,16,Active,
+PT-0002,Peptides,08-01-2025,16,Active,
+PT-0003,Testosterone,21-05-2025,52,Active,
+PT-0004,Testosterone,23-04-2025,46,Completed,
+PT-0005,Testosterone,22-01-2026,14,Completed,
+PT-0006,Testosterone,21-12-2025,25,Active,
+PT-0007,Testosterone,15-04-2026,13,Completed,
+PT-0008,Peptides,10-02-2025,16,Active,
+PT-0009,Peptides,07-08-2025,7,Dropped Off,Switched to in-person provider
+PT-0010,Weight Loss,10-01-2025,8,Completed,
+PT-0011,Testosterone,21-04-2025,33,Completed,
+PT-0012,Weight Loss,21-09-2025,26,Active,
+PT-0013,Weight Loss,09-01-2025,26,Active,
+PT-0014,Weight Loss,10-04-2025,26,Active,
+PT-0015,Weight Loss,07-12-2025,9,Completed,
+PT-0016,Peptides,12-10-2025,5,Completed,
+PT-0017,Weight Loss,22-04-2025,26,Active,
+PT-0018,Weight Loss,05-11-2025,11,Dropped Off,Moved out of service area
+PT-0019,Peptides,02-03-2026,15,Active,
+PT-0020,Testosterone,29-12-2024,52,Active,
+PT-0021,Testosterone,28-02-2026,5,Dropped Off,Switched to in-person provider
+PT-0022,Testosterone,02-01-2026,24,Active,
+PT-0023,Weight Loss,25-06-2025,19,Completed,
+PT-0024,Testosterone,18-03-2025,52,Active,
+PT-0025,Testosterone,20-05-2026,16,Completed,
+PT-0026,Peptides,23-06-2025,12,Completed,
+PT-0027,Peptides,13-02-2025,16,Active,
+PT-0028,Weight Loss,15-02-2025,26,Active,
+PT-0029,Peptides,22-03-2026,7,Completed,
+PT-0030,Peptides,12-11-2025,16,Active,
+PT-0031,Testosterone,01-03-2026,15,Active,
+PT-0032,Testosterone,18-01-2026,15,Dropped Off,Dissatisfied with results
+PT-0033,Testosterone,07-10-2025,36,Active,
+PT-0034,Peptides,28-05-2026,6,Dropped Off,Switched to in-person provider
+PT-0035,Peptides,15-07-2025,14,Completed,
+PT-0036,Weight Loss,16-10-2025,26,Active,
+PT-0037,Testosterone,13-03-2026,14,Active,
+PT-0038,Peptides,20-11-2025,15,Completed,
+PT-0039,Peptides,30-03-2026,13,Completed,
+PT-0040,Weight Loss,29-10-2025,26,Active,
+PT-0041,Testosterone,05-01-2026,17,Completed,
+PT-0042,Testosterone,19-01-2025,7,Dropped Off,Lost contact / unresponsive
+PT-0043,Peptides,26-04-2025,5,Completed,
+PT-0044,Weight Loss,29-05-2025,26,Active,
+PT-0045,Weight Loss,06-02-2025,25,Completed,
+PT-0046,Testosterone,29-04-2025,19,Completed,
+PT-0047,Peptides,17-02-2025,5,Dropped Off,Moved out of service area
+PT-0048,Testosterone,23-05-2025,52,Active,
+PT-0049,Testosterone,29-11-2025,28,Completed,
+PT-0050,Peptides,08-07-2025,2,Dropped Off,Dissatisfied with results
+PT-0051,Peptides,11-07-2025,7,Completed,
+PT-0052,Testosterone,16-04-2025,52,Active,
+PT-0053,Testosterone,17-05-2025,45,Completed,
+PT-0054,Testosterone,09-05-2026,43,Completed,
+PT-0055,Testosterone,06-12-2025,27,Active,
+PT-0056,Weight Loss,15-11-2025,6,Dropped Off,Switched to in-person provider
+PT-0057,Testosterone,27-03-2025,52,Active,
+PT-0058,Peptides,18-01-2026,2,Dropped Off,Personal / scheduling conflicts
+PT-0059,Testosterone,23-03-2025,20,Dropped Off,Lost contact / unresponsive
+PT-0060,Testosterone,16-07-2025,47,Completed,
+PT-0061,Testosterone,06-06-2026,1,Active,
+PT-0062,Peptides,02-12-2025,7,Completed,
+PT-0063,Peptides,18-10-2025,4,Dropped Off,Dissatisfied with results
+PT-0064,Weight Loss,25-12-2025,12,Dropped Off,Moved out of service area
+PT-0065,Weight Loss,20-03-2026,9,Dropped Off,Side effects
+PT-0066,Testosterone,12-02-2026,18,Active,
+PT-0067,Weight Loss,27-04-2025,26,Active,
+PT-0068,Peptides,12-01-2025,16,Active,
+PT-0069,Testosterone,12-06-2025,52,Active,
+PT-0070,Peptides,17-05-2025,7,Completed,
+PT-0071,Testosterone,17-04-2025,13,Dropped Off,Side effects
+PT-0072,Peptides,12-05-2026,5,Active,
+PT-0073,Peptides,07-04-2026,12,Completed,
+PT-0074,Testosterone,11-06-2025,21,Dropped Off,Personal / scheduling conflicts
+PT-0075,Testosterone,10-12-2025,16,Dropped Off,Switched to in-person provider
+PT-0076,Testosterone,24-07-2025,47,Active,
+PT-0077,Weight Loss,27-04-2026,7,Active,
+PT-0078,Weight Loss,27-08-2025,9,Completed,
+PT-0079,Peptides,16-05-2025,14,Completed,
+PT-0080,Testosterone,06-05-2025,52,Active,
+PT-0081,Peptides,21-10-2025,16,Active,
+PT-0082,Testosterone,15-05-2025,52,Active,
+PT-0083,Testosterone,02-11-2025,20,Completed,
+PT-0084,Weight Loss,18-04-2026,8,Active,
+PT-0085,Weight Loss,26-07-2025,26,Active,
+PT-0086,Testosterone,21-04-2025,47,Completed,
+PT-0087,Testosterone,10-06-2026,1,Active,
+PT-0088,Peptides,23-09-2025,2,Dropped Off,Switched to in-person provider
+PT-0089,Testosterone,12-02-2025,42,Completed,
+PT-0090,Testosterone,20-01-2025,4,Dropped Off,Lost contact / unresponsive
+PT-0091,Weight Loss,22-02-2025,26,Active,
+PT-0092,Weight Loss,25-11-2025,26,Active,
+PT-0093,Weight Loss,21-02-2026,16,Active,
+PT-0094,Peptides,08-08-2025,8,Dropped Off,Lost contact / unresponsive
+PT-0095,Testosterone,28-01-2025,52,Active,
+PT-0096,Testosterone,17-07-2025,46,Completed,
+PT-0097,Testosterone,09-06-2026,4,Dropped Off,Cost / insurance not covering treatment
+PT-0098,Peptides,04-10-2025,12,Completed,
+PT-0099,Testosterone,27-05-2026,3,Active,
+PT-0100,Peptides,29-03-2026,11,Active,
+PT-0101,Testosterone,01-01-2025,52,Active,
+PT-0102,Testosterone,14-01-2026,27,Completed,
+PT-0103,Weight Loss,24-12-2025,25,Active,
+PT-0104,Peptides,08-10-2025,16,Active,
+PT-0105,Peptides,17-05-2025,16,Active,
+PT-0106,Testosterone,02-12-2025,49,Completed,
+PT-0107,Peptides,23-02-2025,8,Completed,
+PT-0108,Testosterone,14-08-2025,32,Completed,
+PT-0109,Testosterone,24-08-2025,42,Active,
+PT-0110,Testosterone,18-05-2026,31,Completed,
+PT-0111,Weight Loss,06-04-2026,10,Active,
+PT-0112,Testosterone,15-05-2025,52,Active,
+PT-0113,Peptides,18-09-2025,2,Dropped Off,Side effects
+PT-0114,Peptides,31-03-2025,16,Active,
+PT-0115,Weight Loss,26-04-2026,7,Active,
+PT-0116,Weight Loss,03-04-2026,5,Dropped Off,Moved out of service area
+PT-0117,Weight Loss,03-06-2025,26,Active,
+PT-0118,Peptides,01-12-2025,1,Dropped Off,Dissatisfied with results
+PT-0119,Peptides,15-11-2025,16,Active,
+PT-0120,Testosterone,17-03-2025,52,Active,
+PT-0121,Testosterone,05-02-2026,7,Dropped Off,Dissatisfied with results
+PT-0122,Weight Loss,09-10-2025,18,Completed,
+PT-0123,Testosterone,14-02-2026,28,Completed,
+PT-0124,Peptides,04-10-2025,4,Completed,
+PT-0125,Testosterone,26-12-2024,29,Completed,
+PT-0126,Testosterone,16-06-2025,52,Active,
+PT-0127,Testosterone,05-01-2025,28,Completed,
+PT-0128,Testosterone,05-05-2026,20,Dropped Off,Lab work non-compliance
+PT-0129,Peptides,08-04-2026,10,Active,
+PT-0130,Testosterone,14-03-2026,25,Dropped Off,Lost contact / unresponsive
+PT-0131,Peptides,07-06-2025,16,Active,
+PT-0132,Weight Loss,25-01-2025,12,Completed,
+PT-0133,Weight Loss,07-04-2026,10,Active,
+PT-0134,Weight Loss,14-05-2026,5,Active,
+PT-0135,Testosterone,09-02-2025,9,Dropped Off,Switched to in-person provider
+PT-0136,Peptides,11-09-2025,16,Active,
+PT-0137,Peptides,31-01-2025,7,Dropped Off,Lost contact / unresponsive
+PT-0138,Testosterone,04-02-2026,8,Dropped Off,Lab work non-compliance
+PT-0139,Testosterone,07-02-2026,18,Active,
+PT-0140,Weight Loss,04-03-2025,8,Dropped Off,Switched to in-person provider
+PT-0141,Weight Loss,05-09-2025,26,Active,
+PT-0142,Peptides,15-10-2025,16,Active,
+PT-0143,Testosterone,16-05-2025,10,Dropped Off,Switched to in-person provider
+PT-0144,Weight Loss,05-04-2026,10,Active,
+PT-0145,Testosterone,08-08-2025,45,Active,
+PT-0146,Peptides,17-04-2025,16,Active,
+PT-0147,Weight Loss,09-10-2025,26,Active,
+PT-0148,Testosterone,19-01-2026,11,Dropped Off,Moved out of service area
+PT-0149,Peptides,12-04-2025,14,Completed,
+PT-0150,Peptides,10-06-2025,16,Active,
+PT-0151,Testosterone,09-06-2026,1,Active,
+PT-0152,Weight Loss,07-12-2025,26,Active,
+PT-0153,Weight Loss,16-08-2025,26,Active,
+PT-0154,Peptides,27-09-2025,15,Completed,
+PT-0155,Weight Loss,28-02-2025,24,Completed,
+PT-0156,Testosterone,24-04-2025,52,Active,
+PT-0157,Peptides,24-06-2025,16,Active,
+PT-0158,Testosterone,04-11-2025,3,Dropped Off,Switched to in-person provider
+PT-0159,Weight Loss,27-04-2025,18,Completed,
+PT-0160,Peptides,22-04-2025,16,Active,
+PT-0161,Testosterone,01-02-2025,12,Dropped Off,Dissatisfied with results
+PT-0162,Peptides,27-11-2025,10,Completed,
+PT-0163,Peptides,27-04-2025,16,Active,
+PT-0164,Testosterone,22-04-2026,8,Active,
+PT-0165,Peptides,29-03-2026,3,Dropped Off,Dissatisfied with results
+PT-0166,Weight Loss,01-02-2025,8,Completed,
+PT-0167,Weight Loss,01-05-2025,26,Active,
+PT-0168,Weight Loss,17-12-2025,11,Dropped Off,Moved out of service area
+PT-0169,Weight Loss,19-04-2025,14,Completed,
+PT-0170,Peptides,06-03-2025,16,Completed,
+PT-0171,Peptides,08-05-2026,6,Active,
+PT-0172,Testosterone,26-10-2025,33,Active,
+PT-0173,Peptides,03-09-2025,9,Completed,
+PT-0174,Testosterone,17-02-2026,10,Dropped Off,Dissatisfied with results
+PT-0175,Testosterone,01-03-2026,7,Dropped Off,Cost / insurance not covering treatment
+PT-0176,Testosterone,06-04-2025,52,Active,
+PT-0177,Weight Loss,15-02-2025,10,Completed,
+PT-0178,Weight Loss,12-08-2025,26,Completed,
+PT-0179,Testosterone,08-08-2025,15,Dropped Off,Personal / scheduling conflicts
+PT-0180,Weight Loss,31-08-2025,26,Active,
+PT-0181,Peptides,18-01-2026,16,Completed,
+PT-0182,Testosterone,19-12-2025,10,Dropped Off,Lost contact / unresponsive
+PT-0183,Peptides,03-06-2026,4,Completed,
+PT-0184,Peptides,16-02-2025,16,Active,
+PT-0185,Testosterone,28-07-2025,41,Completed,
+PT-0186,Peptides,24-06-2025,12,Completed,
+PT-0187,Peptides,30-03-2026,11,Active,
+PT-0188,Weight Loss,07-05-2025,24,Completed,
+PT-0189,Weight Loss,06-04-2025,10,Dropped Off,Personal / scheduling conflicts
+PT-0190,Testosterone,22-08-2025,18,Dropped Off,Personal / scheduling conflicts
+PT-0191,Weight Loss,07-08-2025,12,Dropped Off,Dissatisfied with results
+PT-0192,Peptides,23-05-2025,7,Completed,
+PT-0193,Weight Loss,08-05-2025,17,Completed,
+PT-0194,Testosterone,02-05-2026,6,Active,
+PT-0195,Weight Loss,19-08-2025,3,Dropped Off,Lost contact / unresponsive
+PT-0196,Testosterone,30-03-2026,11,Active,
+PT-0197,Peptides,15-10-2025,16,Active,
+PT-0198,Testosterone,21-01-2025,52,Active,
+PT-0199,Weight Loss,11-06-2026,1,Active,
+PT-0200,Weight Loss,16-03-2026,14,Completed,
+PT-0201,Weight Loss,26-05-2026,3,Active,
+PT-0202,Peptides,03-05-2026,1,Dropped Off,Lab work non-compliance
+PT-0203,Weight Loss,23-03-2026,12,Active,
+PT-0204,Weight Loss,24-03-2025,26,Active,
+PT-0205,Weight Loss,10-09-2025,8,Dropped Off,Switched to in-person provider
+PT-0206,Weight Loss,18-04-2025,26,Active,
+PT-0207,Weight Loss,27-07-2025,20,Completed,
+PT-0208,Weight Loss,26-01-2025,20,Completed,
+PT-0209,Peptides,15-07-2025,16,Active,
+PT-0210,Weight Loss,04-06-2026,11,Dropped Off,Cost / insurance not covering treatment
+PT-0211,Weight Loss,16-05-2025,8,Completed,
+PT-0212,Testosterone,16-02-2026,20,Completed,
+PT-0213,Weight Loss,25-08-2025,26,Active,
+PT-0214,Weight Loss,08-08-2025,26,Active,
+PT-0215,Testosterone,20-05-2026,33,Completed,
+PT-0216,Weight Loss,09-06-2026,1,Active,
+PT-0217,Weight Loss,18-10-2025,26,Active,
+PT-0218,Testosterone,12-01-2026,46,Completed,
+PT-0219,Testosterone,18-03-2025,14,Dropped Off,Switched to in-person provider
+PT-0220,Peptides,02-06-2025,16,Active,
+PT-0221,Peptides,26-05-2026,3,Active,
+PT-0222,Testosterone,30-10-2025,9,Dropped Off,Cost / insurance not covering treatment
+PT-0223,Peptides,10-10-2025,16,Active,
+PT-0224,Testosterone,28-01-2026,19,Completed,
+PT-0225,Peptides,25-01-2025,8,Dropped Off,Dissatisfied with results
+PT-0226,Weight Loss,02-11-2025,26,Active,
+PT-0227,Peptides,20-09-2025,2,Dropped Off,Lost contact / unresponsive
+PT-0228,Weight Loss,25-03-2026,12,Active,
+PT-0229,Testosterone,19-03-2025,21,Dropped Off,Lab work non-compliance
+PT-0230,Weight Loss,22-05-2026,5,Dropped Off,Side effects
+PT-0231,Peptides,06-02-2025,14,Completed,
+PT-0232,Testosterone,04-04-2025,52,Active,
+PT-0233,Weight Loss,08-11-2025,11,Dropped Off,Side effects
+PT-0234,Peptides,20-12-2025,6,Dropped Off,Lab work non-compliance
+PT-0235,Peptides,30-04-2025,16,Active,
+PT-0236,Peptides,27-02-2025,4,Completed,
+PT-0237,Weight Loss,14-04-2026,3,Dropped Off,Lab work non-compliance
+PT-0238,Weight Loss,06-05-2025,22,Completed,
+PT-0239,Peptides,07-11-2025,16,Active,
+PT-0240,Testosterone,21-11-2025,23,Dropped Off,Dissatisfied with results
+PT-0241,Peptides,06-08-2025,8,Dropped Off,Personal / scheduling conflicts
+PT-0242,Weight Loss,02-11-2025,11,Dropped Off,Dissatisfied with results
+PT-0243,Weight Loss,30-09-2025,3,Dropped Off,Dissatisfied with results
+PT-0244,Weight Loss,08-05-2026,6,Active,
+PT-0245,Weight Loss,13-04-2025,20,Completed,
+PT-0246,Weight Loss,11-01-2026,22,Active,
+PT-0247,Weight Loss,02-05-2025,26,Active,
+PT-0248,Testosterone,24-07-2025,47,Active,
+PT-0249,Weight Loss,19-12-2025,26,Active,
+PT-0250,Peptides,03-06-2025,5,Dropped Off,Cost / insurance not covering treatment
+PT-0251,Peptides,12-06-2025,2,Dropped Off,Switched to in-person provider
+PT-0252,Peptides,30-01-2026,12,Completed,
+PT-0253,Testosterone,02-02-2025,43,Completed,
+PT-0254,Weight Loss,27-08-2025,3,Dropped Off,Dissatisfied with results
+PT-0255,Testosterone,11-06-2026,27,Completed,
+PT-0256,Weight Loss,09-06-2026,19,Completed,
+PT-0257,Weight Loss,03-02-2025,19,Completed,
+PT-0258,Weight Loss,18-04-2025,10,Dropped Off,Moved out of service area
+PT-0259,Weight Loss,16-05-2025,6,Dropped Off,Dissatisfied with results
+PT-0260,Weight Loss,07-05-2026,6,Active,
+PT-0261,Peptides,09-04-2026,10,Active,
+PT-0262,Testosterone,08-04-2026,25,Dropped Off,Lost contact / unresponsive
+PT-0263,Testosterone,10-07-2025,49,Active,
+PT-0264,Weight Loss,20-03-2025,26,Active,
+PT-0265,Peptides,15-03-2026,5,Dropped Off,Side effects
+PT-0266,Testosterone,04-01-2026,23,Active,
+PT-0267,Weight Loss,17-11-2025,26,Active,
+PT-0268,Testosterone,05-06-2026,7,Dropped Off,Dissatisfied with results
+PT-0269,Testosterone,09-12-2025,20,Dropped Off,Dissatisfied with results
+PT-0270,Peptides,30-12-2024,8,Dropped Off,Side effects
+PT-0271,Testosterone,06-03-2026,42,Completed,
+PT-0272,Weight Loss,03-06-2025,13,Completed,
+PT-0273,Testosterone,14-12-2025,26,Active,
+PT-0274,Weight Loss,10-05-2026,5,Active,
+PT-0275,Testosterone,07-03-2025,16,Completed,
+PT-0276,Peptides,25-02-2025,4,Completed,
+PT-0277,Testosterone,21-02-2025,52,Active,
+PT-0278,Peptides,16-10-2025,2,Dropped Off,Switched to in-person provider
+PT-0279,Testosterone,20-05-2025,38,Completed,
+PT-0280,Peptides,13-11-2025,13,Completed,
+PT-0281,Testosterone,12-01-2026,15,Dropped Off,Personal / scheduling conflicts
+PT-0282,Weight Loss,13-04-2025,26,Active,
+PT-0283,Peptides,29-11-2025,5,Dropped Off,Cost / insurance not covering treatment
+PT-0284,Peptides,15-05-2025,2,Dropped Off,Switched to in-person provider
+PT-0285,Peptides,12-09-2025,16,Active,
+PT-0286,Peptides,22-04-2026,8,Active,
+PT-0287,Testosterone,21-03-2026,12,Active,
+PT-0288,Testosterone,13-02-2025,52,Active,
+PT-0289,Weight Loss,08-08-2025,23,Completed,
+PT-0290,Weight Loss,22-05-2025,26,Active,
+PT-0291,Weight Loss,27-12-2024,13,Dropped Off,Personal / scheduling conflicts
+PT-0292,Testosterone,10-02-2026,28,Completed,
+PT-0293,Peptides,30-11-2025,16,Completed,
+PT-0294,Testosterone,14-05-2025,46,Completed,
+PT-0295,Testosterone,25-01-2026,29,Completed,
+PT-0296,Testosterone,16-10-2025,35,Active,
+PT-0297,Testosterone,10-08-2025,22,Dropped Off,Dissatisfied with results
+PT-0298,Weight Loss,31-12-2024,26,Active,
+PT-0299,Peptides,04-02-2025,16,Active,
+PT-0300,Weight Loss,10-04-2026,10,Dropped Off,Personal / scheduling conflicts
+PT-0301,Weight Loss,01-12-2025,23,Active,
+PT-0302,Peptides,08-01-2025,11,Completed,
+PT-0303,Peptides,21-05-2025,15,Active,
+PT-0304,Testosterone,23-04-2025,37,Completed,
+PT-0305,Testosterone,21-01-2026,36,Completed,
+PT-0306,Testosterone,21-12-2025,51,Completed,
+PT-0307,Peptides,14-04-2026,16,Completed,
+PT-0308,Testosterone,10-02-2025,29,Active,
+PT-0309,Peptides,07-08-2025,9,Active,
+PT-0310,Peptides,10-01-2025,12,Completed,
+PT-0311,Peptides,21-04-2025,9,Dropped Off,Switched to in-person provider
+PT-0312,Weight Loss,20-09-2025,6,Dropped Off,Personal / scheduling conflicts
+PT-0313,Peptides,09-01-2025,3,Active,
+PT-0314,Testosterone,10-04-2025,16,Active,
+PT-0315,Testosterone,06-12-2025,29,Active,
+PT-0316,Weight Loss,11-10-2025,20,Active,
+PT-0317,Testosterone,22-04-2025,32,Dropped Off,Personal / scheduling conflicts
+PT-0318,Weight Loss,04-11-2025,23,Active,
+PT-0319,Peptides,01-03-2026,13,Dropped Off,Personal / scheduling conflicts
+PT-0320,Weight Loss,29-12-2024,24,Completed,
+PT-0321,Peptides,27-02-2026,11,Active,
+PT-0322,Testosterone,01-01-2026,16,Active,
+PT-0323,Testosterone,25-06-2025,52,Active,
+PT-0324,Weight Loss,18-03-2025,10,Active,
+PT-0325,Peptides,19-05-2026,6,Active,
+PT-0326,Weight Loss,23-06-2025,18,Active,
+PT-0327,Weight Loss,13-02-2025,23,Active,
+PT-0328,Peptides,15-02-2025,7,Completed,
+PT-0329,Testosterone,21-03-2026,36,Completed,
+PT-0330,Peptides,12-11-2025,11,Completed,
+PT-0331,Testosterone,28-02-2026,1,Completed,
+PT-0332,Peptides,18-01-2026,16,Dropped Off,Dissatisfied with results
+PT-0333,Peptides,07-10-2025,8,Active,
+PT-0334,Weight Loss,27-05-2026,7,Active,
+PT-0335,Weight Loss,15-07-2025,1,Dropped Off,Switched to in-person provider
+PT-0336,Weight Loss,15-10-2025,23,Active,
+PT-0337,Peptides,12-03-2026,13,Completed,
+PT-0338,Weight Loss,20-11-2025,11,Active,
+PT-0339,Peptides,29-03-2026,1,Completed,
+PT-0340,Testosterone,29-10-2025,21,Active,
+PT-0341,Testosterone,04-01-2026,52,Dropped Off,Switched to in-person provider
+PT-0342,Testosterone,19-01-2025,13,Dropped Off,Lab work non-compliance
+PT-0343,Testosterone,26-04-2025,22,Dropped Off,Side effects
+PT-0344,Testosterone,28-05-2025,29,Completed,
+PT-0345,Weight Loss,06-02-2025,15,Active,
+PT-0346,Testosterone,28-04-2025,52,Completed,
+PT-0347,Peptides,17-02-2025,12,Dropped Off,Personal / scheduling conflicts
+PT-0348,Weight Loss,22-05-2025,24,Completed,
+PT-0349,Testosterone,29-11-2025,31,Completed,
+PT-0350,Testosterone,08-07-2025,43,Active,
+PT-0351,Testosterone,10-07-2025,20,Dropped Off,Cost / insurance not covering treatment
+PT-0352,Testosterone,16-04-2025,19,Active,
+PT-0353,Weight Loss,17-05-2025,17,Dropped Off,Personal / scheduling conflicts
+PT-0354,Weight Loss,08-05-2026,21,Dropped Off,Side effects
+PT-0355,Testosterone,05-12-2025,43,Completed,
+PT-0356,Weight Loss,15-11-2025,22,Completed,
+PT-0357,Weight Loss,27-03-2025,20,Active,
+PT-0358,Testosterone,17-01-2026,27,Dropped Off,Switched to in-person provider
+PT-0359,Testosterone,22-03-2025,12,Active,
+PT-0360,Testosterone,15-07-2025,34,Dropped Off,Lost contact / unresponsive
+PT-0361,Peptides,05-06-2026,9,Dropped Off,Side effects
+PT-0362,Peptides,01-12-2025,10,Dropped Off,Cost / insurance not covering treatment
+PT-0363,Testosterone,18-10-2025,17,Active,
+PT-0364,Testosterone,25-12-2025,29,Active,
+PT-0365,Peptides,19-03-2026,9,Completed,
+PT-0366,Weight Loss,11-02-2026,26,Dropped Off,Lab work non-compliance
+PT-0367,Weight Loss,26-04-2025,15,Active,
+PT-0368,Peptides,12-01-2025,7,Completed,
+PT-0369,Weight Loss,11-06-2025,16,Completed,
+PT-0370,Weight Loss,17-05-2025,14,Dropped Off,Dissatisfied with results
+PT-0371,Peptides,17-04-2025,13,Completed,
+PT-0372,Weight Loss,11-05-2026,19,Active,
+PT-0373,Testosterone,06-04-2026,38,Completed,
+PT-0374,Weight Loss,11-06-2025,12,Active,
+PT-0375,Weight Loss,09-12-2025,1,Active,
+PT-0376,Peptides,24-07-2025,9,Active,
+PT-0377,Weight Loss,26-04-2026,13,Active,
+PT-0378,Peptides,27-08-2025,6,Active,
+PT-0379,Weight Loss,15-05-2025,26,Active,
+PT-0380,Testosterone,06-05-2025,28,Active,
+PT-0381,Peptides,20-10-2025,16,Active,
+PT-0382,Testosterone,14-05-2025,5,Dropped Off,Moved out of service area
+PT-0383,Weight Loss,01-11-2025,26,Active,
+PT-0384,Peptides,17-04-2026,10,Active,
+PT-0385,Weight Loss,26-07-2025,21,Active,
+PT-0386,Testosterone,21-04-2025,25,Completed,
+PT-0387,Testosterone,09-06-2026,7,Active,
+PT-0388,Weight Loss,23-09-2025,8,Active,
+PT-0389,Weight Loss,12-02-2025,26,Active,
+PT-0390,Weight Loss,20-01-2025,7,Active,
+PT-0391,Testosterone,22-02-2025,31,Active,
+PT-0392,Peptides,24-11-2025,3,Completed,
+PT-0393,Weight Loss,20-02-2026,20,Dropped Off,Cost / insurance not covering treatment
+PT-0394,Weight Loss,07-08-2025,17,Dropped Off,Personal / scheduling conflicts
+PT-0395,Testosterone,28-01-2025,38,Dropped Off,Side effects
+PT-0396,Peptides,17-07-2025,14,Dropped Off,Dissatisfied with results
+PT-0397,Testosterone,08-06-2026,52,Dropped Off,Switched to in-person provider
+PT-0398,Weight Loss,03-10-2025,26,Active,
+PT-0399,Peptides,26-05-2026,16,Dropped Off,Cost / insurance not covering treatment
+PT-0400,Testosterone,28-03-2026,1,Dropped Off,Switched to in-person provider
+PT-0401,Peptides,01-01-2025,14,Dropped Off,Switched to in-person provider
+PT-0402,Peptides,13-01-2026,1,Active,
+PT-0403,Peptides,23-12-2025,13,Dropped Off,Lost contact / unresponsive
+PT-0404,Testosterone,07-10-2025,19,Dropped Off,Dissatisfied with results
+PT-0405,Testosterone,16-05-2025,33,Dropped Off,Lab work non-compliance
+PT-0406,Testosterone,01-12-2025,42,Completed,
+PT-0407,Weight Loss,23-02-2025,26,Dropped Off,Dissatisfied with results
+PT-0408,Peptides,14-08-2025,10,Active,
+PT-0409,Peptides,24-08-2025,10,Completed,
+PT-0410,Peptides,17-05-2026,13,Active,
+PT-0411,Weight Loss,05-04-2026,8,Completed,
+PT-0412,Testosterone,15-05-2025,27,Completed,
+PT-0413,Testosterone,18-09-2025,47,Dropped Off,Moved out of service area
+PT-0414,Weight Loss,31-03-2025,12,Active,
+PT-0415,Testosterone,25-04-2026,20,Active,
+PT-0416,Peptides,03-04-2026,6,Completed,
+PT-0417,Testosterone,02-06-2025,22,Completed,
+PT-0418,Testosterone,30-11-2025,44,Active,
+PT-0419,Weight Loss,14-11-2025,26,Dropped Off,Personal / scheduling conflicts
+PT-0420,Testosterone,17-03-2025,19,Completed,
+PT-0421,Testosterone,04-02-2026,24,Completed,
+PT-0422,Weight Loss,08-10-2025,25,Active,
+PT-0423,Weight Loss,13-02-2026,19,Dropped Off,Side effects
+PT-0424,Testosterone,04-10-2025,47,Active,
+PT-0425,Weight Loss,26-12-2024,11,Dropped Off,Moved out of service area
+PT-0426,Weight Loss,16-06-2025,11,Active,
+PT-0427,Testosterone,05-01-2025,41,Completed,
+PT-0428,Peptides,04-05-2026,11,Active,
+PT-0429,Weight Loss,07-04-2026,13,Completed,
+PT-0430,Weight Loss,13-03-2026,12,Active,
+PT-0431,Weight Loss,07-06-2025,26,Completed,
+PT-0432,Testosterone,25-01-2025,29,Completed,
+PT-0433,Testosterone,07-04-2026,48,Active,
+PT-0434,Testosterone,13-05-2026,23,Dropped Off,Lost contact / unresponsive
+PT-0435,Peptides,09-02-2025,2,Completed,
+PT-0436,Peptides,10-09-2025,1,Dropped Off,Personal / scheduling conflicts
+PT-0437,Peptides,31-01-2025,1,Completed,
+PT-0438,Peptides,03-02-2026,10,Dropped Off,Lost contact / unresponsive
+PT-0439,Testosterone,06-02-2026,29,Dropped Off,Lost contact / unresponsive
+PT-0440,Weight Loss,04-03-2025,26,Active,
+PT-0441,Testosterone,04-09-2025,25,Active,
+PT-0442,Weight Loss,14-10-2025,23,Active,
+PT-0443,Testosterone,16-05-2025,19,Active,
+PT-0444,Weight Loss,04-04-2026,4,Completed,
+PT-0445,Weight Loss,08-08-2025,19,Dropped Off,Personal / scheduling conflicts
+PT-0446,Weight Loss,17-04-2025,25,Dropped Off,Side effects
+PT-0447,Weight Loss,08-10-2025,24,Completed,
+PT-0448,Peptides,18-01-2026,10,Dropped Off,Switched to in-person provider
+PT-0449,Peptides,12-04-2025,3,Active,
+PT-0450,Testosterone,09-06-2025,22,Completed,
+PT-0451,Testosterone,08-06-2026,15,Completed,
+PT-0452,Testosterone,06-12-2025,50,Completed,
+PT-0453,Testosterone,16-08-2025,25,Active,
+PT-0454,Weight Loss,27-09-2025,15,Active,
+PT-0455,Weight Loss,28-02-2025,23,Active,
+PT-0456,Weight Loss,24-04-2025,24,Active,
+PT-0457,Testosterone,23-06-2025,29,Dropped Off,Side effects
+PT-0458,Testosterone,03-11-2025,12,Active,
+PT-0459,Testosterone,27-04-2025,1,Active,
+PT-0460,Weight Loss,22-04-2025,7,Dropped Off,Personal / scheduling conflicts
+PT-0461,Peptides,01-02-2025,14,Active,
+PT-0462,Testosterone,26-11-2025,25,Active,
+PT-0463,Weight Loss,26-04-2025,11,Completed,
+PT-0464,Peptides,21-04-2026,9,Active,
+PT-0465,Weight Loss,28-03-2026,16,Dropped Off,Lab work non-compliance
+PT-0466,Testosterone,01-02-2025,20,Active,
+PT-0467,Testosterone,01-05-2025,10,Active,
+PT-0468,Peptides,16-12-2025,1,Active,
+PT-0469,Weight Loss,18-04-2025,14,Completed,
+PT-0470,Peptides,06-03-2025,9,Completed,
+PT-0471,Testosterone,07-05-2026,52,Active,
+PT-0472,Weight Loss,25-10-2025,15,Active,
+PT-0473,Weight Loss,03-09-2025,7,Dropped Off,Dissatisfied with results
+PT-0474,Peptides,16-02-2026,16,Completed,
+PT-0475,Peptides,28-02-2026,9,Completed,
+PT-0476,Peptides,06-04-2025,5,Active,
+PT-0477,Peptides,15-02-2025,4,Completed,
+PT-0478,Peptides,12-08-2025,9,Active,
+PT-0479,Peptides,08-08-2025,11,Dropped Off,Switched to in-person provider
+PT-0480,Weight Loss,31-08-2025,13,Completed,
+PT-0481,Weight Loss,17-01-2026,26,Active,
+PT-0482,Testosterone,19-12-2025,34,Dropped Off,Switched to in-person provider
+PT-0483,Peptides,02-06-2026,9,Active,
+PT-0484,Peptides,16-02-2025,6,Active,
+PT-0485,Peptides,28-07-2025,1,Completed,
+PT-0486,Weight Loss,24-06-2025,18,Active,
+PT-0487,Peptides,29-03-2026,13,Completed,
+PT-0488,Testosterone,07-05-2025,35,Completed,
+PT-0489,Weight Loss,06-04-2025,8,Completed,
+PT-0490,Testosterone,21-08-2025,25,Completed,
+PT-0491,Testosterone,07-08-2025,28,Active,
+PT-0492,Testosterone,23-05-2025,37,Completed,
+PT-0493,Peptides,07-05-2025,12,Completed,
+PT-0494,Peptides,01-05-2026,14,Dropped Off,Lost contact / unresponsive
+PT-0495,Testosterone,18-08-2025,37,Active,
+PT-0496,Testosterone,29-03-2026,35,Active,
+PT-0497,Weight Loss,14-10-2025,13,Completed,
+PT-0498,Peptides,21-01-2025,16,Active,
+PT-0499,Peptides,10-06-2026,1,Completed,
+PT-0500,Weight Loss,15-03-2026,17,Active,
+PT-0501,Testosterone,25-05-2026,52,Completed,
+PT-0502,Peptides,02-05-2026,14,Active,
+PT-0503,Testosterone,22-03-2026,24,Active,
+PT-0504,Weight Loss,24-03-2025,14,Active,
+PT-0505,Peptides,10-09-2025,16,Completed,
+PT-0506,Peptides,18-04-2025,16,Active,
+PT-0507,Weight Loss,27-07-2025,8,Dropped Off,Lab work non-compliance
+PT-0508,Testosterone,26-01-2025,34,Completed,
+PT-0509,Weight Loss,15-07-2025,15,Active,
+PT-0510,Testosterone,03-06-2026,1,Completed,
+PT-0511,Testosterone,16-05-2025,31,Active,
+PT-0512,Weight Loss,16-02-2026,19,Completed,
+PT-0513,Testosterone,25-08-2025,31,Completed,
+PT-0514,Weight Loss,08-08-2025,26,Completed,
+PT-0515,Peptides,19-05-2026,12,Completed,
+PT-0516,Peptides,08-06-2026,3,Completed,
+PT-0517,Weight Loss,17-10-2025,5,Dropped Off,Dissatisfied with results
+PT-0518,Testosterone,12-01-2026,1,Active,
+PT-0519,Peptides,18-03-2025,6,Active,
+PT-0520,Weight Loss,01-06-2025,13,Completed,
+PT-0521,Peptides,25-05-2026,4,Active,
+PT-0522,Testosterone,30-10-2025,28,Completed,
+PT-0523,Testosterone,10-10-2025,28,Dropped Off,Side effects
+PT-0524,Weight Loss,27-01-2026,20,Dropped Off,Lab work non-compliance
+PT-0525,Weight Loss,25-01-2025,16,Completed,
+PT-0526,Weight Loss,01-11-2025,19,Completed,
+PT-0527,Peptides,19-09-2025,13,Completed,
+PT-0528,Weight Loss,24-03-2026,26,Active,
+PT-0529,Testosterone,19-03-2025,16,Dropped Off,Switched to in-person provider
+PT-0530,Weight Loss,21-05-2026,26,Active,
+PT-0531,Peptides,06-02-2025,13,Completed,
+PT-0532,Testosterone,03-04-2025,9,Active,
+PT-0533,Peptides,07-11-2025,5,Dropped Off,Personal / scheduling conflicts
+PT-0534,Weight Loss,20-12-2025,22,Active,
+PT-0535,Testosterone,30-04-2025,10,Completed,
+PT-0536,Peptides,27-02-2025,16,Active,
+PT-0537,Weight Loss,13-04-2026,25,Completed,
+PT-0538,Testosterone,05-05-2025,20,Dropped Off,Personal / scheduling conflicts
+PT-0539,Testosterone,07-11-2025,40,Completed,
+PT-0540,Testosterone,20-11-2025,46,Dropped Off,Cost / insurance not covering treatment
+PT-0541,Weight Loss,06-08-2025,26,Active,
+PT-0542,Peptides,01-11-2025,16,Completed,
+PT-0543,Testosterone,30-09-2025,52,Active,
+PT-0544,Weight Loss,07-05-2026,1,Active,
+PT-0545,Peptides,13-04-2025,1,Dropped Off,Switched to in-person provider
+PT-0546,Peptides,11-01-2026,10,Completed,
+PT-0547,Peptides,01-05-2025,1,Active,
+PT-0548,Testosterone,24-07-2025,27,Completed,
+PT-0549,Peptides,18-12-2025,7,Completed,
+PT-0550,Testosterone,03-06-2025,29,Completed,
+PT-0551,Weight Loss,12-06-2025,9,Active,
+PT-0552,Peptides,29-01-2026,12,Completed,
+PT-0553,Testosterone,02-02-2025,29,Dropped Off,Moved out of service area
+PT-0554,Peptides,26-08-2025,9,Active,
+PT-0555,Weight Loss,10-06-2026,26,Active,
+PT-0556,Testosterone,08-06-2026,1,Completed,
+PT-0557,Weight Loss,02-02-2025,26,Active,
+PT-0558,Weight Loss,18-04-2025,4,Active,
+PT-0559,Peptides,16-05-2025,4,Active,
+PT-0560,Weight Loss,06-05-2026,23,Dropped Off,Switched to in-person provider
+PT-0561,Weight Loss,08-04-2026,7,Dropped Off,Cost / insurance not covering treatment
+PT-0562,Weight Loss,07-04-2026,3,Active,
+PT-0563,Peptides,10-07-2025,11,Active,
+PT-0564,Testosterone,19-03-2025,1,Completed,
+PT-0565,Peptides,14-03-2026,16,Completed,
+PT-0566,Testosterone,04-01-2026,28,Completed,
+PT-0567,Peptides,16-11-2025,3,Dropped Off,Dissatisfied with results
+PT-0568,Peptides,04-06-2026,13,Active,
+PT-0569,Weight Loss,08-12-2025,23,Completed,
+PT-0570,Peptides,30-12-2024,15,Active,
+PT-0571,Testosterone,05-03-2026,44,Active,
+PT-0572,Peptides,03-06-2025,5,Active,
+PT-0573,Weight Loss,13-12-2025,16,Active,
+PT-0574,Peptides,09-05-2026,14,Dropped Off,Moved out of service area
+PT-0575,Testosterone,07-03-2025,14,Completed,
+PT-0576,Weight Loss,25-02-2025,19,Active,
+PT-0577,Testosterone,20-02-2025,35,Active,
+PT-0578,Weight Loss,16-10-2025,12,Active,
+PT-0579,Weight Loss,19-05-2025,1,Active,
+PT-0580,Peptides,12-11-2025,3,Completed,
+PT-0581,Testosterone,11-01-2026,5,Dropped Off,Dissatisfied with results
+PT-0582,Weight Loss,13-04-2025,11,Active,
+PT-0583,Peptides,28-11-2025,8,Completed,
+PT-0584,Testosterone,15-05-2025,52,Completed,
+PT-0585,Weight Loss,11-09-2025,10,Completed,
+PT-0586,Peptides,21-04-2026,3,Completed,
+PT-0587,Peptides,21-03-2026,8,Completed,
+PT-0588,Weight Loss,13-02-2025,11,Completed,
+PT-0589,Testosterone,08-08-2025,20,Active,
+PT-0590,Testosterone,22-05-2025,52,Completed,
+PT-0591,Peptides,27-12-2024,1,Dropped Off,Switched to in-person provider
+PT-0592,Peptides,09-02-2026,8,Completed,
+PT-0593,Peptides,29-11-2025,10,Active,
+PT-0594,Peptides,14-05-2025,5,Active,
+PT-0595,Peptides,24-01-2026,16,Dropped Off,Lab work non-compliance
+PT-0596,Peptides,15-10-2025,4,Active,
+PT-0597,Peptides,10-08-2025,16,Completed,
+PT-0598,Weight Loss,31-12-2024,17,Completed,
+PT-0599,Weight Loss,04-02-2025,25,Active,
+PT-0600,Testosterone,09-04-2026,1,Active,
+PT-0601,Peptides,20-04-2026,1,Active,
+PT-0602,Testosterone,12-10-2025,14,Dropped Off,Cost / insurance not covering treatment
+PT-0603,Testosterone,15-03-2026,20,Dropped Off,Switched to in-person provider
+PT-0604,Weight Loss,31-10-2025,19,Active,
+PT-0605,Peptides,14-03-2025,14,Completed,
+PT-0606,Peptides,03-03-2025,15,Dropped Off,Switched to in-person provider
+PT-0607,Peptides,07-06-2025,13,Active,
+PT-0608,Weight Loss,18-04-2026,24,Active,
+PT-0609,Peptides,22-02-2026,15,Completed,
+PT-0610,Peptides,28-03-2026,11,Dropped Off,Dissatisfied with results
+PT-0611,Weight Loss,18-04-2026,1,Active,
+PT-0612,Weight Loss,16-04-2025,10,Active,
+PT-0613,Testosterone,07-05-2025,39,Completed,
+PT-0614,Weight Loss,18-02-2025,9,Completed,
+PT-0615,Testosterone,14-02-2026,31,Active,
+PT-0616,Weight Loss,10-04-2026,10,Active,
+PT-0617,Peptides,30-07-2025,11,Dropped Off,Switched to in-person provider
+PT-0618,Testosterone,21-11-2025,40,Dropped Off,Dissatisfied with results
+PT-0619,Peptides,18-03-2025,12,Active,
+PT-0620,Testosterone,04-05-2026,35,Completed,
+PT-0621,Testosterone,30-03-2026,52,Active,
+PT-0622,Testosterone,29-05-2026,31,Active,
+PT-0623,Testosterone,02-03-2026,27,Dropped Off,Lost contact / unresponsive
+PT-0624,Peptides,08-04-2026,4,Completed,
+PT-0625,Testosterone,08-01-2025,1,Active,
+PT-0626,Peptides,21-01-2026,10,Dropped Off,Lost contact / unresponsive
+PT-0627,Weight Loss,20-06-2025,19,Active,
+PT-0628,Weight Loss,05-05-2026,16,Completed,
+PT-0629,Weight Loss,25-02-2026,19,Active,
+PT-0630,Weight Loss,30-03-2026,15,Active,
+PT-0631,Testosterone,02-03-2026,14,Active,
+PT-0632,Peptides,16-05-2025,5,Completed,
+PT-0633,Weight Loss,17-02-2026,13,Completed,
+PT-0634,Peptides,21-02-2025,9,Completed,
+PT-0635,Peptides,03-04-2026,10,Completed,
+PT-0636,Testosterone,27-03-2026,17,Active,
+PT-0637,Weight Loss,23-04-2025,13,Active,
+PT-0638,Weight Loss,05-03-2026,18,Active,
+PT-0639,Testosterone,27-08-2025,34,Dropped Off,Dissatisfied with results
+PT-0640,Testosterone,06-06-2025,25,Dropped Off,Side effects
+PT-0641,Weight Loss,22-02-2026,7,Active,
+PT-0642,Testosterone,26-04-2025,17,Active,
+PT-0643,Weight Loss,07-01-2025,17,Completed,
+PT-0644,Peptides,07-04-2025,1,Completed,
+PT-0645,Testosterone,18-06-2025,18,Completed,
+PT-0646,Testosterone,30-03-2026,23,Active,
+PT-0647,Peptides,24-05-2026,4,Completed,
+PT-0648,Peptides,23-05-2025,16,Dropped Off,Lab work non-compliance
+PT-0649,Peptides,02-12-2025,5,Active,
+PT-0650,Peptides,26-07-2025,5,Dropped Off,Switched to in-person provider
+PT-0651,Testosterone,31-05-2026,24,Active,
+PT-0652,Testosterone,07-10-2025,14,Dropped Off,Personal / scheduling conflicts
+PT-0653,Weight Loss,09-05-2026,24,Active,
+PT-0654,Peptides,25-02-2025,16,Active,
+PT-0655,Weight Loss,26-05-2026,12,Completed,
+PT-0656,Peptides,30-03-2025,15,Completed,
+PT-0657,Testosterone,22-05-2026,38,Completed,
+PT-0658,Weight Loss,16-05-2025,18,Active,
+PT-0659,Weight Loss,21-02-2025,7,Active,
+PT-0660,Peptides,14-08-2025,11,Active,
+PT-0661,Weight Loss,17-01-2026,14,Active,
+PT-0662,Weight Loss,10-06-2025,26,Active,
+PT-0663,Weight Loss,13-11-2025,16,Active,
+PT-0664,Testosterone,24-09-2025,27,Active,
+PT-0665,Testosterone,18-07-2025,27,Dropped Off,Dissatisfied with results
+PT-0666,Weight Loss,28-10-2025,17,Completed,
+PT-0667,Weight Loss,10-05-2025,24,Active,
+PT-0668,Peptides,07-01-2026,2,Active,
+PT-0669,Testosterone,26-12-2024,52,Completed,
+PT-0670,Weight Loss,02-05-2026,8,Completed,
+PT-0671,Weight Loss,08-10-2025,18,Active,
+PT-0672,Peptides,12-01-2026,11,Completed,
+PT-0673,Peptides,24-01-2026,12,Dropped Off,Switched to in-person provider
+PT-0674,Weight Loss,17-12-2025,15,Completed,
+PT-0675,Weight Loss,07-07-2025,14,Active,
+PT-0676,Testosterone,01-02-2025,42,Completed,
+PT-0677,Testosterone,14-12-2025,1,Active,
+PT-0678,Peptides,19-06-2025,10,Dropped Off,Side effects
+PT-0679,Testosterone,11-06-2025,35,Completed,
+PT-0680,Peptides,22-03-2026,13,Completed,
+PT-0681,Testosterone,12-01-2026,31,Dropped Off,Side effects
+PT-0682,Weight Loss,03-06-2025,7,Dropped Off,Personal / scheduling conflicts
+PT-0683,Weight Loss,08-06-2025,4,Completed,
+PT-0684,Testosterone,31-07-2025,4,Active,
+PT-0685,Weight Loss,28-07-2025,14,Active,
+PT-0686,Weight Loss,01-06-2025,23,Active,
+PT-0687,Weight Loss,03-03-2025,26,Active,
+PT-0688,Peptides,06-08-2025,14,Dropped Off,Personal / scheduling conflicts
+PT-0689,Weight Loss,10-05-2026,6,Dropped Off,Cost / insurance not covering treatment
+PT-0690,Weight Loss,21-12-2025,19,Dropped Off,Personal / scheduling conflicts
+PT-0691,Testosterone,20-04-2026,19,Active,
+PT-0692,Testosterone,18-11-2025,30,Dropped Off,Switched to in-person provider
+PT-0693,Peptides,04-06-2025,7,Active,
+PT-0694,Weight Loss,13-10-2025,16,Active,
+PT-0695,Weight Loss,26-12-2024,21,Active,
+PT-0696,Weight Loss,27-05-2025,23,Active,
+PT-0697,Weight Loss,11-08-2025,20,Active,
+PT-0698,Testosterone,30-10-2025,5,Completed,
+PT-0699,Testosterone,09-12-2025,24,Dropped Off,Cost / insurance not covering treatment
+PT-0700,Testosterone,30-08-2025,4,Completed,
+PT-0701,Testosterone,18-08-2025,2,Completed,
+PT-0702,Weight Loss,18-04-2025,26,Completed,
+PT-0703,Peptides,03-09-2025,8,Dropped Off,Side effects
+PT-0704,Weight Loss,19-04-2026,24,Dropped Off,Moved out of service area
+PT-0705,Weight Loss,22-02-2026,4,Active,
+PT-0706,Testosterone,26-03-2025,24,Active,
+PT-0707,Testosterone,09-02-2025,37,Completed,
+PT-0708,Testosterone,26-09-2025,52,Active,
+PT-0709,Testosterone,27-11-2025,33,Dropped Off,Side effects
+PT-0710,Peptides,22-06-2025,8,Active,
+PT-0711,Testosterone,06-03-2026,29,Active,
+PT-0712,Testosterone,29-01-2026,19,Dropped Off,Side effects
+PT-0713,Peptides,18-12-2025,13,Completed,
+PT-0714,Weight Loss,24-04-2025,24,Active,
+PT-0715,Weight Loss,10-04-2025,13,Active,
+PT-0716,Weight Loss,07-01-2025,26,Active,
+PT-0717,Peptides,05-05-2025,1,Active,
+PT-0718,Peptides,04-09-2025,12,Dropped Off,Lost contact / unresponsive
+PT-0719,Testosterone,23-03-2026,13,Dropped Off,Side effects
+PT-0720,Peptides,02-02-2025,15,Active,
+PT-0721,Testosterone,03-08-2025,7,Completed,
+PT-0722,Testosterone,26-11-2025,2,Dropped Off,Cost / insurance not covering treatment
+PT-0723,Testosterone,08-04-2025,29,Dropped Off,Dissatisfied with results
+PT-0724,Weight Loss,31-12-2025,10,Dropped Off,Dissatisfied with results
+PT-0725,Weight Loss,15-09-2025,15,Active,
+PT-0726,Weight Loss,04-05-2025,18,Active,
+PT-0727,Peptides,10-12-2025,9,Dropped Off,Side effects
+PT-0728,Weight Loss,28-12-2024,18,Dropped Off,Dissatisfied with results
+PT-0729,Testosterone,29-01-2026,41,Active,
+PT-0730,Peptides,08-02-2026,3,Completed,
+PT-0731,Testosterone,20-02-2025,40,Dropped Off,Lost contact / unresponsive
+PT-0732,Peptides,09-08-2025,12,Completed,
+PT-0733,Testosterone,29-03-2025,25,Active,
+PT-0734,Weight Loss,19-05-2026,24,Dropped Off,Lost contact / unresponsive
+PT-0735,Testosterone,27-09-2025,47,Active,
+PT-0736,Weight Loss,21-01-2025,10,Active,
+PT-0737,Testosterone,07-05-2025,7,Active,
+PT-0738,Weight Loss,22-03-2026,22,Completed,
+PT-0739,Testosterone,25-08-2025,34,Completed,
+PT-0740,Weight Loss,25-02-2026,16,Dropped Off,Personal / scheduling conflicts
+PT-0741,Weight Loss,16-12-2025,4,Dropped Off,Switched to in-person provider
+PT-0742,Testosterone,04-06-2026,33,Dropped Off,Switched to in-person provider
+PT-0743,Peptides,07-11-2025,4,Completed,
+PT-0744,Testosterone,15-05-2026,7,Active,
+PT-0745,Weight Loss,14-04-2026,19,Dropped Off,Lost contact / unresponsive
+PT-0746,Weight Loss,16-11-2025,12,Completed,
+PT-0747,Peptides,12-01-2026,16,Completed,
+PT-0748,Testosterone,20-09-2025,39,Active,
+PT-0749,Testosterone,12-03-2026,52,Completed,
+PT-0750,Peptides,13-10-2025,14,Completed,
+PT-0751,Testosterone,17-04-2026,28,Active,
+PT-0752,Peptides,25-01-2026,7,Dropped Off,Switched to in-person provider
+PT-0753,Testosterone,04-09-2025,4,Dropped Off,Cost / insurance not covering treatment
+PT-0754,Weight Loss,12-05-2025,26,Dropped Off,Lost contact / unresponsive
+PT-0755,Weight Loss,06-05-2025,26,Dropped Off,Moved out of service area
+PT-0756,Testosterone,30-11-2025,19,Completed,
+PT-0757,Peptides,06-02-2026,6,Active,
+PT-0758,Weight Loss,29-09-2025,14,Active,
+PT-0759,Weight Loss,24-11-2025,5,Active,
+PT-0760,Testosterone,21-05-2025,40,Dropped Off,Switched to in-person provider
+PT-0761,Peptides,05-02-2025,8,Dropped Off,Dissatisfied with results
+PT-0762,Weight Loss,27-05-2025,26,Active,
+PT-0763,Peptides,19-05-2025,5,Active,
+PT-0764,Weight Loss,14-06-2025,1,Dropped Off,Dissatisfied with results
+PT-0765,Testosterone,09-10-2025,31,Active,
+PT-0766,Weight Loss,09-03-2025,8,Completed,
+PT-0767,Weight Loss,28-04-2025,24,Completed,
+PT-0768,Weight Loss,30-12-2025,14,Completed,
+PT-0769,Weight Loss,05-01-2026,13,Active,
+PT-0770,Peptides,29-01-2025,7,Completed,
+PT-0771,Weight Loss,30-07-2025,10,Active,
+PT-0772,Weight Loss,10-10-2025,14,Dropped Off,Switched to in-person provider
+PT-0773,Peptides,04-08-2025,8,Dropped Off,Lost contact / unresponsive
+PT-0774,Peptides,15-04-2025,10,Completed,
+PT-0775,Testosterone,06-08-2025,15,Active,
+PT-0776,Testosterone,21-04-2026,1,Active,
+PT-0777,Weight Loss,01-11-2025,26,Completed,
+PT-0778,Peptides,31-12-2025,4,Completed,
+PT-0779,Peptides,26-03-2026,8,Active,
+PT-0780,Testosterone,06-02-2026,28,Dropped Off,Dissatisfied with results
+PT-0781,Weight Loss,16-07-2025,6,Completed,
+PT-0782,Weight Loss,29-12-2024,26,Active,
+PT-0783,Testosterone,01-07-2025,52,Completed,
+PT-0784,Peptides,30-01-2026,10,Dropped Off,Dissatisfied with results
+PT-0785,Peptides,25-03-2026,7,Completed,
+PT-0786,Testosterone,17-05-2026,14,Dropped Off,Side effects
+PT-0787,Weight Loss,05-08-2025,26,Active,
+PT-0788,Peptides,27-01-2026,16,Active,
+PT-0789,Testosterone,12-10-2025,34,Active,
+PT-0790,Peptides,11-11-2025,13,Active,
+PT-0791,Peptides,22-04-2025,16,Active,
+PT-0792,Weight Loss,21-04-2025,6,Completed,
+PT-0793,Testosterone,14-08-2025,21,Completed,
+PT-0794,Testosterone,10-01-2025,48,Dropped Off,Dissatisfied with results
+PT-0795,Weight Loss,22-06-2025,14,Dropped Off,Personal / scheduling conflicts
+PT-0796,Peptides,22-12-2025,3,Active,
+PT-0797,Testosterone,29-07-2025,14,Completed,
+PT-0798,Peptides,23-03-2025,5,Completed,
+PT-0799,Weight Loss,31-08-2025,4,Active,
+PT-0800,Peptides,03-03-2025,10,Completed,
+PT-0801,Peptides,22-11-2025,9,Active,
+PT-0802,Testosterone,09-01-2025,15,Completed,
+PT-0803,Weight Loss,23-07-2025,20,Active,
+PT-0804,Peptides,22-10-2025,16,Completed,
+PT-0805,Peptides,09-01-2025,13,Active,
+PT-0806,Weight Loss,02-12-2025,16,Active,
+PT-0807,Weight Loss,08-03-2025,16,Active,
+PT-0808,Testosterone,28-08-2025,41,Active,
+PT-0809,Weight Loss,21-01-2025,17,Active,
+PT-0810,Testosterone,15-07-2025,52,Completed,
+PT-0811,Testosterone,17-04-2025,30,Completed,
+PT-0812,Weight Loss,17-06-2025,6,Active,
+PT-0813,Testosterone,03-02-2026,47,Dropped Off,Dissatisfied with results
+PT-0814,Testosterone,15-07-2025,21,Active,
+PT-0815,Weight Loss,30-01-2026,26,Active,
+PT-0816,Weight Loss,13-03-2026,8,Dropped Off,Lost contact / unresponsive
+PT-0817,Peptides,09-05-2025,9,Active,
+PT-0818,Weight Loss,07-02-2025,2,Completed,
+PT-0819,Testosterone,05-01-2025,22,Completed,
+PT-0820,Peptides,08-10-2025,10,Active,
+PT-0821,Peptides,10-06-2026,9,Dropped Off,Switched to in-person provider
+PT-0822,Peptides,30-06-2025,8,Active,
+PT-0823,Peptides,06-12-2025,10,Completed,
+PT-0824,Weight Loss,14-02-2026,11,Active,
+PT-0825,Testosterone,07-12-2025,19,Completed,
+PT-0826,Weight Loss,31-01-2026,25,Completed,
+PT-0827,Testosterone,15-05-2026,21,Dropped Off,Moved out of service area
+PT-0828,Testosterone,11-04-2025,22,Active,
+PT-0829,Peptides,05-01-2025,2,Active,
+PT-0830,Peptides,17-03-2025,9,Active,
+PT-0831,Weight Loss,03-03-2025,26,Dropped Off,Moved out of service area
+PT-0832,Weight Loss,17-12-2025,15,Active,
+PT-0833,Weight Loss,22-10-2025,26,Dropped Off,Personal / scheduling conflicts
+PT-0834,Peptides,20-04-2025,8,Completed,
+PT-0835,Testosterone,02-01-2026,12,Dropped Off,Dissatisfied with results
+PT-0836,Weight Loss,06-02-2026,8,Active,
+PT-0837,Peptides,25-03-2025,11,Active,
+PT-0838,Testosterone,14-11-2025,30,Completed,
+PT-0839,Weight Loss,27-01-2026,20,Dropped Off,Moved out of service area
+PT-0840,Testosterone,24-02-2025,1,Active,
+PT-0841,Testosterone,06-03-2026,17,Completed,
+PT-0842,Testosterone,23-05-2026,50,Active,
+PT-0843,Peptides,21-02-2025,8,Dropped Off,Moved out of service area
+PT-0844,Weight Loss,08-01-2025,23,Completed,
+PT-0845,Weight Loss,09-06-2025,19,Completed,
+PT-0846,Testosterone,21-12-2025,40,Dropped Off,Switched to in-person provider
+PT-0847,Testosterone,19-05-2026,35,Active,
+PT-0848,Testosterone,25-07-2025,52,Dropped Off,Side effects
+PT-0849,Testosterone,10-01-2026,46,Active,
+PT-0850,Peptides,04-02-2025,16,Dropped Off,Lab work non-compliance
+PT-0851,Peptides,28-12-2025,9,Completed,
+PT-0852,Testosterone,24-11-2025,42,Completed,
+PT-0853,Testosterone,18-02-2025,17,Completed,
+PT-0854,Peptides,09-02-2026,11,Completed,
+PT-0855,Testosterone,23-03-2026,11,Active,
+PT-0856,Weight Loss,10-11-2025,9,Completed,
+PT-0857,Weight Loss,28-02-2025,25,Completed,
+PT-0858,Testosterone,02-06-2026,34,Dropped Off,Dissatisfied with results
+PT-0859,Weight Loss,15-02-2026,24,Dropped Off,Cost / insurance not covering treatment
+PT-0860,Weight Loss,28-06-2025,13,Active,
+PT-0861,Peptides,10-08-2025,7,Dropped Off,Dissatisfied with results
+PT-0862,Weight Loss,11-07-2025,26,Completed,
+PT-0863,Peptides,21-09-2025,16,Active,
+PT-0864,Peptides,25-06-2025,6,Active,
+PT-0865,Peptides,22-03-2026,16,Completed,
+PT-0866,Peptides,08-03-2026,10,Dropped Off,Lab work non-compliance
+PT-0867,Peptides,20-02-2025,16,Active,
+PT-0868,Peptides,21-05-2026,11,Active,
+PT-0869,Peptides,29-11-2025,4,Dropped Off,Cost / insurance not covering treatment
+PT-0870,Weight Loss,11-03-2026,14,Active,
+PT-0871,Testosterone,06-01-2026,38,Active,
+PT-0872,Testosterone,14-08-2025,44,Dropped Off,Side effects
+PT-0873,Weight Loss,20-01-2026,17,Dropped Off,Cost / insurance not covering treatment
+PT-0874,Peptides,23-05-2026,7,Completed,
+PT-0875,Testosterone,18-05-2025,23,Active,
+PT-0876,Testosterone,28-02-2026,19,Active,
+PT-0877,Testosterone,08-10-2025,31,Dropped Off,Switched to in-person provider
+PT-0878,Peptides,09-09-2025,16,Active,
+PT-0879,Weight Loss,14-08-2025,15,Active,
+PT-0880,Testosterone,18-01-2026,23,Completed,
+PT-0881,Weight Loss,17-05-2025,26,Active,
+PT-0882,Testosterone,24-03-2026,12,Dropped Off,Switched to in-person provider
+PT-0883,Weight Loss,12-03-2026,17,Active,
+PT-0884,Peptides,10-02-2025,13,Completed,
+PT-0885,Weight Loss,09-04-2026,7,Completed,
+PT-0886,Weight Loss,04-05-2025,14,Active,
+PT-0887,Testosterone,30-08-2025,29,Active,
+PT-0888,Weight Loss,15-11-2025,1,Completed,
+PT-0889,Testosterone,15-07-2025,23,Completed,
+PT-0890,Weight Loss,10-01-2025,15,Completed,
+PT-0891,Testosterone,23-03-2026,19,Active,
+PT-0892,Testosterone,01-04-2025,46,Completed,
+PT-0893,Testosterone,17-04-2025,1,Completed,
+PT-0894,Weight Loss,23-02-2026,15,Active,
+PT-0895,Testosterone,25-06-2025,1,Dropped Off,Switched to in-person provider
+PT-0896,Peptides,08-04-2026,13,Dropped Off,Personal / scheduling conflicts
+PT-0897,Testosterone,03-01-2026,25,Dropped Off,Lab work non-compliance
+PT-0898,Testosterone,21-05-2025,33,Dropped Off,Dissatisfied with results
+PT-0899,Weight Loss,31-12-2024,18,Dropped Off,Personal / scheduling conflicts
+PT-0900,Weight Loss,14-05-2026,2,Dropped Off,Switched to in-person provider
+PT-0901,Peptides,09-02-2025,15,Completed,
+PT-0902,Weight Loss,13-01-2026,12,Completed,
+PT-0903,Weight Loss,11-09-2025,13,Completed,
+PT-0904,Weight Loss,02-02-2026,21,Completed,
+PT-0905,Testosterone,28-12-2025,32,Active,
+PT-0906,Weight Loss,04-12-2025,17,Completed,
+PT-0907,Weight Loss,13-09-2025,19,Active,
+PT-0908,Testosterone,20-02-2026,17,Dropped Off,Moved out of service area
+PT-0909,Testosterone,13-02-2025,35,Dropped Off,Cost / insurance not covering treatment
+PT-0910,Testosterone,22-04-2025,12,Active,
+PT-0911,Testosterone,29-12-2025,50,Completed,
+PT-0912,Testosterone,06-06-2025,33,Dropped Off,Switched to in-person provider
+PT-0913,Testosterone,31-10-2025,35,Active,
+PT-0914,Weight Loss,03-09-2025,26,Active,
+PT-0915,Peptides,04-10-2025,10,Completed,
+PT-0916,Weight Loss,09-08-2025,9,Active,
+PT-0917,Testosterone,26-01-2026,44,Active,
+PT-0918,Testosterone,19-06-2025,48,Active,
+PT-0919,Peptides,03-01-2026,16,Completed,
+PT-0920,Weight Loss,19-05-2025,3,Active,
+PT-0921,Peptides,08-05-2025,16,Dropped Off,Switched to in-person provider
+PT-0922,Weight Loss,28-02-2025,12,Active,
+PT-0923,Weight Loss,07-04-2025,17,Dropped Off,Switched to in-person provider
+PT-0924,Peptides,27-02-2025,4,Dropped Off,Cost / insurance not covering treatment
+PT-0925,Weight Loss,07-10-2025,26,Active,
+PT-0926,Testosterone,04-02-2026,24,Active,
+PT-0927,Weight Loss,03-04-2025,26,Active,
+PT-0928,Peptides,20-04-2025,5,Active,
+PT-0929,Testosterone,09-09-2025,18,Dropped Off,Dissatisfied with results
+PT-0930,Peptides,15-01-2026,4,Completed,
+PT-0931,Weight Loss,29-05-2026,1,Active,
+PT-0932,Peptides,01-10-2025,12,Active,
+PT-0933,Peptides,25-05-2025,13,Dropped Off,Lost contact / unresponsive
+PT-0934,Testosterone,17-02-2025,26,Completed,
+PT-0935,Testosterone,08-04-2025,47,Dropped Off,Switched to in-person provider
+PT-0936,Weight Loss,26-04-2025,11,Active,
+PT-0937,Testosterone,31-03-2025,9,Active,
+PT-0938,Peptides,02-01-2025,10,Completed,
+PT-0939,Peptides,06-10-2025,15,Completed,
+PT-0940,Weight Loss,20-05-2025,12,Active,
+PT-0941,Testosterone,28-05-2026,26,Completed,
+PT-0942,Weight Loss,16-10-2025,26,Active,
+PT-0943,Testosterone,01-01-2026,5,Completed,
+PT-0944,Weight Loss,03-03-2025,26,Completed,
+PT-0945,Testosterone,02-04-2026,47,Completed,
+PT-0946,Weight Loss,13-09-2025,1,Active,
+PT-0947,Peptides,04-04-2026,14,Completed,
+PT-0948,Peptides,27-10-2025,16,Completed,
+PT-0949,Weight Loss,01-09-2025,19,Dropped Off,Lab work non-compliance
+PT-0950,Weight Loss,17-08-2025,17,Completed,
+PT-0951,Weight Loss,03-04-2025,20,Completed,
+PT-0952,Testosterone,22-01-2025,18,Completed,
+PT-0953,Testosterone,10-05-2026,10,Completed,
+PT-0954,Weight Loss,06-09-2025,8,Active,
+PT-0955,Testosterone,08-03-2026,26,Completed,
+PT-0956,Testosterone,27-07-2025,27,Dropped Off,Dissatisfied with results
+PT-0957,Peptides,03-02-2025,6,Dropped Off,Dissatisfied with results
+PT-0958,Testosterone,25-11-2025,1,Active,
+PT-0959,Testosterone,23-01-2025,1,Active,
+PT-0960,Weight Loss,15-03-2025,14,Active,
+PT-0961,Weight Loss,21-10-2025,1,Active,
+PT-0962,Weight Loss,05-06-2025,6,Dropped Off,Personal / scheduling conflicts
+PT-0963,Peptides,07-06-2026,10,Active,
+PT-0964,Weight Loss,27-02-2025,13,Active,
+PT-0965,Testosterone,05-02-2026,38,Completed,
+PT-0966,Peptides,13-11-2025,16,Completed,
+PT-0967,Peptides,19-02-2026,16,Active,
+PT-0968,Testosterone,25-04-2025,40,Dropped Off,Cost / insurance not covering treatment
+PT-0969,Weight Loss,30-09-2025,20,Dropped Off,Cost / insurance not covering treatment
+PT-0970,Weight Loss,22-08-2025,17,Active,
+PT-0971,Peptides,18-08-2025,5,Completed,
+PT-0972,Peptides,28-03-2026,16,Completed,
+PT-0973,Weight Loss,05-06-2026,21,Active,
+PT-0974,Peptides,06-06-2025,12,Active,
+PT-0975,Peptides,21-11-2025,6,Active,
+PT-0976,Peptides,15-11-2025,16,Completed,
+PT-0977,Weight Loss,23-01-2026,19,Active,
+PT-0978,Peptides,14-05-2026,10,Active,
+PT-0979,Peptides,15-04-2025,15,Dropped Off,Dissatisfied with results
+PT-0980,Testosterone,17-04-2025,23,Dropped Off,Lost contact / unresponsive
+PT-0981,Testosterone,12-12-2025,45,Completed,
+PT-0982,Weight Loss,19-03-2025,13,Active,
+PT-0983,Weight Loss,28-03-2025,21,Active,
+PT-0984,Testosterone,03-02-2025,3,Completed,
+PT-0985,Weight Loss,27-12-2024,16,Active,
+PT-0986,Testosterone,22-08-2025,14,Active,
+PT-0987,Testosterone,06-11-2025,27,Active,
+PT-0988,Weight Loss,29-05-2025,21,Completed,
+PT-0989,Weight Loss,28-04-2025,24,Active,
+PT-0990,Weight Loss,06-01-2026,18,Active,
+PT-0991,Weight Loss,03-01-2026,14,Active,
+PT-0992,Peptides,24-08-2025,15,Dropped Off,Lab work non-compliance
+PT-0993,Weight Loss,26-12-2025,21,Active,
+PT-0994,Testosterone,01-05-2026,43,Completed,
+PT-0995,Testosterone,18-02-2026,12,Completed,
+PT-0996,Testosterone,23-11-2025,35,Active,
+PT-0997,Testosterone,12-12-2025,12,Active,
+PT-0998,Testosterone,06-05-2026,12,Active,
+PT-0999,Peptides,09-08-2025,7,Dropped Off,Switched to in-person provider
+PT-1000,Testosterone,11-10-2025,49,Dropped Off,Cost / insurance not covering treatment
+PT-1001,Peptides,05-12-2025,13,Dropped Off,Dissatisfied with results
+PT-1002,Testosterone,23-04-2026,39,Dropped Off,Lab work non-compliance
+PT-1003,Testosterone,10-03-2026,22,Completed,
+PT-1004,Testosterone,01-02-2025,10,Active,
+PT-1005,Peptides,24-03-2025,8,Completed,
+PT-1006,Weight Loss,07-06-2025,19,Completed,
+PT-1007,Weight Loss,28-01-2026,1,Active,
+PT-1008,Peptides,24-10-2025,6,Completed,
+PT-1009,Testosterone,28-05-2025,17,Dropped Off,Switched to in-person provider
+PT-1010,Weight Loss,02-03-2025,2,Completed,
+PT-1011,Testosterone,27-12-2025,14,Dropped Off,Dissatisfied with results
+PT-1012,Peptides,02-01-2026,3,Completed,
+PT-1013,Weight Loss,11-05-2026,1,Completed,
+PT-1014,Weight Loss,18-09-2025,16,Dropped Off,Switched to in-person provider
+PT-1015,Peptides,14-09-2025,3,Active,
+PT-1016,Peptides,06-02-2025,9,Completed,
+PT-1017,Testosterone,16-01-2025,25,Dropped Off,Moved out of service area
+PT-1018,Weight Loss,12-08-2025,14,Completed,
+PT-1019,Peptides,15-06-2025,10,Active,
+PT-1020,Weight Loss,08-05-2025,17,Completed,
+PT-1021,Weight Loss,12-02-2025,8,Active,
+PT-1022,Peptides,21-05-2026,8,Completed,
+PT-1023,Weight Loss,15-03-2026,15,Active,
+PT-1024,Weight Loss,28-10-2025,18,Dropped Off,Dissatisfied with results
+PT-1025,Peptides,15-05-2026,13,Completed,
+PT-1026,Testosterone,10-06-2026,40,Completed,
+PT-1027,Weight Loss,18-12-2025,4,Active,
+PT-1028,Testosterone,18-05-2025,38,Dropped Off,Dissatisfied with results
+PT-1029,Peptides,16-01-2025,6,Active,
+PT-1030,Peptides,01-02-2026,4,Active,
+PT-1031,Testosterone,02-09-2025,40,Dropped Off,Switched to in-person provider
+PT-1032,Weight Loss,07-12-2025,26,Active,
+PT-1033,Weight Loss,27-04-2026,15,Completed,
+PT-1034,Testosterone,01-04-2025,30,Completed,
+PT-1035,Weight Loss,02-11-2025,15,Completed,
+PT-1036,Peptides,28-11-2025,7,Active,
+PT-1037,Testosterone,13-09-2025,36,Active,
+PT-1038,Weight Loss,12-02-2025,12,Active,
+PT-1039,Peptides,29-06-2025,3,Completed,
+PT-1040,Weight Loss,21-06-2025,14,Completed,
+PT-1041,Testosterone,17-12-2025,41,Dropped Off,Moved out of service area
+PT-1042,Testosterone,27-03-2026,9,Completed,
+PT-1043,Testosterone,19-06-2025,34,Active,
+PT-1044,Testosterone,30-12-2025,35,Completed,
+PT-1045,Weight Loss,28-05-2025,12,Active,
+PT-1046,Testosterone,12-05-2026,33,Completed,
+PT-1047,Weight Loss,03-03-2026,1,Completed,
+PT-1048,Weight Loss,14-10-2025,1,Active,
+PT-1049,Testosterone,24-08-2025,23,Active,
+PT-1050,Testosterone,11-06-2025,30,Active,
+PT-1051,Peptides,15-06-2025,16,Completed,
+PT-1052,Weight Loss,26-05-2026,14,Active,
+PT-1053,Peptides,29-07-2025,8,Active,
+PT-1054,Peptides,25-09-2025,10,Active,
+PT-1055,Testosterone,04-06-2026,18,Completed,
+PT-1056,Peptides,10-12-2025,10,Dropped Off,Lost contact / unresponsive
+PT-1057,Testosterone,10-10-2025,50,Dropped Off,Switched to in-person provider
+PT-1058,Peptides,02-08-2025,16,Active,
+PT-1059,Peptides,04-04-2025,1,Active,
+PT-1060,Peptides,06-07-2025,6,Dropped Off,Switched to in-person provider
+PT-1061,Peptides,01-02-2026,6,Dropped Off,Lost contact / unresponsive
+PT-1062,Peptides,23-11-2025,12,Dropped Off,Switched to in-person provider
+PT-1063,Peptides,03-02-2026,6,Completed,
+PT-1064,Weight Loss,13-04-2025,12,Active,
+PT-1065,Testosterone,14-10-2025,31,Active,
+PT-1066,Testosterone,03-05-2026,39,Active,
+PT-1067,Weight Loss,16-08-2025,10,Active,
+PT-1068,Testosterone,01-01-2026,52,Dropped Off,Lab work non-compliance
+PT-1069,Weight Loss,28-02-2025,26,Dropped Off,Cost / insurance not covering treatment
+PT-1070,Peptides,27-05-2026,16,Dropped Off,Dissatisfied with results
+PT-1071,Peptides,14-11-2025,10,Dropped Off,Side effects
+PT-1072,Weight Loss,02-05-2025,26,Active,
+PT-1073,Weight Loss,20-03-2025,15,Active,
+PT-1074,Weight Loss,15-10-2025,25,Dropped Off,Dissatisfied with results
+PT-1075,Weight Loss,15-10-2025,13,Active,
+PT-1076,Peptides,13-02-2025,16,Active,
+PT-1077,Testosterone,06-06-2026,32,Dropped Off,Lost contact / unresponsive
+PT-1078,Weight Loss,25-04-2026,3,Active,
+PT-1079,Testosterone,28-08-2025,17,Completed,
+PT-1080,Testosterone,26-02-2025,26,Active,
+PT-1081,Peptides,13-03-2026,7,Completed,
+PT-1082,Weight Loss,17-09-2025,26,Active,
+PT-1083,Weight Loss,11-01-2026,20,Dropped Off,Lost contact / unresponsive
+PT-1084,Testosterone,22-09-2025,31,Dropped Off,Lost contact / unresponsive
+PT-1085,Testosterone,20-05-2025,39,Completed,
+PT-1086,Testosterone,15-03-2026,25,Completed,
+PT-1087,Testosterone,31-05-2026,41,Completed,
+PT-1088,Testosterone,04-05-2025,23,Active,
+PT-1089,Peptides,15-10-2025,13,Active,
+PT-1090,Peptides,18-07-2025,15,Active,
+PT-1091,Weight Loss,30-04-2026,16,Active,
+PT-1092,Testosterone,22-09-2025,27,Active,
+PT-1093,Weight Loss,07-04-2026,26,Dropped Off,Lab work non-compliance
+PT-1094,Weight Loss,30-03-2026,17,Active,
+PT-1095,Testosterone,21-05-2025,8,Active,
+PT-1096,Testosterone,19-02-2026,47,Dropped Off,Dissatisfied with results
+PT-1097,Peptides,03-08-2025,10,Dropped Off,Dissatisfied with results
+PT-1098,Weight Loss,07-05-2026,12,Active,
+PT-1099,Weight Loss,22-09-2025,4,Completed,
+PT-1100,Testosterone,07-03-2026,38,Completed,
+PT-1101,Weight Loss,25-05-2025,19,Active,
+PT-1102,Peptides,02-06-2025,9,Completed,
+PT-1103,Weight Loss,03-11-2025,24,Active,
+PT-1104,Testosterone,10-06-2026,25,Active,
+PT-1105,Weight Loss,12-09-2025,7,Dropped Off,Moved out of service area
+PT-1106,Peptides,15-03-2025,6,Completed,
+PT-1107,Testosterone,08-10-2025,8,Dropped Off,Switched to in-person provider
+PT-1108,Testosterone,27-06-2025,26,Dropped Off,Lab work non-compliance
+PT-1109,Weight Loss,15-10-2025,24,Completed,
+PT-1110,Weight Loss,11-10-2025,23,Dropped Off,Lab work non-compliance
+PT-1111,Peptides,25-08-2025,16,Completed,
+PT-1112,Testosterone,15-06-2025,52,Completed,
+PT-1113,Peptides,05-04-2025,16,Active,
+PT-1114,Testosterone,01-01-2026,20,Active,
+PT-1115,Testosterone,26-10-2025,52,Completed,
+PT-1116,Weight Loss,29-04-2025,22,Active,
+PT-1117,Weight Loss,11-02-2026,15,Completed,
+PT-1118,Weight Loss,18-01-2025,13,Active,
+PT-1119,Testosterone,26-01-2026,17,Dropped Off,Lost contact / unresponsive
+PT-1120,Weight Loss,05-01-2026,16,Completed,
+PT-1121,Peptides,02-03-2026,9,Completed,
+PT-1122,Peptides,19-07-2025,9,Dropped Off,Dissatisfied with results
+PT-1123,Testosterone,14-12-2025,11,Completed,
+PT-1124,Testosterone,07-03-2026,36,Dropped Off,Moved out of service area
+PT-1125,Testosterone,31-05-2026,21,Active,
+PT-1126,Peptides,15-09-2025,2,Completed,
+PT-1127,Peptides,14-01-2025,10,Active,
+PT-1128,Peptides,19-09-2025,7,Active,
+PT-1129,Peptides,04-11-2025,10,Dropped Off,Switched to in-person provider
+PT-1130,Testosterone,02-04-2026,24,Completed,
+PT-1131,Weight Loss,05-04-2026,25,Active,
+PT-1132,Weight Loss,17-08-2025,21,Completed,
+PT-1133,Testosterone,01-10-2025,28,Completed,
+PT-1134,Peptides,26-08-2025,13,Active,
+PT-1135,Weight Loss,14-01-2026,26,Active,
+PT-1136,Weight Loss,01-08-2025,21,Active,
+PT-1137,Testosterone,09-12-2025,52,Completed,
+PT-1138,Peptides,18-03-2025,6,Dropped Off,Switched to in-person provider
+PT-1139,Testosterone,01-09-2025,5,Active,
+PT-1140,Testosterone,25-05-2026,42,Active,
+PT-1141,Weight Loss,24-06-2025,21,Dropped Off,Lab work non-compliance
+PT-1142,Peptides,29-12-2025,8,Active,
+PT-1143,Weight Loss,06-12-2025,13,Active,
+PT-1144,Weight Loss,24-03-2026,26,Active,
+PT-1145,Testosterone,24-03-2026,15,Completed,
+PT-1146,Weight Loss,28-03-2026,14,Completed,
+PT-1147,Weight Loss,16-07-2025,17,Dropped Off,Side effects
+PT-1148,Testosterone,12-06-2025,17,Active,
+PT-1149,Weight Loss,12-01-2026,17,Dropped Off,Cost / insurance not covering treatment
+PT-1150,Peptides,03-02-2026,15,Active,
+PT-1151,Weight Loss,04-04-2026,25,Active,
+PT-1152,Weight Loss,14-01-2025,5,Active,
+PT-1153,Weight Loss,31-01-2025,26,Completed,
+PT-1154,Testosterone,26-11-2025,49,Dropped Off,Cost / insurance not covering treatment
+PT-1155,Weight Loss,29-04-2026,14,Dropped Off,Dissatisfied with results
+PT-1156,Testosterone,09-06-2026,13,Active,
+PT-1157,Peptides,27-01-2026,16,Completed,
+PT-1158,Peptides,13-08-2025,13,Active,
+PT-1159,Testosterone,16-02-2025,16,Completed,
+PT-1160,Peptides,28-11-2025,16,Active,
+PT-1161,Testosterone,04-04-2026,38,Dropped Off,Personal / scheduling conflicts
+PT-1162,Testosterone,19-08-2025,33,Active,
+PT-1163,Weight Loss,30-12-2025,8,Dropped Off,Dissatisfied with results
+PT-1164,Testosterone,20-04-2026,40,Active,
+PT-1165,Testosterone,19-01-2025,42,Dropped Off,Moved out of service area
+PT-1166,Testosterone,22-02-2026,50,Dropped Off,Switched to in-person provider
+PT-1167,Testosterone,31-05-2025,28,Completed,
+PT-1168,Weight Loss,13-07-2025,25,Active,
+PT-1169,Peptides,13-03-2025,16,Completed,
+PT-1170,Peptides,04-10-2025,11,Active,
+PT-1171,Weight Loss,23-10-2025,18,Active,
+PT-1172,Peptides,20-02-2026,8,Dropped Off,Dissatisfied with results
+PT-1173,Peptides,26-03-2025,5,Completed,
+PT-1174,Weight Loss,06-02-2025,25,Active,
+PT-1175,Peptides,03-04-2026,12,Dropped Off,Lost contact / unresponsive
+PT-1176,Testosterone,20-11-2025,29,Dropped Off,Side effects
+PT-1177,Testosterone,03-05-2025,46,Active,
+PT-1178,Weight Loss,25-04-2026,19,Dropped Off,Switched to in-person provider
+PT-1179,Testosterone,12-03-2025,24,Active,
+PT-1180,Testosterone,28-08-2025,19,Active,
+PT-1181,Peptides,10-05-2025,16,Active,
+PT-1182,Testosterone,10-05-2025,33,Completed,
+PT-1183,Weight Loss,30-12-2024,23,Active,
+PT-1184,Testosterone,27-02-2026,33,Dropped Off,Lost contact / unresponsive
+PT-1185,Weight Loss,19-04-2026,21,Dropped Off,Side effects
+PT-1186,Testosterone,21-12-2025,1,Completed,
+PT-1187,Weight Loss,20-03-2025,25,Active,
+PT-1188,Testosterone,18-08-2025,18,Active,
+PT-1189,Testosterone,27-06-2025,51,Active,
+PT-1190,Peptides,03-11-2025,5,Completed,
+PT-1191,Peptides,30-11-2025,16,Active,
+PT-1192,Weight Loss,08-08-2025,16,Active,
+PT-1193,Peptides,08-05-2025,12,Dropped Off,Dissatisfied with results
+PT-1194,Peptides,20-03-2026,9,Dropped Off,Switched to in-person provider
+PT-1195,Peptides,10-04-2025,12,Completed,
+PT-1196,Peptides,18-07-2025,8,Completed,
+PT-1197,Peptides,09-09-2025,16,Dropped Off,Personal / scheduling conflicts
+PT-1198,Weight Loss,01-05-2025,19,Active,
+PT-1199,Peptides,26-10-2025,15,Active,
+PT-1200,Weight Loss,27-10-2025,10,Active,
+PT-1201,Testosterone,07-06-2026,32,Active,
+PT-1202,Peptides,01-06-2025,16,Active,
+PT-1203,Testosterone,30-05-2026,20,Dropped Off,Switched to in-person provider
+PT-1204,Testosterone,11-12-2025,1,Completed,
+PT-1205,Peptides,21-05-2025,12,Dropped Off,Lab work non-compliance
+PT-1206,Weight Loss,23-10-2025,1,Dropped Off,Switched to in-person provider
+PT-1207,Testosterone,25-12-2025,25,Active,
+PT-1208,Peptides,26-01-2026,13,Dropped Off,Lab work non-compliance
+PT-1209,Weight Loss,21-01-2025,26,Completed,
+PT-1210,Peptides,13-11-2025,16,Dropped Off,Dissatisfied with results
+PT-1211,Weight Loss,16-09-2025,20,Completed,
+PT-1212,Testosterone,21-04-2026,41,Dropped Off,Lab work non-compliance
+PT-1213,Peptides,27-05-2025,1,Dropped Off,Dissatisfied with results
+PT-1214,Weight Loss,23-02-2026,26,Dropped Off,Lab work non-compliance
+PT-1215,Testosterone,13-11-2025,1,Active,
+PT-1216,Peptides,01-07-2025,5,Active,
+PT-1217,Peptides,29-11-2025,16,Active,
+PT-1218,Peptides,21-11-2025,16,Completed,
+PT-1219,Peptides,21-12-2025,6,Active,
+PT-1220,Testosterone,13-01-2026,33,Active,
+PT-1221,Testosterone,11-12-2025,45,Dropped Off,Lab work non-compliance
+PT-1222,Peptides,16-03-2026,10,Completed,
+PT-1223,Weight Loss,25-11-2025,13,Active,
+PT-1224,Peptides,20-04-2026,10,Completed,
+PT-1225,Weight Loss,04-12-2025,18,Dropped Off,Switched to in-person provider
+PT-1226,Testosterone,08-06-2025,34,Dropped Off,Dissatisfied with results
+PT-1227,Testosterone,17-08-2025,9,Completed,
+PT-1228,Peptides,30-10-2025,16,Active,
+PT-1229,Weight Loss,19-01-2026,9,Active,
+PT-1230,Peptides,11-02-2025,6,Active,
+PT-1231,Peptides,31-05-2025,12,Active,
+PT-1232,Testosterone,27-01-2026,35,Completed,
+PT-1233,Peptides,29-03-2025,10,Active,
+PT-1234,Testosterone,06-03-2025,15,Active,
+PT-1235,Weight Loss,08-10-2025,19,Active,
+PT-1236,Weight Loss,26-05-2026,12,Active,
+PT-1237,Weight Loss,04-10-2025,12,Active,
+PT-1238,Testosterone,25-04-2026,22,Active,
+PT-1239,Testosterone,12-03-2026,36,Active,
+PT-1240,Weight Loss,11-05-2025,10,Completed,
+PT-1241,Testosterone,09-03-2026,18,Dropped Off,Switched to in-person provider
+PT-1242,Weight Loss,08-09-2025,15,Active,
+PT-1243,Weight Loss,28-02-2026,17,Active,
+PT-1244,Peptides,27-01-2026,14,Completed,
+PT-1245,Testosterone,24-06-2025,17,Dropped Off,Personal / scheduling conflicts
+PT-1246,Weight Loss,25-02-2025,25,Dropped Off,Side effects
+PT-1247,Weight Loss,22-05-2026,1,Active,
+PT-1248,Peptides,10-03-2025,8,Completed,
+PT-1249,Testosterone,24-05-2026,50,Completed,
+PT-1250,Peptides,28-03-2026,5,Dropped Off,Moved out of service area
+PT-1251,Weight Loss,15-01-2026,26,Active,
+PT-1252,Peptides,31-05-2026,16,Dropped Off,Side effects
+PT-1253,Testosterone,24-05-2026,1,Completed,
+PT-1254,Peptides,27-02-2026,16,Completed,
+PT-1255,Peptides,08-07-2025,10,Dropped Off,Dissatisfied with results
+PT-1256,Weight Loss,19-02-2026,26,Active,
+PT-1257,Testosterone,02-01-2025,25,Dropped Off,Side effects
+PT-1258,Weight Loss,07-10-2025,26,Completed,
+PT-1259,Weight Loss,24-08-2025,12,Completed,
+PT-1260,Peptides,18-12-2025,12,Dropped Off,Lab work non-compliance
+PT-1261,Weight Loss,18-12-2025,22,Completed,
+PT-1262,Testosterone,01-11-2025,36,Completed,
+PT-1263,Weight Loss,08-03-2026,5,Active,
+PT-1264,Testosterone,10-05-2026,30,Active,
+PT-1265,Weight Loss,21-02-2025,16,Dropped Off,Switched to in-person provider
+PT-1266,Testosterone,29-04-2025,24,Dropped Off,Cost / insurance not covering treatment
+PT-1267,Peptides,08-01-2025,16,Active,
+PT-1268,Testosterone,10-04-2026,32,Completed,
+PT-1269,Weight Loss,20-10-2025,26,Active,
+PT-1270,Peptides,26-04-2026,16,Completed,
+PT-1271,Peptides,22-04-2025,10,Completed,
+PT-1272,Testosterone,28-01-2025,46,Active,
+PT-1273,Peptides,09-03-2026,10,Dropped Off,Side effects
+PT-1274,Weight Loss,23-04-2026,2,Active,
+PT-1275,Testosterone,04-06-2025,19,Dropped Off,Cost / insurance not covering treatment
+PT-1276,Testosterone,31-07-2025,28,Active,
+PT-1277,Peptides,10-03-2025,12,Completed,
+PT-1278,Peptides,13-05-2026,7,Completed,
+PT-1279,Testosterone,05-06-2025,37,Completed,
+PT-1280,Testosterone,14-09-2025,10,Active,
+PT-1281,Testosterone,15-02-2025,19,Dropped Off,Personal / scheduling conflicts
+PT-1282,Testosterone,12-04-2026,22,Active,
+PT-1283,Peptides,08-03-2025,10,Active,
+PT-1284,Weight Loss,24-08-2025,3,Active,
+PT-1285,Weight Loss,17-12-2025,26,Completed,
+PT-1286,Weight Loss,25-01-2026,13,Active,
+PT-1287,Weight Loss,13-05-2026,26,Completed,
+PT-1288,Testosterone,05-08-2025,32,Dropped Off,Personal / scheduling conflicts
+PT-1289,Weight Loss,24-01-2026,23,Dropped Off,Switched to in-person provider
+PT-1290,Peptides,18-03-2025,11,Completed,
+PT-1291,Weight Loss,03-08-2025,11,Active,
+PT-1292,Weight Loss,16-02-2025,22,Completed,
+PT-1293,Peptides,12-09-2025,8,Completed,
+PT-1294,Weight Loss,31-07-2025,19,Dropped Off,Switched to in-person provider
+PT-1295,Weight Loss,16-05-2026,11,Active,
+PT-1296,Testosterone,12-01-2025,19,Dropped Off,Personal / scheduling conflicts
+PT-1297,Peptides,11-07-2025,10,Dropped Off,Switched to in-person provider
+PT-1298,Testosterone,18-08-2025,52,Dropped Off,Cost / insurance not covering treatment
+PT-1299,Peptides,15-05-2026,13,Completed,
+PT-1300,Weight Loss,26-03-2026,5,Completed,
+PT-1301,Weight Loss,16-02-2025,23,Active,
+PT-1302,Weight Loss,25-12-2025,16,Active,
+PT-1303,Peptides,11-10-2025,7,Completed,
+PT-1304,Testosterone,30-05-2026,23,Completed,
+PT-1305,Peptides,04-07-2025,16,Completed,
+PT-1306,Peptides,25-07-2025,6,Dropped Off,Cost / insurance not covering treatment
+PT-1307,Testosterone,05-04-2025,35,Active,
+PT-1308,Peptides,28-02-2025,12,Dropped Off,Dissatisfied with results
+PT-1309,Weight Loss,22-03-2026,15,Active,
+PT-1310,Peptides,24-08-2025,12,Active,
+PT-1311,Peptides,13-12-2025,8,Active,
+PT-1312,Peptides,02-12-2025,14,Completed,
+PT-1313,Peptides,08-11-2025,1,Active,
+PT-1314,Peptides,06-01-2025,4,Completed,
+PT-1315,Peptides,17-02-2026,7,Active,
+PT-1316,Peptides,04-05-2025,13,Active,
+PT-1317,Testosterone,02-03-2025,10,Dropped Off,Lost contact / unresponsive
+PT-1318,Testosterone,22-10-2025,40,Dropped Off,Side effects
+PT-1319,Weight Loss,31-01-2025,13,Completed,
+PT-1320,Testosterone,06-02-2026,21,Active,
+PT-1321,Peptides,15-04-2025,15,Completed,
+PT-1322,Peptides,19-04-2025,16,Active,
+PT-1323,Weight Loss,02-04-2026,11,Dropped Off,Switched to in-person provider
+PT-1324,Testosterone,18-06-2025,15,Active,
+PT-1325,Testosterone,14-03-2025,43,Dropped Off,Dissatisfied with results
+PT-1326,Weight Loss,19-04-2026,17,Completed,
+PT-1327,Testosterone,27-12-2024,23,Active,
+PT-1328,Weight Loss,27-03-2026,9,Completed,
+PT-1329,Testosterone,12-03-2025,35,Active,
+PT-1330,Peptides,05-03-2025,6,Completed,
+PT-1331,Testosterone,08-05-2025,52,Active,
+PT-1332,Peptides,28-03-2025,1,Active,
+PT-1333,Testosterone,12-12-2025,52,Completed,
+PT-1334,Testosterone,08-01-2025,16,Dropped Off,Dissatisfied with results
+PT-1335,Peptides,02-01-2025,8,Active,
+PT-1336,Weight Loss,19-02-2026,14,Active,
+PT-1337,Peptides,01-05-2025,10,Active,
+PT-1338,Peptides,16-06-2025,16,Completed,
+PT-1339,Weight Loss,28-03-2025,26,Active,
+PT-1340,Weight Loss,22-01-2025,18,Completed,
+PT-1341,Weight Loss,24-01-2026,24,Completed,
+PT-1342,Testosterone,01-10-2025,50,Completed,
+PT-1343,Weight Loss,26-01-2026,15,Active,
+PT-1344,Peptides,05-09-2025,16,Active,
+PT-1345,Peptides,12-02-2026,12,Active,
+PT-1346,Testosterone,25-09-2025,34,Active,
+PT-1347,Testosterone,22-02-2025,17,Completed,
+PT-1348,Testosterone,20-09-2025,27,Active,
+PT-1349,Weight Loss,12-05-2026,22,Active,
+PT-1350,Testosterone,18-01-2025,52,Completed,
+PT-1351,Peptides,15-02-2026,14,Active,
+PT-1352,Testosterone,01-04-2026,7,Completed,
+PT-1353,Peptides,29-09-2025,14,Active,
+PT-1354,Peptides,26-08-2025,13,Active,
+PT-1355,Weight Loss,22-05-2026,21,Active,
+PT-1356,Testosterone,27-01-2025,34,Dropped Off,Switched to in-person provider
+PT-1357,Peptides,06-09-2025,16,Active,
+PT-1358,Peptides,27-07-2025,15,Completed,
+PT-1359,Testosterone,26-12-2025,17,Completed,
+PT-1360,Peptides,12-09-2025,15,Active,
+PT-1361,Peptides,23-04-2026,13,Dropped Off,Switched to in-person provider
+PT-1362,Weight Loss,03-02-2025,24,Dropped Off,Side effects
+PT-1363,Weight Loss,06-02-2025,18,Completed,
+PT-1364,Testosterone,14-11-2025,20,Dropped Off,Dissatisfied with results
+PT-1365,Weight Loss,29-01-2025,3,Completed,
+PT-1366,Testosterone,21-05-2025,12,Active,
+PT-1367,Testosterone,27-11-2025,52,Dropped Off,Lab work non-compliance
+PT-1368,Testosterone,13-10-2025,33,Dropped Off,Dissatisfied with results
+PT-1369,Weight Loss,16-06-2025,23,Active,
+PT-1370,Peptides,08-06-2026,11,Completed,
+PT-1371,Peptides,04-10-2025,4,Dropped Off,Moved out of service area
+PT-1372,Testosterone,24-08-2025,18,Completed,
+PT-1373,Peptides,13-11-2025,16,Active,
+PT-1374,Testosterone,16-02-2025,42,Completed,
+PT-1375,Weight Loss,03-01-2026,22,Dropped Off,Dissatisfied with results
+PT-1376,Weight Loss,24-03-2026,7,Active,
+PT-1377,Peptides,07-12-2025,16,Active,
+PT-1378,Weight Loss,08-02-2026,3,Active,
+PT-1379,Peptides,13-01-2026,14,Completed,
+PT-1380,Weight Loss,19-04-2025,18,Active,
+PT-1381,Weight Loss,23-08-2025,19,Dropped Off,Lost contact / unresponsive
+PT-1382,Testosterone,26-04-2025,11,Completed,
+PT-1383,Weight Loss,24-06-2025,24,Completed,
+PT-1384,Testosterone,24-08-2025,39,Active,
+PT-1385,Weight Loss,04-08-2025,11,Active,
+PT-1386,Testosterone,14-02-2025,18,Completed,
+PT-1387,Peptides,10-08-2025,9,Active,
+PT-1388,Weight Loss,14-12-2025,19,Completed,
+PT-1389,Weight Loss,13-07-2025,4,Completed,
+PT-1390,Testosterone,17-03-2025,32,Dropped Off,Dissatisfied with results
+PT-1391,Testosterone,01-05-2026,49,Active,
+PT-1392,Weight Loss,30-01-2025,1,Completed,
+PT-1393,Testosterone,13-03-2026,33,Dropped Off,Moved out of service area
+PT-1394,Testosterone,13-02-2025,36,Completed,
+PT-1395,Testosterone,15-02-2025,43,Completed,
+PT-1396,Peptides,23-01-2026,8,Completed,
+PT-1397,Testosterone,02-03-2026,1,Dropped Off,Personal / scheduling conflicts
+PT-1398,Peptides,17-10-2025,16,Completed,
+PT-1399,Weight Loss,02-11-2025,21,Active,
+PT-1400,Weight Loss,20-10-2025,15,Active,
+PT-1401,Peptides,19-06-2025,14,Completed,
+PT-1402,Peptides,01-03-2025,5,Active,
+PT-1403,Weight Loss,02-07-2025,16,Active,
+PT-1404,Weight Loss,14-12-2025,12,Dropped Off,Lost contact / unresponsive
+PT-1405,Weight Loss,29-01-2026,26,Completed,
+PT-1406,Testosterone,01-04-2026,23,Dropped Off,Lab work non-compliance
+PT-1407,Weight Loss,13-01-2026,22,Completed,
+PT-1408,Peptides,25-05-2026,14,Active,
+PT-1409,Peptides,10-11-2025,16,Dropped Off,Personal / scheduling conflicts
+PT-1410,Testosterone,01-07-2025,8,Completed,
+PT-1411,Testosterone,29-10-2025,14,Dropped Off,Personal / scheduling conflicts
+PT-1412,Peptides,18-04-2025,16,Completed,
+PT-1413,Weight Loss,10-12-2025,15,Active,
+PT-1414,Weight Loss,24-04-2025,20,Completed,
+PT-1415,Weight Loss,21-02-2025,4,Dropped Off,Switched to in-person provider
+PT-1416,Peptides,20-03-2026,15,Dropped Off,Lost contact / unresponsive
+PT-1417,Testosterone,09-07-2025,44,Active,
+PT-1418,Peptides,04-02-2026,16,Active,
+PT-1419,Testosterone,27-10-2025,28,Completed,
+PT-1420,Testosterone,28-02-2026,52,Dropped Off,Dissatisfied with results
+PT-1421,Peptides,20-03-2026,16,Dropped Off,Cost / insurance not covering treatment
+PT-1422,Peptides,28-05-2026,16,Completed,
+PT-1423,Testosterone,06-03-2026,35,Active,
+PT-1424,Weight Loss,17-11-2025,1,Dropped Off,Switched to in-person provider
+PT-1425,Peptides,02-12-2025,15,Completed,
+PT-1426,Testosterone,08-01-2025,26,Active,
+PT-1427,Weight Loss,04-05-2026,20,Dropped Off,Cost / insurance not covering treatment
+PT-1428,Peptides,12-03-2026,1,Completed,
+PT-1429,Peptides,17-05-2025,3,Dropped Off,Lab work non-compliance
+PT-1430,Testosterone,31-03-2025,22,Active,
+PT-1431,Weight Loss,03-01-2026,19,Active,
+PT-1432,Weight Loss,08-06-2025,21,Active,
+PT-1433,Weight Loss,24-06-2025,24,Active,
+PT-1434,Testosterone,29-12-2024,44,Completed,
+PT-1435,Testosterone,02-04-2026,37,Active,
+PT-1436,Peptides,23-10-2025,14,Completed,
+PT-1437,Weight Loss,27-07-2025,5,Active,
+PT-1438,Peptides,11-03-2025,11,Active,
+PT-1439,Testosterone,27-11-2025,31,Completed,
+PT-1440,Weight Loss,11-01-2025,19,Completed,
+PT-1441,Testosterone,26-01-2026,30,Active,
+PT-1442,Testosterone,19-04-2025,40,Active,
+PT-1443,Peptides,06-08-2025,1,Dropped Off,Lab work non-compliance
+PT-1444,Testosterone,25-06-2025,17,Completed,
+PT-1445,Weight Loss,10-07-2025,26,Completed,
+PT-1446,Peptides,13-01-2026,6,Completed,
+PT-1447,Testosterone,12-02-2026,52,Active,
+PT-1448,Weight Loss,23-10-2025,6,Active,
+PT-1449,Peptides,09-02-2025,13,Dropped Off,Lost contact / unresponsive
+PT-1450,Testosterone,22-01-2025,14,Dropped Off,Dissatisfied with results
+PT-1451,Weight Loss,19-03-2025,21,Dropped Off,Lost contact / unresponsive
+PT-1452,Testosterone,19-11-2025,25,Active,
+PT-1453,Weight Loss,19-12-2025,19,Active,
+PT-1454,Testosterone,19-05-2025,1,Completed,
+PT-1455,Peptides,13-12-2025,16,Completed,
+PT-1456,Peptides,10-09-2025,9,Dropped Off,Dissatisfied with results
+PT-1457,Weight Loss,18-08-2025,15,Active,
+PT-1458,Peptides,20-05-2025,12,Completed,
+PT-1459,Weight Loss,31-01-2026,17,Active,
+PT-1460,Weight Loss,24-02-2025,23,Active,
+PT-1461,Testosterone,11-08-2025,19,Completed,
+PT-1462,Weight Loss,25-05-2025,7,Completed,
+PT-1463,Weight Loss,21-12-2025,15,Dropped Off,Dissatisfied with results
+PT-1464,Peptides,10-09-2025,8,Active,
+PT-1465,Testosterone,15-12-2025,30,Active,
+PT-1466,Weight Loss,19-01-2025,7,Active,
+PT-1467,Weight Loss,24-07-2025,22,Dropped Off,Lost contact / unresponsive
+PT-1468,Peptides,09-11-2025,14,Active,
+PT-1469,Weight Loss,30-12-2024,26,Completed,
+PT-1470,Testosterone,04-06-2025,13,Dropped Off,Personal / scheduling conflicts
+PT-1471,Weight Loss,17-04-2025,17,Completed,
+PT-1472,Weight Loss,09-03-2025,17,Dropped Off,Switched to in-person provider
+PT-1473,Peptides,10-05-2025,14,Completed,
+PT-1474,Weight Loss,18-06-2025,12,Active,
+PT-1475,Testosterone,30-12-2024,34,Active,
+PT-1476,Testosterone,27-01-2026,52,Dropped Off,Cost / insurance not covering treatment
+PT-1477,Peptides,29-03-2025,16,Completed,
+PT-1478,Weight Loss,16-07-2025,5,Active,
+PT-1479,Testosterone,04-01-2026,50,Completed,
+PT-1480,Testosterone,18-09-2025,44,Active,
+PT-1481,Weight Loss,14-03-2026,26,Dropped Off,Switched to in-person provider
+PT-1482,Weight Loss,27-02-2026,24,Completed,
+PT-1483,Testosterone,02-02-2025,9,Active,
+PT-1484,Testosterone,29-03-2026,17,Completed,
+PT-1485,Testosterone,17-01-2025,29,Dropped Off,Lost contact / unresponsive
+PT-1486,Peptides,04-01-2025,14,Active,
+PT-1487,Peptides,30-04-2026,15,Active,
+PT-1488,Testosterone,29-03-2026,15,Completed,
+PT-1489,Testosterone,28-10-2025,3,Dropped Off,Dissatisfied with results
+PT-1490,Weight Loss,27-10-2025,6,Active,
+PT-1491,Peptides,07-01-2026,12,Active,
+PT-1492,Weight Loss,05-08-2025,18,Active,
+PT-1493,Weight Loss,25-02-2025,7,Dropped Off,Personal / scheduling conflicts
+PT-1494,Weight Loss,06-01-2025,23,Dropped Off,Lost contact / unresponsive
+PT-1495,Peptides,16-06-2025,8,Dropped Off,Moved out of service area
+PT-1496,Testosterone,25-02-2026,37,Completed,
+PT-1497,Weight Loss,19-11-2025,8,Completed,
+PT-1498,Peptides,13-03-2026,14,Dropped Off,Personal / scheduling conflicts
+PT-1499,Testosterone,29-04-2026,10,Active,
+PT-1500,Peptides,10-02-2025,10,Completed,
+PT-1501,Peptides,20-03-2026,10,Active,
+PT-1502,Testosterone,04-05-2025,9,Completed,
+PT-1503,Testosterone,04-11-2025,25,Active,
+PT-1504,Peptides,30-09-2025,11,Active,
+PT-1505,Weight Loss,24-07-2025,14,Dropped Off,Switched to in-person provider
+PT-1506,Peptides,09-06-2025,11,Completed,
+PT-1507,Peptides,24-06-2025,12,Completed,
+PT-1508,Testosterone,21-06-2025,17,Completed,
+PT-1509,Testosterone,25-03-2025,10,Completed,
+PT-1510,Weight Loss,23-09-2025,3,Dropped Off,Lost contact / unresponsive
+PT-1511,Testosterone,24-02-2025,41,Completed,
+PT-1512,Weight Loss,23-09-2025,9,Active,
+PT-1513,Testosterone,21-04-2026,32,Completed,
+PT-1514,Testosterone,29-06-2025,34,Active,
+PT-1515,Testosterone,16-01-2026,26,Active,
+PT-1516,Peptides,06-03-2026,8,Completed,
+PT-1517,Weight Loss,04-03-2026,11,Active,
+PT-1518,Peptides,30-04-2025,11,Active,
+PT-1519,Testosterone,13-03-2025,19,Completed,
+PT-1520,Testosterone,09-04-2025,24,Completed,
+PT-1521,Testosterone,11-11-2025,28,Dropped Off,Personal / scheduling conflicts
+PT-1522,Weight Loss,03-02-2026,22,Active,
+PT-1523,Peptides,09-12-2025,8,Active,
+PT-1524,Weight Loss,30-03-2025,10,Dropped Off,Cost / insurance not covering treatment
+PT-1525,Testosterone,10-02-2026,39,Dropped Off,Side effects
+PT-1526,Testosterone,14-09-2025,8,Completed,
+PT-1527,Testosterone,31-01-2026,26,Completed,
+PT-1528,Weight Loss,03-02-2026,9,Active,
+PT-1529,Weight Loss,21-08-2025,21,Dropped Off,Lost contact / unresponsive
+PT-1530,Weight Loss,01-05-2026,20,Active,
+PT-1531,Testosterone,22-10-2025,5,Active,
+PT-1532,Peptides,28-11-2025,11,Completed,
+PT-1533,Testosterone,23-11-2025,19,Completed,
+PT-1534,Peptides,30-03-2026,11,Dropped Off,Side effects
+PT-1535,Weight Loss,24-11-2025,8,Active,
+PT-1536,Weight Loss,16-03-2025,15,Active,
+PT-1537,Peptides,31-01-2025,12,Completed,
+PT-1538,Peptides,18-08-2025,5,Dropped Off,Moved out of service area
+PT-1539,Testosterone,05-06-2025,41,Active,
+PT-1540,Peptides,21-05-2025,15,Active,
+PT-1541,Peptides,24-01-2025,7,Completed,
+PT-1542,Peptides,21-09-2025,12,Completed,
+PT-1543,Testosterone,09-06-2025,52,Completed,
+PT-1544,Testosterone,23-08-2025,29,Active,
+PT-1545,Testosterone,25-01-2025,21,Dropped Off,Lost contact / unresponsive
+PT-1546,Testosterone,13-03-2026,18,Active,
+PT-1547,Weight Loss,04-02-2025,17,Dropped Off,Lost contact / unresponsive
+PT-1548,Testosterone,30-03-2026,11,Completed,
+PT-1549,Testosterone,26-03-2026,23,Completed,
+PT-1550,Peptides,18-11-2025,15,Dropped Off,Personal / scheduling conflicts
+PT-1551,Peptides,21-09-2025,3,Active,
+PT-1552,Testosterone,29-08-2025,37,Active,
+PT-1553,Testosterone,16-10-2025,3,Completed,
+PT-1554,Testosterone,20-02-2026,20,Dropped Off,Dissatisfied with results
+PT-1555,Testosterone,16-04-2026,52,Completed,
+PT-1556,Testosterone,22-08-2025,52,Active,
+PT-1557,Testosterone,01-03-2026,44,Dropped Off,Personal / scheduling conflicts
+PT-1558,Weight Loss,07-12-2025,18,Completed,
+PT-1559,Weight Loss,15-06-2025,26,Completed,
+PT-1560,Weight Loss,05-09-2025,11,Active,
+PT-1561,Weight Loss,16-03-2025,19,Active,
+PT-1562,Weight Loss,27-01-2025,10,Completed,
+PT-1563,Testosterone,19-02-2025,30,Active,
+PT-1564,Testosterone,18-04-2026,32,Active,
+PT-1565,Peptides,26-06-2025,11,Active,
+PT-1566,Weight Loss,10-01-2026,9,Completed,
+PT-1567,Peptides,20-09-2025,12,Active,
+PT-1568,Peptides,27-03-2025,11,Dropped Off,Switched to in-person provider
+PT-1569,Peptides,06-05-2025,9,Active,
+PT-1570,Peptides,15-08-2025,16,Completed,
+PT-1571,Testosterone,16-08-2025,22,Active,
+PT-1572,Testosterone,30-09-2025,33,Dropped Off,Side effects
+PT-1573,Peptides,20-03-2025,16,Completed,
+PT-1574,Weight Loss,12-07-2025,5,Dropped Off,Personal / scheduling conflicts
+PT-1575,Peptides,25-05-2025,11,Completed,
+PT-1576,Weight Loss,31-07-2025,1,Completed,
+PT-1577,Testosterone,24-06-2025,33,Completed,
+PT-1578,Peptides,09-11-2025,12,Completed,
+PT-1579,Testosterone,18-02-2026,11,Completed,
+PT-1580,Testosterone,05-12-2025,52,Dropped Off,Switched to in-person provider
+PT-1581,Testosterone,30-01-2025,14,Active,
+PT-1582,Peptides,14-02-2025,2,Completed,
+PT-1583,Testosterone,21-12-2025,39,Dropped Off,Moved out of service area
+PT-1584,Peptides,26-05-2025,8,Completed,
+PT-1585,Testosterone,15-01-2026,25,Active,
+PT-1586,Testosterone,10-12-2025,1,Active,
+PT-1587,Weight Loss,22-04-2026,19,Dropped Off,Moved out of service area
+PT-1588,Weight Loss,04-04-2026,20,Completed,
+PT-1589,Peptides,21-06-2025,9,Completed,
+PT-1590,Weight Loss,01-11-2025,16,Active,
+PT-1591,Peptides,11-03-2025,16,Completed,
+PT-1592,Peptides,30-06-2025,4,Dropped Off,Switched to in-person provider
+PT-1593,Testosterone,24-05-2026,23,Dropped Off,Lost contact / unresponsive
+PT-1594,Weight Loss,01-01-2026,15,Active,
+PT-1595,Weight Loss,22-07-2025,14,Dropped Off,Moved out of service area
+PT-1596,Weight Loss,07-11-2025,12,Completed,
+PT-1597,Testosterone,09-05-2026,34,Active,
+PT-1598,Weight Loss,08-06-2025,26,Active,
+PT-1599,Weight Loss,14-07-2025,17,Completed,
+PT-1600,Testosterone,20-02-2026,47,Completed,
+PT-1601,Testosterone,03-03-2026,23,Dropped Off,Switched to in-person provider
+PT-1602,Testosterone,17-12-2025,13,Active,
+PT-1603,Weight Loss,12-03-2026,17,Active,
+PT-1604,Testosterone,23-01-2026,36,Completed,
+PT-1605,Weight Loss,25-12-2025,26,Active,
+PT-1606,Peptides,02-10-2025,16,Active,
+PT-1607,Weight Loss,04-12-2025,26,Completed,
+PT-1608,Peptides,08-08-2025,10,Dropped Off,Switched to in-person provider
+PT-1609,Weight Loss,06-07-2025,9,Completed,
+PT-1610,Testosterone,06-07-2025,21,Dropped Off,Lost contact / unresponsive
+PT-1611,Weight Loss,31-03-2025,9,Active,
+PT-1612,Weight Loss,18-04-2025,19,Dropped Off,Switched to in-person provider
+PT-1613,Testosterone,14-05-2026,52,Dropped Off,Dissatisfied with results
+PT-1614,Weight Loss,10-09-2025,26,Completed,
+PT-1615,Testosterone,25-04-2025,31,Completed,
+PT-1616,Weight Loss,09-03-2025,9,Completed,
+PT-1617,Peptides,05-02-2025,7,Completed,
+PT-1618,Testosterone,20-03-2026,38,Active,
+PT-1619,Peptides,17-02-2025,6,Completed,
+PT-1620,Peptides,09-02-2026,16,Active,
+PT-1621,Testosterone,15-03-2026,30,Active,
+PT-1622,Testosterone,10-04-2026,43,Completed,
+PT-1623,Testosterone,15-01-2025,1,Active,
+PT-1624,Weight Loss,23-06-2025,22,Dropped Off,Switched to in-person provider
+PT-1625,Testosterone,06-02-2026,52,Completed,
+PT-1626,Peptides,05-03-2025,12,Completed,
+PT-1627,Testosterone,14-07-2025,32,Active,
+PT-1628,Peptides,22-03-2025,12,Completed,
+PT-1629,Testosterone,13-03-2026,5,Active,
+PT-1630,Testosterone,09-02-2026,45,Active,
+PT-1631,Weight Loss,01-03-2026,22,Active,
+PT-1632,Testosterone,24-03-2025,19,Completed,
+PT-1633,Testosterone,15-08-2025,30,Completed,
+PT-1634,Peptides,01-08-2025,9,Active,
+PT-1635,Weight Loss,20-12-2025,26,Active,
+PT-1636,Weight Loss,01-05-2025,15,Dropped Off,Moved out of service area
+PT-1637,Testosterone,19-08-2025,9,Completed,
+PT-1638,Weight Loss,26-05-2025,9,Completed,
+PT-1639,Weight Loss,28-01-2026,14,Completed,
+PT-1640,Peptides,21-08-2025,15,Completed,
+PT-1641,Testosterone,06-10-2025,27,Active,
+PT-1642,Peptides,08-06-2025,15,Dropped Off,Switched to in-person provider
+PT-1643,Weight Loss,01-03-2026,26,Dropped Off,Lost contact / unresponsive
+PT-1644,Testosterone,01-09-2025,30,Completed,
+PT-1645,Testosterone,15-03-2026,28,Active,
+PT-1646,Weight Loss,09-07-2025,18,Completed,
+PT-1647,Weight Loss,13-05-2026,24,Active,
+PT-1648,Weight Loss,02-06-2026,26,Active,
+PT-1649,Weight Loss,28-08-2025,17,Dropped Off,Side effects
+PT-1650,Weight Loss,24-05-2025,26,Active,
+PT-1651,Peptides,17-07-2025,12,Dropped Off,Dissatisfied with results
+PT-1652,Testosterone,02-10-2025,12,Completed,
+PT-1653,Weight Loss,24-05-2026,15,Active,
+PT-1654,Testosterone,05-03-2026,52,Active,
+PT-1655,Weight Loss,25-02-2026,18,Active,
+PT-1656,Peptides,09-03-2025,13,Completed,
+PT-1657,Testosterone,08-05-2025,40,Active,
+PT-1658,Testosterone,02-12-2025,44,Dropped Off,Lab work non-compliance
+PT-1659,Weight Loss,05-04-2026,18,Dropped Off,Lab work non-compliance
+PT-1660,Testosterone,17-10-2025,14,Dropped Off,Dissatisfied with results
+PT-1661,Weight Loss,18-02-2025,22,Dropped Off,Side effects
+PT-1662,Testosterone,21-03-2026,52,Dropped Off,Switched to in-person provider
+PT-1663,Peptides,23-03-2026,2,Active,
+PT-1664,Weight Loss,26-05-2025,21,Completed,
+PT-1665,Weight Loss,04-02-2026,26,Completed,
+PT-1666,Testosterone,20-05-2025,26,Active,
+PT-1667,Weight Loss,21-04-2026,26,Completed,
+PT-1668,Testosterone,14-03-2025,39,Completed,
+PT-1669,Testosterone,15-08-2025,52,Active,
+PT-1670,Testosterone,13-05-2026,6,Completed,
+PT-1671,Testosterone,23-04-2025,35,Active,
+PT-1672,Peptides,23-08-2025,14,Active,
+PT-1673,Testosterone,29-06-2025,32,Completed,
+PT-1674,Testosterone,09-01-2025,10,Active,
+PT-1675,Testosterone,23-01-2025,48,Dropped Off,Lab work non-compliance
+PT-1676,Weight Loss,19-09-2025,23,Active,
+PT-1677,Weight Loss,30-04-2025,12,Active,
+PT-1678,Testosterone,08-06-2026,1,Dropped Off,Side effects
+PT-1679,Peptides,13-07-2025,12,Active,
+PT-1680,Weight Loss,09-01-2025,8,Active,
+PT-1681,Testosterone,05-05-2026,44,Completed,
+PT-1682,Testosterone,17-03-2026,17,Completed,
+PT-1683,Testosterone,06-12-2025,34,Dropped Off,Switched to in-person provider
+PT-1684,Peptides,20-02-2026,15,Dropped Off,Personal / scheduling conflicts
+PT-1685,Testosterone,09-03-2025,36,Active,
+PT-1686,Testosterone,27-05-2025,40,Active,
+PT-1687,Weight Loss,12-03-2026,12,Active,
+PT-1688,Peptides,31-12-2025,13,Dropped Off,Switched to in-person provider
+PT-1689,Peptides,09-03-2025,7,Active,
+PT-1690,Weight Loss,05-01-2026,7,Active,
+PT-1691,Weight Loss,21-08-2025,11,Completed,
+PT-1692,Testosterone,28-12-2024,19,Completed,
+PT-1693,Testosterone,06-02-2025,33,Dropped Off,Dissatisfied with results
+PT-1694,Weight Loss,11-05-2025,13,Active,
+PT-1695,Weight Loss,15-03-2026,23,Completed,
+PT-1696,Peptides,13-10-2025,4,Active,
+PT-1697,Testosterone,16-01-2026,23,Dropped Off,Dissatisfied with results
+PT-1698,Weight Loss,02-10-2025,14,Dropped Off,Dissatisfied with results
+PT-1699,Peptides,23-02-2025,16,Dropped Off,Switched to in-person provider
+PT-1700,Testosterone,28-05-2025,36,Completed,
+PT-1701,Peptides,04-06-2025,10,Active,
+PT-1702,Testosterone,20-01-2025,33,Dropped Off,Lab work non-compliance
+PT-1703,Testosterone,06-08-2025,25,Active,
+PT-1704,Weight Loss,21-02-2026,6,Active,
+PT-1705,Weight Loss,26-08-2025,23,Active,
+PT-1706,Testosterone,22-02-2025,52,Completed,
+PT-1707,Testosterone,21-04-2026,4,Dropped Off,Dissatisfied with results
+PT-1708,Testosterone,08-11-2025,35,Active,
+PT-1709,Testosterone,03-01-2025,52,Completed,
+PT-1710,Testosterone,26-09-2025,52,Active,
+PT-1711,Peptides,03-05-2025,8,Dropped Off,Lost contact / unresponsive
+PT-1712,Peptides,12-03-2025,15,Completed,
+PT-1713,Weight Loss,11-08-2025,20,Dropped Off,Switched to in-person provider
+PT-1714,Peptides,18-11-2025,16,Completed,
+PT-1715,Weight Loss,02-05-2025,13,Completed,
+PT-1716,Weight Loss,04-08-2025,1,Dropped Off,Switched to in-person provider
+PT-1717,Testosterone,14-12-2025,34,Active,
+PT-1718,Peptides,09-02-2025,16,Completed,
+PT-1719,Testosterone,28-05-2026,8,Dropped Off,Dissatisfied with results
+PT-1720,Testosterone,31-01-2025,21,Active,
+PT-1721,Testosterone,01-10-2025,13,Active,
+PT-1722,Peptides,21-09-2025,16,Active,
+PT-1723,Weight Loss,04-06-2026,26,Completed,
+PT-1724,Peptides,16-10-2025,6,Active,
+PT-1725,Peptides,21-07-2025,8,Dropped Off,Personal / scheduling conflicts
+PT-1726,Testosterone,02-09-2025,8,Dropped Off,Personal / scheduling conflicts
+PT-1727,Testosterone,29-11-2025,52,Active,
+PT-1728,Peptides,31-05-2026,13,Completed,
+PT-1729,Peptides,09-05-2025,13,Completed,
+PT-1730,Weight Loss,03-01-2025,12,Active,
+PT-1731,Peptides,18-02-2026,7,Active,
+PT-1732,Weight Loss,27-06-2025,21,Active,
+PT-1733,Weight Loss,19-01-2026,17,Completed,
+PT-1734,Weight Loss,25-11-2025,19,Active,
+PT-1735,Weight Loss,09-02-2026,10,Active,
+PT-1736,Weight Loss,21-01-2026,16,Active,
+PT-1737,Testosterone,20-06-2025,23,Active,
+PT-1738,Testosterone,18-01-2025,26,Completed,
+PT-1739,Peptides,12-10-2025,12,Completed,
+PT-1740,Weight Loss,03-03-2026,20,Completed,
+PT-1741,Testosterone,29-03-2025,8,Active,
+PT-1742,Testosterone,13-02-2026,10,Dropped Off,Switched to in-person provider
+PT-1743,Peptides,30-08-2025,16,Completed,
+PT-1744,Testosterone,30-12-2025,42,Active,
+PT-1745,Weight Loss,27-11-2025,24,Dropped Off,Personal / scheduling conflicts
+PT-1746,Peptides,02-03-2026,11,Completed,
+PT-1747,Testosterone,28-01-2025,52,Active,
+PT-1748,Weight Loss,11-02-2026,21,Completed,
+PT-1749,Peptides,26-08-2025,12,Dropped Off,Lab work non-compliance
+PT-1750,Peptides,31-05-2025,11,Dropped Off,Dissatisfied with results
+PT-1751,Weight Loss,18-01-2025,24,Active,
+PT-1752,Testosterone,11-04-2025,40,Completed,
+PT-1753,Testosterone,17-01-2025,15,Completed,
+PT-1754,Peptides,06-05-2026,10,Active,
+PT-1755,Peptides,26-09-2025,16,Completed,
+PT-1756,Testosterone,05-06-2026,31,Active,
+PT-1757,Testosterone,10-10-2025,34,Active,
+PT-1758,Weight Loss,09-05-2025,5,Active,
+PT-1759,Weight Loss,30-01-2026,14,Completed,
+PT-1760,Peptides,06-04-2025,16,Active,
+PT-1761,Peptides,03-07-2025,8,Active,
+PT-1762,Peptides,14-02-2026,7,Active,
+PT-1763,Testosterone,31-03-2026,42,Active,
+PT-1764,Weight Loss,20-06-2025,9,Active,
+PT-1765,Peptides,02-03-2025,14,Completed,
+PT-1766,Testosterone,09-07-2025,30,Active,
+PT-1767,Testosterone,13-04-2026,19,Completed,
+PT-1768,Testosterone,25-01-2026,41,Dropped Off,Lost contact / unresponsive
+PT-1769,Peptides,15-04-2026,3,Dropped Off,Side effects
+PT-1770,Testosterone,19-07-2025,4,Completed,
+PT-1771,Testosterone,28-05-2026,49,Completed,
+PT-1772,Testosterone,15-09-2025,52,Active,
+PT-1773,Peptides,16-09-2025,5,Active,
+PT-1774,Testosterone,01-05-2026,13,Active,
+PT-1775,Peptides,28-09-2025,14,Completed,
+PT-1776,Testosterone,25-02-2026,20,Active,
+PT-1777,Weight Loss,16-01-2026,22,Active,
+PT-1778,Peptides,05-02-2025,1,Completed,
+PT-1779,Testosterone,11-11-2025,52,Active,
+PT-1780,Peptides,08-03-2026,10,Dropped Off,Switched to in-person provider
+PT-1781,Weight Loss,12-10-2025,21,Active,
+PT-1782,Peptides,14-06-2025,9,Completed,
+PT-1783,Peptides,06-02-2025,14,Completed,
+PT-1784,Weight Loss,12-12-2025,10,Dropped Off,Cost / insurance not covering treatment
+PT-1785,Peptides,07-06-2025,9,Active,
+PT-1786,Testosterone,11-11-2025,52,Dropped Off,Personal / scheduling conflicts
+PT-1787,Testosterone,09-08-2025,17,Active,
+PT-1788,Weight Loss,27-12-2025,14,Active,
+PT-1789,Weight Loss,01-07-2025,6,Completed,
+PT-1790,Peptides,17-01-2025,11,Active,
+PT-1791,Peptides,02-04-2026,7,Active,
+PT-1792,Testosterone,01-07-2025,29,Dropped Off,Dissatisfied with results
+PT-1793,Testosterone,10-06-2026,5,Dropped Off,Side effects
+PT-1794,Testosterone,21-05-2025,43,Dropped Off,Lab work non-compliance
+PT-1795,Peptides,31-05-2026,6,Completed,
+PT-1796,Testosterone,14-05-2026,29,Completed,
+PT-1797,Testosterone,03-02-2025,27,Active,
+PT-1798,Weight Loss,30-11-2025,8,Completed,
+PT-1799,Weight Loss,07-07-2025,1,Dropped Off,Lost contact / unresponsive
+PT-1800,Weight Loss,25-02-2026,14,Dropped Off,Dissatisfied with results
+PT-1801,Peptides,22-12-2025,5,Completed,
+PT-1802,Weight Loss,16-05-2026,15,Completed,
+PT-1803,Weight Loss,11-03-2025,23,Active,
+PT-1804,Testosterone,14-11-2025,32,Dropped Off,Lost contact / unresponsive
+PT-1805,Weight Loss,14-02-2026,14,Completed,
+PT-1806,Testosterone,13-01-2025,25,Dropped Off,Lost contact / unresponsive
+PT-1807,Peptides,30-01-2025,16,Dropped Off,Moved out of service area
+PT-1808,Testosterone,13-02-2026,47,Completed,
+PT-1809,Weight Loss,08-07-2025,21,Completed,
+PT-1810,Testosterone,17-07-2025,49,Completed,
+PT-1811,Testosterone,23-10-2025,15,Dropped Off,Moved out of service area
+PT-1812,Testosterone,12-11-2025,1,Active,
+PT-1813,Weight Loss,22-12-2025,10,Active,
+PT-1814,Peptides,14-05-2026,15,Completed,
+PT-1815,Peptides,11-07-2025,7,Dropped Off,Cost / insurance not covering treatment
+PT-1816,Weight Loss,04-02-2026,22,Completed,
+PT-1817,Testosterone,27-10-2025,35,Completed,
+PT-1818,Weight Loss,03-10-2025,12,Active,
+PT-1819,Peptides,25-07-2025,3,Active,
+PT-1820,Testosterone,06-12-2025,36,Active,
+PT-1821,Weight Loss,07-05-2025,16,Dropped Off,Lost contact / unresponsive
+PT-1822,Testosterone,24-02-2025,47,Dropped Off,Switched to in-person provider
+PT-1823,Weight Loss,21-01-2026,8,Active,
+PT-1824,Weight Loss,17-09-2025,18,Active,
+PT-1825,Weight Loss,19-07-2025,8,Dropped Off,Dissatisfied with results
+PT-1826,Testosterone,20-10-2025,14,Completed,
+PT-1827,Testosterone,14-05-2025,43,Dropped Off,Switched to in-person provider
+PT-1828,Peptides,13-05-2025,4,Active,
+PT-1829,Weight Loss,20-08-2025,22,Completed,
+PT-1830,Weight Loss,09-06-2026,26,Completed,
+PT-1831,Peptides,26-05-2025,13,Completed,
+PT-1832,Peptides,27-04-2026,16,Active,
+PT-1833,Testosterone,13-09-2025,17,Active,
+PT-1834,Weight Loss,01-03-2025,23,Completed,
+PT-1835,Testosterone,24-03-2026,45,Active,
+PT-1836,Weight Loss,23-08-2025,26,Completed,
+PT-1837,Weight Loss,18-04-2026,13,Completed,
+PT-1838,Weight Loss,19-08-2025,14,Dropped Off,Lost contact / unresponsive
+PT-1839,Weight Loss,10-02-2025,26,Active,
+PT-1840,Weight Loss,23-12-2025,6,Active,
+PT-1841,Weight Loss,20-03-2026,25,Active,
+PT-1842,Weight Loss,14-06-2025,16,Completed,
+PT-1843,Weight Loss,28-06-2025,11,Completed,
+PT-1844,Peptides,29-01-2025,10,Dropped Off,Dissatisfied with results
+PT-1845,Testosterone,10-10-2025,22,Dropped Off,Side effects
+PT-1846,Peptides,14-04-2026,8,Completed,
+PT-1847,Testosterone,23-03-2026,6,Active,
+PT-1848,Testosterone,08-01-2026,19,Active,
+PT-1849,Peptides,03-05-2026,8,Active,
+PT-1850,Testosterone,30-11-2025,47,Completed,
+PT-1851,Testosterone,21-02-2026,24,Active,
+PT-1852,Testosterone,22-09-2025,5,Active,
+PT-1853,Testosterone,28-02-2025,11,Dropped Off,Personal / scheduling conflicts
+PT-1854,Weight Loss,11-04-2025,1,Completed,
+PT-1855,Peptides,09-03-2025,6,Dropped Off,Switched to in-person provider
+PT-1856,Peptides,19-02-2026,9,Dropped Off,Switched to in-person provider
+PT-1857,Peptides,08-01-2025,8,Active,
+PT-1858,Weight Loss,16-10-2025,26,Dropped Off,Cost / insurance not covering treatment
+PT-1859,Testosterone,10-07-2025,42,Active,
+PT-1860,Peptides,26-02-2026,9,Completed,
+PT-1861,Peptides,15-10-2025,6,Completed,
+PT-1862,Peptides,16-11-2025,8,Dropped Off,Moved out of service area
+PT-1863,Testosterone,09-02-2025,45,Completed,
+PT-1864,Testosterone,08-06-2025,32,Completed,
+PT-1865,Peptides,10-06-2026,11,Active,
+PT-1866,Peptides,12-01-2026,15,Dropped Off,Cost / insurance not covering treatment
+PT-1867,Weight Loss,01-10-2025,26,Active,
+PT-1868,Testosterone,08-02-2026,31,Dropped Off,Moved out of service area
+PT-1869,Weight Loss,09-03-2026,17,Dropped Off,Side effects
+PT-1870,Peptides,03-02-2025,7,Completed,
+PT-1871,Testosterone,27-05-2026,25,Completed,
+PT-1872,Weight Loss,02-12-2025,7,Active,
+PT-1873,Peptides,22-08-2025,8,Active,
+PT-1874,Weight Loss,22-12-2025,6,Active,
+PT-1875,Weight Loss,27-06-2025,12,Completed,
+PT-1876,Testosterone,07-04-2026,16,Dropped Off,Switched to in-person provider
+PT-1877,Testosterone,14-02-2026,26,Completed,
+PT-1878,Testosterone,01-12-2025,43,Active,
+PT-1879,Testosterone,01-04-2025,52,Completed,
+PT-1880,Testosterone,24-05-2026,30,Active,
+PT-1881,Testosterone,13-08-2025,45,Active,
+PT-1882,Testosterone,24-04-2026,49,Active,
+PT-1883,Weight Loss,24-01-2025,12,Active,
+PT-1884,Weight Loss,02-03-2025,24,Completed,
+PT-1885,Testosterone,17-03-2025,45,Active,
+PT-1886,Weight Loss,23-03-2025,19,Completed,
+PT-1887,Peptides,15-06-2025,8,Active,
+PT-1888,Peptides,07-01-2026,3,Completed,
+PT-1889,Weight Loss,28-06-2025,1,Completed,
+PT-1890,Weight Loss,10-05-2026,12,Active,
+PT-1891,Peptides,16-04-2026,16,Completed,
+PT-1892,Weight Loss,21-03-2026,12,Completed,
+PT-1893,Weight Loss,08-05-2025,17,Dropped Off,Personal / scheduling conflicts
+PT-1894,Peptides,28-11-2025,14,Active,
+PT-1895,Peptides,15-10-2025,6,Dropped Off,Lost contact / unresponsive
+PT-1896,Testosterone,02-03-2025,3,Completed,
+PT-1897,Testosterone,05-06-2025,18,Dropped Off,Personal / scheduling conflicts
+PT-1898,Testosterone,05-10-2025,31,Active,
+PT-1899,Peptides,19-09-2025,12,Completed,
+PT-1900,Peptides,25-03-2025,6,Completed,
+PT-1901,Weight Loss,10-05-2026,6,Completed,
+PT-1902,Peptides,18-03-2025,14,Active,
+PT-1903,Testosterone,11-12-2025,37,Dropped Off,Lost contact / unresponsive
+PT-1904,Peptides,13-01-2026,4,Completed,
+PT-1905,Testosterone,12-11-2025,25,Dropped Off,Personal / scheduling conflicts
+PT-1906,Weight Loss,19-03-2026,14,Completed,
+PT-1907,Weight Loss,21-10-2025,1,Active,
+PT-1908,Peptides,10-03-2026,7,Active,
+PT-1909,Testosterone,10-01-2025,40,Active,
+PT-1910,Weight Loss,19-01-2025,3,Completed,
+PT-1911,Testosterone,02-12-2025,43,Dropped Off,Personal / scheduling conflicts
+PT-1912,Testosterone,28-10-2025,1,Active,
+PT-1913,Testosterone,07-12-2025,12,Completed,
+PT-1914,Testosterone,07-02-2026,25,Completed,
+PT-1915,Testosterone,04-08-2025,1,Active,
+PT-1916,Peptides,30-11-2025,5,Completed,
+PT-1917,Peptides,16-09-2025,9,Active,
+PT-1918,Peptides,24-11-2025,12,Active,
+PT-1919,Testosterone,29-05-2025,24,Completed,
+PT-1920,Testosterone,18-05-2026,44,Completed,
+PT-1921,Peptides,08-09-2025,4,Dropped Off,Switched to in-person provider
+PT-1922,Peptides,27-02-2026,16,Active,
+PT-1923,Testosterone,25-12-2025,16,Completed,
+PT-1924,Weight Loss,02-06-2025,22,Active,
+PT-1925,Testosterone,02-02-2025,1,Dropped Off,Dissatisfied with results
+PT-1926,Peptides,26-01-2025,16,Completed,
+PT-1927,Testosterone,16-08-2025,31,Dropped Off,Lost contact / unresponsive
+PT-1928,Weight Loss,09-09-2025,17,Dropped Off,Dissatisfied with results
+PT-1929,Weight Loss,13-04-2025,8,Dropped Off,Personal / scheduling conflicts
+PT-1930,Weight Loss,13-11-2025,21,Active,
+PT-1931,Weight Loss,10-06-2025,8,Active,
+PT-1932,Testosterone,12-01-2026,22,Completed,
+PT-1933,Weight Loss,20-01-2026,20,Active,
+PT-1934,Weight Loss,28-03-2026,11,Completed,
+PT-1935,Testosterone,28-05-2026,50,Completed,
+PT-1936,Testosterone,05-03-2025,25,Completed,
+PT-1937,Weight Loss,11-07-2025,25,Dropped Off,Lab work non-compliance
+PT-1938,Peptides,20-10-2025,16,Completed,
+PT-1939,Testosterone,13-06-2025,34,Completed,
+PT-1940,Peptides,31-08-2025,9,Dropped Off,Dissatisfied with results
+PT-1941,Weight Loss,17-05-2025,19,Active,
+PT-1942,Testosterone,06-05-2025,14,Dropped Off,Lost contact / unresponsive
+PT-1943,Weight Loss,15-02-2025,3,Active,
+PT-1944,Peptides,29-05-2025,12,Dropped Off,Switched to in-person provider
+PT-1945,Testosterone,18-07-2025,52,Dropped Off,Personal / scheduling conflicts
+PT-1946,Testosterone,18-11-2025,15,Completed,
+PT-1947,Testosterone,07-05-2025,52,Dropped Off,Personal / scheduling conflicts
+PT-1948,Testosterone,31-03-2026,45,Active,
+PT-1949,Weight Loss,20-03-2025,21,Active,
+PT-1950,Testosterone,18-06-2025,17,Dropped Off,Dissatisfied with results
+PT-1951,Testosterone,29-10-2025,39,Active,
+PT-1952,Weight Loss,10-06-2025,26,Dropped Off,Switched to in-person provider
+PT-1953,Peptides,04-02-2026,1,Dropped Off,Switched to in-person provider
+PT-1954,Testosterone,17-09-2025,31,Active,
+PT-1955,Peptides,25-09-2025,14,Dropped Off,Side effects
+PT-1956,Testosterone,17-09-2025,44,Completed,
+PT-1957,Weight Loss,08-06-2025,20,Active,
+PT-1958,Weight Loss,07-01-2025,26,Completed,
+PT-1959,Testosterone,12-05-2026,37,Active,
+PT-1960,Peptides,20-09-2025,15,Dropped Off,Lost contact / unresponsive
+PT-1961,Weight Loss,24-05-2026,14,Active,
+PT-1962,Peptides,19-04-2025,5,Active,
+PT-1963,Peptides,01-07-2025,3,Dropped Off,Moved out of service area
+PT-1964,Testosterone,21-01-2025,36,Dropped Off,Personal / scheduling conflicts
+PT-1965,Peptides,15-09-2025,1,Dropped Off,Switched to in-person provider
+PT-1966,Testosterone,09-04-2026,44,Active,
+PT-1967,Weight Loss,09-12-2025,5,Completed,
+PT-1968,Peptides,02-09-2025,16,Completed,
+PT-1969,Testosterone,07-10-2025,15,Active,
+PT-1970,Weight Loss,21-03-2026,26,Completed,
+PT-1971,Peptides,12-08-2025,13,Active,
+PT-1972,Weight Loss,09-04-2026,17,Active,
+PT-1973,Testosterone,17-01-2026,30,Active,
+PT-1974,Peptides,05-02-2026,11,Completed,
+PT-1975,Peptides,08-07-2025,16,Completed,
+PT-1976,Testosterone,27-07-2025,21,Dropped Off,Dissatisfied with results
+PT-1977,Weight Loss,25-10-2025,25,Dropped Off,Cost / insurance not covering treatment
+PT-1978,Weight Loss,08-04-2025,10,Active,
+PT-1979,Weight Loss,16-10-2025,26,Dropped Off,Switched to in-person provider
+PT-1980,Weight Loss,03-02-2025,12,Dropped Off,Side effects
+PT-1981,Testosterone,20-09-2025,32,Dropped Off,Switched to in-person provider
+PT-1982,Testosterone,05-02-2026,34,Active,
+PT-1983,Peptides,23-05-2025,10,Completed,
+PT-1984,Peptides,05-06-2026,16,Completed,
+PT-1985,Testosterone,22-12-2025,19,Dropped Off,Dissatisfied with results
+PT-1986,Weight Loss,27-02-2025,17,Dropped Off,Moved out of service area
+PT-1987,Testosterone,28-05-2026,48,Active,
+PT-1988,Weight Loss,23-07-2025,21,Dropped Off,Dissatisfied with results
+PT-1989,Weight Loss,21-02-2026,26,Active,
+PT-1990,Peptides,24-06-2025,7,Dropped Off,Personal / scheduling conflicts
+PT-1991,Weight Loss,09-05-2026,26,Active,
+PT-1992,Peptides,31-01-2026,8,Dropped Off,Side effects
+PT-1993,Weight Loss,10-04-2025,26,Dropped Off,Lost contact / unresponsive
+PT-1994,Weight Loss,22-09-2025,17,Dropped Off,Switched to in-person provider
+PT-1995,Weight Loss,18-09-2025,7,Dropped Off,Dissatisfied with results
+PT-1996,Weight Loss,19-01-2025,24,Dropped Off,Dissatisfied with results
+PT-1997,Weight Loss,08-03-2025,18,Active,
+PT-1998,Testosterone,21-06-2025,4,Active,
+PT-1999,Testosterone,04-09-2025,16,Completed,
+PT-2000,Testosterone,26-08-2025,1,Active,
