@@ -20,7 +20,193 @@ model = "claude-sonnet-5"
 # Loaded once at import time. Every analysis function below reads this same
 # dataframe rather than being passed a fresh copy, so all four subagents and
 # the tool layer are working against identical data within a single run.
-df = pd.read_csv(r"telehealth.csv")
+df = pd.read_csv(r"telehealth_test_renamed_columns.csv")
+
+# ---------------------------------------------------------------------------
+# COLUMN MAPPING (LLM-based)
+#
+# The rest of this pipeline expects three specific column names:
+# program_type, treatment_duration_weeks, retention_status. A new dataset
+# can hold the exact same information under different headers, e.g.
+# "program" instead of "program_type", or "Discharged Day" instead of a
+# duration count. Rather than hardcoding a synonym list, this sends the
+# real column headers AND a handful of real sample rows to Haiku, and asks
+# it to say which actual column matches each field this pipeline needs.
+#
+# Every proposal Haiku returns is checked against the real column's actual
+# values before being trusted -- a header can sound right while the data
+# underneath it means something else (a REASON column being mistaken for a
+# STATUS column, for example), and that only shows up by looking at the
+# values, not the name. If a field cannot be matched at all, that is
+# reported plainly and the pipeline stops with a clear message, rather
+# than silently proceeding with an empty or wrong column and producing a
+# confidently incorrect report several API calls later.
+# ---------------------------------------------------------------------------
+
+REQUIRED_COLUMNS = {
+    "program_type": {
+        "meaning": "Which program or track a patient is enrolled in. Categorical, "
+                   "a small number of repeating labels.",
+        "example_values": ["Peptides", "Testosterone", "Weight Loss"],
+    },
+    "treatment_duration_weeks": {
+        "meaning": "How many weeks a patient has been or was in treatment. Always numeric.",
+        "example_values": [4, 12, 26, 8],
+    },
+    "retention_status": {
+        "meaning": "Whether the patient is active, completed, or dropped off. "
+                   "Categorical, few distinct values, not a reason and not a day count.",
+        "example_values": ["Active", "Completed", "Dropped Off"],
+    },
+}
+
+COLUMN_MAPPER_MODEL = "claude-haiku-4-5-20251001"
+
+
+def get_llm_column_mapping(dataframe, anthropic_client, sample_rows=8):
+    """
+    Sends column headers and real sample rows to Haiku, asks it to map
+    each field this pipeline needs to the actual column that represents
+    it. Returns {field_name: column_name_or_None}. Never raises -- on any
+    API or parsing failure every field maps to None, and the caller
+    decides what to do with that (see apply_llm_column_mapping below).
+    """
+    sample = dataframe.head(sample_rows).to_dict(orient="records")
+    field_block = "\n".join(
+        f'- "{field}": {info["meaning"]} Example values: {info["example_values"]}'
+        for field, info in REQUIRED_COLUMNS.items()
+    )
+
+    prompt = f"""You are matching columns in a new CSV to specific fields an existing \
+analysis pipeline needs. The pipeline was built for a telehealth dataset but is now being \
+pointed at a dataset that may use different column names for the same concepts.
+
+Fields needed:
+{field_block}
+
+Actual columns in this dataset: {list(dataframe.columns)}
+
+Sample rows from this dataset:
+{json.dumps(sample, indent=2, default=str)}
+
+For each field, decide which actual column represents it, based on both the column name \
+AND the real values shown in the sample rows. Match on meaning and data type, not just \
+similar-sounding names -- for example a column of day counts means duration, not a reason \
+code, even if its header contains an unrelated word.
+
+If no column in this dataset represents a given field, say so explicitly rather than \
+picking the closest-sounding column. It is better to report no match than a wrong match.
+
+Respond with ONLY a JSON object, no markdown, no explanation outside the JSON:
+{{"program_type": "<exact column name or null>", "treatment_duration_weeks": "<exact column name or null>", "retention_status": "<exact column name or null>"}}
+"""
+
+    try:
+        response = anthropic_client.messages.create(
+            model=COLUMN_MAPPER_MODEL,
+            max_tokens=500,
+            temperature=0,  # minimizes, but does not eliminate, run-to-run variance
+            messages=[{"role": "user", "content": prompt}],
+        )
+        raw_text = "".join(block.text for block in response.content if hasattr(block, "text"))
+        raw_text = raw_text.replace("```json", "").replace("```", "").strip()
+        json_start = raw_text.find("{")
+        if json_start != -1:
+            raw_text = raw_text[json_start:]
+        parsed = json.loads(raw_text)
+        return {field: parsed.get(field) for field in REQUIRED_COLUMNS}
+    except Exception as e:
+        print(f"Column mapping LLM call failed: {e}")
+        return {field: None for field in REQUIRED_COLUMNS}
+
+
+def validate_mapped_column(field, column_name, dataframe):
+    """
+    Sanity-checks a proposed column against its real values before trusting
+    it. Returns (is_valid, reason). This is what catches a plausible-
+    sounding but wrong match, for example a drop-off REASON column
+    ("cost", "side effects") being proposed for retention STATUS just
+    because both relate to why a patient left -- the header alone can't
+    tell them apart, but the values can.
+    """
+    if column_name is None or column_name not in dataframe.columns:
+        return False, "No matching column found in dataset"
+
+    series = dataframe[column_name].dropna()
+    if len(series) == 0:
+        return False, f"Column '{column_name}' is empty"
+
+    if field == "treatment_duration_weeks":
+        numeric = pd.to_numeric(series, errors="coerce")
+        if numeric.notna().sum() / len(series) < 0.9:
+            return False, f"Column '{column_name}' is not mostly numeric, not a valid duration field"
+        return True, "OK"
+
+    if field in ("program_type", "retention_status"):
+        unique_count = series.nunique()
+        if unique_count > 20:
+            return False, f"Column '{column_name}' has {unique_count} distinct values, too many for {field}"
+        if field == "retention_status":
+            vocab = {
+                "active", "completed", "complete", "dropped off", "dropped", "discontinued",
+                "inactive", "churned", "retained", "enrolled", "discharged", "ongoing", "finished",
+            }
+            values = set(series.astype(str).str.strip().str.lower().unique())
+            overlap = sum(1 for v in values if any(term in v or v in term for term in vocab))
+            if overlap / max(len(values), 1) < 0.4:
+                return False, (
+                    f"Column '{column_name}' values ({', '.join(list(values)[:5])}) "
+                    f"don't resemble retention status wording"
+                )
+        return True, "OK"
+
+    return True, "OK"
+
+
+def apply_llm_column_mapping(dataframe, anthropic_client):
+    """
+    Runs the LLM mapper, validates every proposal against real data, and
+    renames whatever passes validation to this pipeline's expected column
+    names. Returns the renamed dataframe, a report of what was resolved,
+    and a report of what was not. Fields that fail validation or come back
+    as no-match are left out of the rename entirely rather than forcing a
+    guess through.
+    """
+    proposed = get_llm_column_mapping(dataframe, anthropic_client)
+    rename_map = {}
+    resolved_report = {}
+    unresolved_fields = {}
+
+    for field, proposed_column in proposed.items():
+        is_valid, reason = validate_mapped_column(field, proposed_column, dataframe)
+        if is_valid:
+            rename_map[proposed_column] = field
+            resolved_report[field] = proposed_column
+        else:
+            unresolved_fields[field] = reason
+
+    renamed_df = dataframe.rename(columns=rename_map)
+    return renamed_df, resolved_report, unresolved_fields
+
+
+# If the dataset already has the exact column names this pipeline expects,
+# skip the LLM mapping call entirely, no need to spend a Haiku call and
+# add latency on a dataset that already matches.
+if not set(REQUIRED_COLUMNS.keys()).issubset(set(df.columns)):
+    df, _resolved_columns, _unresolved_columns = apply_llm_column_mapping(df, client)
+
+    if _resolved_columns:
+        print(f"Column mapping applied: {_resolved_columns}")
+
+    _still_missing = [field for field in REQUIRED_COLUMNS if field not in df.columns]
+    if _still_missing:
+        # Fail loudly here, before any subagent runs and spends API calls,
+        # rather than letting a later df.groupby("program_type") raise a
+        # cryptic KeyError deep inside a parallel subagent call.
+        raise SystemExit(
+            f"Cannot proceed: required column(s) {_still_missing} could not be found or "
+            f"confidently mapped in this dataset.\nReasons: {_unresolved_columns}"
+        )
 
 # ---------------------------------------------------------------------------
 # ANALYSIS FUNCTIONS
@@ -844,16 +1030,10 @@ if __name__ == "__main__":
     clinical_report = generate_clinical_report(final_report, results)
 
     output_filename = save_report_to_file(clinical_report)
-
     print(f"\nClinical report saved to: {output_filename}")
-
     html_report = generate_html_report(final_report, results)
-
     html_output_filename = save_html_report_to_file(html_report)
-
     print(f"HTML clinical report saved to: {html_output_filename}")
-
-
     print("\n" + "=" * 80)
     print("Complete Pipeline Finished Successfully")
     print("=" * 80)
