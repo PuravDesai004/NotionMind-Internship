@@ -1,6 +1,6 @@
 # Multi Agent Healthcare Analytics System
 
-An AI system that turns a raw telehealth CSV into a clinic ready report. Point it at patient data and it produces a prioritized, plain English summary of program performance, patient risk, and retention patterns, with zero human input needed once it starts running.
+A prototype that analyzes a synthetic telehealth CSV and produces a plain-language summary of program performance, patient segments, retention, and anomalies. Its reports require human review and are not validated for clinical decisions.
 
 Built during a five week internship at Notionmind.
 
@@ -54,7 +54,7 @@ ANTHROPIC_API_KEY=your_actual_api_key_here
 python agents_complete.py
 ```
 
-The pipeline runs fully non interactively, no prompts or input required once it starts. A full run takes roughly 20 seconds and prints progress for each step as it completes. When it finishes, `clinical_report.md` and `clinical_report.html` will be in the same folder.
+The pipeline runs fully non interactively, no prompts or input required once it starts. The original project notes reported roughly 20 seconds for a full run; that timing has not been remeasured in the current audit. The script prints progress for each step as it completes. When it finishes, `clinical_report.md` and `clinical_report.html` will be in the same folder.
 
 ## File structure
 
